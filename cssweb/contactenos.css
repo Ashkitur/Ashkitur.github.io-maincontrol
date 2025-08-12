@@ -1,0 +1,70 @@
+
+.datos-empresa-container {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 35px;
+   border: 1px solid #ccc;
+}
+
+.contactenos-container {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+
+}
+
+.formulario-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.formulario-contacto {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: black;
+  color: white;           /* Aquí el color del texto */
+  border-radius: 10px;
+}
+
+.btn
+{
+    background-color: #df6011;
+    color: white;
+    border-radius: 15px;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+@media (max-width: 991px) {
+
+    .formulario-contacto {
+        padding: 10px;
+    }
+
+    .datos-empresa-container {
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        font-size: 25px;
+    }
+
+    #head-formulario {
+        font-size: 50px;
+        text-align: center;
+    }
+
+    .btn {
+      
+        font-size: 20px;
+    }
+
+
+}

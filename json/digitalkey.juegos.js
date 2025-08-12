@@ -1,0 +1,81 @@
+const juegos = [
+  {
+    id:1,
+    nombre: "Key Digital - Minecraft Java Edition",
+    precio: 25000,
+    stock: true,
+    disponibilidad: "Solo online",
+    portada: "img/minecraft.jpg",
+    descripcion: "Código digital original de Minecraft Java Edition, entrega inmediata por email.",
+    plataformas: [
+      "PC"
+    ],
+    imagenes: [
+      "img/mcgaleria1.jpg",
+      "img/mcgaleria2.jpg"
+    ],
+    envio: {
+      tiempoEstimado: "3 minutos",
+      costo: 0
+    },
+    resenas: {
+      comentarios: [
+        { usuario: "Carlos G.", texto: "Me llegó el código en 1 minuto, todo perfecto.", calificacion: 5 },
+        { usuario: "Sofía M.", texto: "Muy rápido y fácil de canjear.", calificacion: 5 }
+      ]
+    }
+  },
+{
+  id: 3,
+  nombre: "Key Digital - Peak Juego Digital",
+  precio: 18000,
+  stock: true,
+  disponibilidad: "Solo online",
+  portada: "img/peak.jpg",
+  descripcion: "Peak es un juego de entrenamiento cerebral diseñado para mejorar habilidades cognitivas como la memoria, concentración, resolución de problemas y velocidad mental a través de divertidos y desafiantes minijuegos. Ideal para todas las edades, Peak ofrece una experiencia personalizada para ayudarte a mantener tu mente ágil y activa.",
+  plataformas: [
+    "PC"
+  ],
+  imagenes: [
+    "img/peak-galeria1.jpg",
+    "img/peak-galeria2.jpg"
+  ],
+  envio: {
+    tiempoEstimado: "5 minutos",
+    costo: 0
+  },
+  resenas: {
+    comentarios: [
+      { usuario: "Ana P.", texto: "Muy divertido y excelente para entrenar la mente.", calificacion: 5 },
+      { usuario: "Luis M.", texto: "Entrega rápida y sin problemas.", calificacion: 4 }
+    ]
+  }
+}
+,
+  {
+    id:4,
+    nombre: "Key Digital - Signalis",
+    precio: 13000,
+    stock: true,
+    disponibilidad: "Solo online",
+    portada: "img/Signalis.jpg",
+    descripcion: "Código digital original de Signalis, entrega inmediata por email.",
+    plataformas: [
+      "Xbox"
+    ],
+    imagenes: [
+      "img/mcgaleria1.jpg",
+      "img/mcgaleria2.jpg"
+    ],
+    envio: {
+      tiempoEstimado: "3 minutos",
+      costo: 0
+    },
+    resenas: {
+      comentarios: [
+        { usuario: "Carlos G.", texto: "Obra maestra.", calificacion: 5 },
+        { usuario: "Sofía M.", texto: "Muy rápido y fácil de canjear.", calificacion: 5 }
+      ]
+    }
+  }
+];
