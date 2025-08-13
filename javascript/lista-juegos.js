@@ -52,10 +52,7 @@ data.forEach(juego => {
         <h5 class="card-title text-left">${juego.nombre}</h5>
         <p class="card-text text-left"><b>Precio:</b> ₡${juego.precio}</p>
         <p class="card-text text-left"><b>Plataformas:</b> ${juego.plataformas.join(", ")}</p>
-        <div class="input-group mb-3">
-          <span class="input-group-text">Cantidad</span>
-          <input type="number" class="form-control juego-quantity" value="1" min="1">
-        </div>
+        
         <div class="mt-auto d-grid gap-2 d-md-flex justify-content-md-end">
           <button class="btn" onclick="comprarJuegos(${juego.id})" style="background-color:#df6011; color:#fff; border-radius:15px; border:none;">
             <i class="bi bi-cart-plus"></i> Comprar
