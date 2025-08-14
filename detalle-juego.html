@@ -8,14 +8,11 @@
   <link rel="stylesheet" href="css/bootstrap.min.css" />
   <link rel="stylesheet" href="cssweb/footerheader.css" />
   <link rel="stylesheet" href="cssweb/detalle-juego.css" />
+  <link rel="stylesheet" href="cssweb/StarsPrueba.css">
+
 </head>
 
-<body>
-
-
-
-
-
+<body style="background-color: #757575;">
   <nav class="navbar navbar-expand-lg navbar-dark bg-black">
 
     <div class="container-fluid">
@@ -76,91 +73,73 @@
     </div>
   </nav>
 
-
-
   <!-- Toda la vara acá, TODO CONTENIDO. -->
-  <main class="container py-4">
-    <div id="detalle" class="row justify-content-center">
-      <div class="col-lg-10">
-        <div class="card shadow-sm">
-          <div class="card-header bg-primary text-white">
-            <h4 id="title" class="mb-0">Título del juego</h4>
+
+  <main>
+
+    <div class="mx-auto pt-4 pb-4 px-4 mt-4 mb-4 border rounded-4 bg-white w-75 h-100 " id="ContenedorPrincipal">
+
+
+      <div class="row align-items-center" id="Titulo">
+
+        <div class="col-sm-6 px-4 pb-3" id="Nombre resena">
+          <h1 class="title">Titulo del Juego</h1>
+
+          <!-- Investiga una vaina pa poner estrellas -->
+
+        </div>
+        <div class="col-sm-6 d-flex justify-content-end " id="Disponibilidad">
+
+          <div class="rounded-pill w-50  " style="background-color: #df6011;">
+            <h5 class="text-center p-1 "> Disponibilidad: <span id="disponibilidad"></span> </h5>
           </div>
-          <div class="card-body">
-            <div class="row g-4">
-              <!-- willy miniatura miniatura -->
-              <div class="col-md-3 d-flex justify-content-center">
-                <img id="image" class="img-thumbnail" style="max-height: 200px; width: auto; object-fit: contain;"
-                  src="img/image-not-found.jpg" alt="Imagen juego" />
-              </div>
 
 
-              <div class="col-md-9">
-                <!-- precio stock-->
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <div>
-                    <strong>Disponibilidad:</strong> <span id="disponibilidad"></span><br />
-                    <strong>Stock:</strong> <span id="stock"></span>
-                  </div>
-                  <div>
-                    <h2 id="price" class="text-info fw-bold mb-0"></h2>
-                  </div>
-                </div>
+        </div>
 
-                <!--descr-->
-                <div class="mb-4">
-                  <strong>Descripción:</strong>
-                  <p id="descripcion" class="mt-2 mb-0"></p>
-                </div>
+      </div>
 
-                <!--categoria plataforma -->
-                <div class="mb-4">
-                  <strong>Plataformas:</strong>
-                  <p id="plataformas" class="mt-2 mb-0"></p>
-                </div>
+      <div class="row align-items-center" id="Campos">
 
-                <!--el envio -->
-                <div class="mb-4">
-                  <strong>Envío:</strong>
-                  <p class="mt-2 mb-0">
-                    Tiempo estimado: <span id="envio-tiempo"></span><br />
-                    Costo: <span id="envio-costo"></span>
-                  </p>
-                </div>
+        <div class="col-sm-4" id="Tarjeta de Juego">
 
-                <!--imagenes galeria -->
-                <div class="mb-4">
-                  <strong>Galería:</strong>
-                  <div id="galeria" class="d-flex flex-wrap gap-2 mt-2"></div>
-                </div>
 
-                <!-- sus reseñas -->
-                <div class="mb-4">
-                  <strong>Reseñas:</strong>
-                  <div id="resenas" class="mt-2"></div>
-                </div>
-              </div>
+          <div class="card p-4 " style="width: 300px; border-radius: 20px; background-color:#4a4646;">
+
+            <img src="img/ImagenesJuegos/ImagenesCaratulas/Minecraft.jpg" class="card-img-top rounded" alt="Img"
+              style="border-radius: 20px 20px 0 0 ;">
+
+
+            <div class="d-flex justify-content-between mt-3 gap-2">
+
+
+              <img src="/img/ImagenesJuegos/Imagenes extras/McExtra2.jpg" class="img-fluid rounded" style=" width:  33%" alt="" >
+              <img src="/img/ImagenesJuegos/Imagenes extras/McExtra1.jpg" class="img-fluid rounded" style=" width:  33%"  alt="">
+              <img src="/img/ImagenesJuegos/Imagenes extras/McExtra3.jpg" class="img-fluid rounded" style=" width:  33%" alt="">
+
+    <!-- Si puedes hacer que las imagenes se coloquen al lado al pasar al pixel 7 😊-->
+
             </div>
           </div>
-          <div class="card-footer bg-white text-end">
-            <button id="btnComprar" class="btn btn-success btn-lg mt-2 px-4">
-              <i class="bi bi-cart-fill me-2"></i> Comprar
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <div id="alertNotFound" class="alert alert-danger mt-4 d-none">
-      Juego no encontrado.
+        </div>
+        <div class="col-sm-8" id="Informacion del Juego">
+
+          
+
+
+        </div>
+
+
+      </div>
+
+
     </div>
   </main>
 
 
   <!-- Footer -->
-
-
-  <footer class="text-white text-center py-3 bg-black mt-5 h-100 w-100">
+  <footer class="text-white text-center py-3 bg-black mt-5 h-30 w-100">
     <div class="container d-flex align-items-start">
       <div class="left-container">
         <h5 style="font-weight: bold;">Aim Control</h5>
@@ -231,25 +210,17 @@
   </footer>
 
 
-
+  <script src="/javascript/StarsPrueba.Js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
-
   <script src="https://code.jquery.com/jquery-2.2.4.js" crossorigin="anonymous"></script>
   <!-- Notificaciones Toastr -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-
-
   <script src="./json/digitalkey.juegos.js"> </script>
   <script src="./javascript/lista-juegos.js"></script>
   <script src="./javascript/juego-detalle.js"></script>
-
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
     crossorigin="anonymous"></script>
-
-
-
 </body>
 
 </html>
