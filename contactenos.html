@@ -5,24 +5,18 @@
   <meta charset="UTF-8">
   <title>Main Control</title>
 
- <link rel="stylesheet" href="css/bootstrap.min.css" />
-<link rel="stylesheet" href="cssweb/footerheader.css" />
-<link rel="stylesheet" href="cssweb/contactenos.css" />
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="cssweb/footerheader.css" />
+  <link rel="stylesheet" href="cssweb/contactenos.css" />
 </head>
 
 <body>
-
-
-
-
-
   <!-- nav -->
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-black">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-black">
 
     <div class="container-fluid">
       <a class="navbar-brand" href="index.html" style="font-weight: bold;" id="texto-logito">
-        <img src="img/ICON.png" alt="Main Control" width="80" height="80">
+        <img src="/img/LogoPrincipal/ICON.png" alt="Main Control" width="80" height="80">
         Aim Control
       </a>
 
@@ -32,27 +26,29 @@
         <div class="vr mx-3 bg-white" style="opacity: 0.5;"></div>
 
 
-    <div class="navbar-nav mx-auto text-center">
-    <a class="nav-link d-flex align-items-center gap-2" aria-current="page" href="index.html?plataforma=all">
-      <img src="img/computadora-para-juegos.png" alt="plataformas" width="40" height="40">Todas las plataformas
-    </a>
+        <div class="navbar-nav mx-auto text-center">
+          <a class="nav-link d-flex align-items-center gap-2" aria-current="page" href="index.html?plataforma=all"
+            style="color: #df6011; font-weight: 600;">
+            <img src="/img/Logos/computadora-para-juegos.png" alt="plataformas" width="40" height="40">Todas las
+            plataformas
+          </a>
 
-    <a class="nav-link d-flex align-items-center gap-2" href="PC.html?plataforma=PC">
-      <img src="img/logotipo-de-steam.png" alt="PC" width="30" height="30"> PC
-    </a>
+          <a class="nav-link d-flex align-items-center gap-2" href="PC.html?plataforma=PC">
+            <img src="/img/Logos/logotipo-de-steam.png" alt="PC" width="30" height="30"> PC
+          </a>
 
-    <a class="nav-link d-flex align-items-center gap-2" href="PlayStation.html?plataforma=PlayStation">
-      <img src="img/consoles-ps-512.png" alt="PlayStation" width="30" height="30">PlayStation
-    </a>
+          <a class="nav-link d-flex align-items-center gap-2" href="PlayStation.html?plataforma=PlayStation">
+            <img src="img/Logos/consoles-ps-512.png" alt="PlayStation" width="30" height="30">PlayStation
+          </a>
 
-    <a class="nav-link d-flex align-items-center gap-2" href="Xbox.html?plataforma=Xbox">
-      <img src="img/logotipo-de-xbox.png" alt="Xbox" width="30" height="30">Xbox
-    </a>
+          <a class="nav-link d-flex align-items-center gap-2" href="Xbox.html?plataforma=Xbox">
+            <img src="img/Logos/logotipo-de-xbox.png" alt="Xbox" width="30" height="30">Xbox
+          </a>
 
-    <a class="nav-link d-flex align-items-center gap-2" href="NintendoSwitch.html?plataforma=Nintendo Switch">
-      <img src="img/nintendo-switch.png" alt="Nintendo Switch" width="50" height="44">Nintendo Switch
-    </a>
-  </div>
+          <a class="nav-link d-flex align-items-center gap-2" href="NintendoSwitch.html?plataforma=NintendoSwitch">
+            <img src="img/Logos/nintendo-switch.png" alt="Nintendo Switch" width="50" height="44">Nintendo Switch
+          </a>
+        </div>
 
 
 
@@ -67,7 +63,7 @@
 
         <a class="nav-link d-flex align-items-center gap-2" href="#">
           <div class="icon-box" style="background-color: #df6011; padding: 9px; border-radius: 15px;">
-            <img src="img/carrito-de-compras.png" alt="Carrito de Compras" width="30" height="30">
+            <img src="img/Logos/carrito-de-compras.png" alt="Carrito de Compras" width="30" height="30">
           </div>
         </a>
 
@@ -76,275 +72,266 @@
     </div>
   </nav>
 
+  <!-- Toda la vara acá, TODO CONTENIDO. -->
+  <main>
+
+<div class="" id="Contenedor-Grid">
 
 
+      <div class="container-contactenos">
+
+      <div class="col-md-12 text-center">
+        <h1 class="display-4" style="font-weight: bold;">Contáctenos</h1>
+        <p class="lead">Estamos aquí para ayudarte y brindar nuestros servicios a usted.</p>
+      </div>
+
+    </div>
+
+    <div class="datos-empresa-container">
+      <div class="bg-black text-white p-4 rounded mb-4">
+        <h2>Datos de la Empresa</h2>
+        <p><strong>Nombre:</strong> Aim Control</p>
+        <p><strong>Teléfono:</strong> +506 1234-5678</p>
+        <p><strong>Correo Electrónico:</strong> contacto@aimcontrol.com</p>
+        <p><strong>Dirección física:</strong> Avenida Central 123, San José, Costa Rica</p>
+        <p><strong>Horarios de atención:</strong> Lunes a Viernes, 8:00 AM - 5:00 PM</p>
+      </div>
+
+      <div class="map-container" style="height: 300px;">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.045064682855!2d-84.09296068515599!3d9.933720292853215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0e7c98d9cae2f%3A0x8c262a47b6d7db92!2sAvenida%20Central%20123%2C%20San%20Jos%C3%A9%2C%20Costa%20Rica!5e0!3m2!1ses!2sus!4v1691580000000!5m2!1ses!2sus"
+          width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+
+    <div class="formulario-container">
+      <h1 id="head-formulario">Formulario de Contacto</h1>
+      <p class="lead">Complete el siguiente formulario para estar en contacto con nosotros.</p>
+
+      <div class="formulario-contacto">
+
+        <form id="AimControlForms" novalidate>
+          <div class="mb-3">
+            <label for="email" class="form-label">Correo electrónico</label>
+            <input type="email" class="form-control" id="email" placeholder="correo@ejemplo.com" required>
+            <div class="invalid-feedback">Por favor ingresa un correo válido.</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="fullName" class="form-label">Nombre completo</label>
+            <input type="text" class="form-control" id="fullName" placeholder="Tu nombre completo" required
+              pattern="^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$">
+            <div class="invalid-feedback">Por favor ingresa tu nombre completo (solo letras y espacios).</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="birthDate" class="form-label">Fecha de nacimiento</label>
+            <input type="date" class="form-control" id="birthDate" required
+              max="<?= new Date().toISOString().split('T')[0] ?>">
+            <div class="invalid-feedback">Por favor selecciona una fecha válida.</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="gender" class="form-label">Género</label>
+            <select class="form-select" id="gender" required>
+              <option value="" selected disabled>Selecciona tu género</option>
+              <option value="Masculino">Masculino</option>
+              <option value="Femenino">Femenino</option>
+              <option value="Otro">Otro</option>
+              <option value="Prefiero no decir">Prefiero no decir</option>
+            </select>
+            <div class="invalid-feedback">Por favor selecciona tu género.</div>
+          </div>
 
 
+          <div class="mb-3">
+            <label for="contactReason" class="form-label">Motivo de contacto</label>
+            <select class="form-select" id="contactReason" required>
+              <option value="" selected disabled>Selecciona un motivo</option>
+              <option value="Soporte técnico">Soporte técnico</option>
+              <option value="Consulta de productos">Consulta de productos</option>
+              <option value="Reporte de problema">Reporte de problema</option>
+              <option value="Otros">Otros</option>
+            </select>
+            <div class="invalid-feedback">Por favor selecciona un motivo.</div>
+          </div>
 
-    <!-- Toda la vara acá, TODO CONTENIDO. -->
-<main>
- <div class="container-contactenos" >
- 
-     <div class="col-md-12 text-center">
-       <h1 class="display-4" style="font-weight: bold;">Contáctenos</h1>
-       <p class="lead">Estamos aquí para ayudarte y brindar nuestros servicios a usted.</p>
-     </div>
- 
- </div>
+          <div class="mb-3">
+            <label for="orderNumber" class="form-label">Número de pedido (opcional)</label>
+            <input type="text" class="form-control" id="orderNumber" placeholder="Ejemplo: 12345678"
+              pattern="^[0-9]{0,10}$">
+            <div class="invalid-feedback">El número de pedido debe ser numérico (máx 10 dígitos).</div>
+          </div>
 
-
-<div class="datos-empresa-container">
-  <div class="bg-black text-white p-4 rounded mb-4">
-    <h2>Datos de la Empresa</h2>
-    <p><strong>Nombre:</strong> Aim Control</p>
-    <p><strong>Teléfono:</strong> +506 1234-5678</p>
-    <p><strong>Correo Electrónico:</strong> contacto@aimcontrol.com</p>
-    <p><strong>Dirección física:</strong> Avenida Central 123, San José, Costa Rica</p>
-    <p><strong>Horarios de atención:</strong> Lunes a Viernes, 8:00 AM - 5:00 PM</p>
-  </div>
-
-  <div class="map-container" style="height: 300px;">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.045064682855!2d-84.09296068515599!3d9.933720292853215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0e7c98d9cae2f%3A0x8c262a47b6d7db92!2sAvenida%20Central%20123%2C%20San%20Jos%C3%A9%2C%20Costa%20Rica!5e0!3m2!1ses!2sus!4v1691580000000!5m2!1ses!2sus"
-      width="100%"
-      height="100%"
-      style="border:0;"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-  </div>
-</div>
+          <div class="mb-3">
+            <label for="queryType" class="form-label">Tipo de consulta</label>
+            <select class="form-select" id="queryType" required>
+              <option value="" selected disabled>Selecciona un tipo</option>
+              <option value="Consulta general">Consulta general</option>
+              <option value="Devolución">Devolución</option>
+              <option value="Información sobre productos">Información sobre productos</option>
+              <option value="Otro">Otro</option>
+            </select>
+            <div class="invalid-feedback">Por favor selecciona un tipo de consulta.</div>
+          </div>
 
 
+          <!-- captcha-->
+          <div class="mb-3">
+            <div class="g-recaptcha" data-sitekey="TU_SITE_KEY"></div>
+          </div>
+          <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+          <button type="submit" class="btn"
+            style="background-color:#df6011; color:#fff; border-radius:15px; border:none;">Enviar</button>
+        </form>
 
-
-
-<div class="formulario-container">
-<h1 id="head-formulario">Formulario de Contacto</h1>
-<p class="lead">Complete el siguiente formulario para estar en contacto con nosotros.</p>
-
-<div class="formulario-contacto">
-
-<form id="AimControlForms" novalidate>
-  <div class="mb-3">
-    <label for="email" class="form-label">Correo electrónico</label>
-    <input type="email" class="form-control" id="email" placeholder="correo@ejemplo.com" required>
-    <div class="invalid-feedback">Por favor ingresa un correo válido.</div>
-  </div>
-
-  <div class="mb-3">
-    <label for="fullName" class="form-label">Nombre completo</label>
-    <input type="text" class="form-control" id="fullName" placeholder="Tu nombre completo" required pattern="^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$">
-    <div class="invalid-feedback">Por favor ingresa tu nombre completo (solo letras y espacios).</div>
-  </div>
-
-  <div class="mb-3">
-    <label for="birthDate" class="form-label">Fecha de nacimiento</label>
-    <input type="date" class="form-control" id="birthDate" required max="<?= new Date().toISOString().split('T')[0] ?>">
-    <div class="invalid-feedback">Por favor selecciona una fecha válida.</div>
-  </div>
-
-  <div class="mb-3">
-    <label for="gender" class="form-label">Género</label>
-    <select class="form-select" id="gender" required>
-      <option value="" selected disabled>Selecciona tu género</option>
-      <option value="Masculino">Masculino</option>
-      <option value="Femenino">Femenino</option>
-      <option value="Otro">Otro</option>
-      <option value="Prefiero no decir">Prefiero no decir</option>
-    </select>
-    <div class="invalid-feedback">Por favor selecciona tu género.</div>
-  </div>
-
-
-  <div class="mb-3">
-    <label for="contactReason" class="form-label">Motivo de contacto</label>
-    <select class="form-select" id="contactReason" required>
-      <option value="" selected disabled>Selecciona un motivo</option>
-      <option value="Soporte técnico">Soporte técnico</option>
-      <option value="Consulta de productos">Consulta de productos</option>
-      <option value="Reporte de problema">Reporte de problema</option>
-      <option value="Otros">Otros</option>
-    </select>
-    <div class="invalid-feedback">Por favor selecciona un motivo.</div>
-  </div>
-
-  <div class="mb-3">
-    <label for="orderNumber" class="form-label">Número de pedido (opcional)</label>
-    <input type="text" class="form-control" id="orderNumber" placeholder="Ejemplo: 12345678" pattern="^[0-9]{0,10}$">
-    <div class="invalid-feedback">El número de pedido debe ser numérico (máx 10 dígitos).</div>
-  </div>
-
-  <div class="mb-3">
-    <label for="queryType" class="form-label">Tipo de consulta</label>
-    <select class="form-select" id="queryType" required>
-      <option value="" selected disabled>Selecciona un tipo</option>
-      <option value="Consulta general">Consulta general</option>
-      <option value="Devolución">Devolución</option>
-      <option value="Información sobre productos">Información sobre productos</option>
-      <option value="Otro">Otro</option>
-    </select>
-    <div class="invalid-feedback">Por favor selecciona un tipo de consulta.</div>
-  </div>
-
-
-    <!-- captcha-->
-<div class="mb-3">
-  <div class="g-recaptcha" data-sitekey="TU_SITE_KEY"></div>
-</div>
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-  <button type="submit" class="btn" style="background-color:#df6011; color:#fff; border-radius:15px; border:none;">Enviar</button>
-</form>
-
-</div>
-</div>
-
- <!-- mostrar la info enviada modal-->
-  <div class="modal fade" id="ModalForms" tabindex="-1" aria-labelledby="summaryModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="summaryModalLabel">Resumen de Datos</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-                    </div>
-                    <div class="modal-body">
-                        <p><strong>Correo:</strong> <span id="modalEmail"></span></p>
-                        <p><strong>Nombre completo:</strong> <span id="modalName"></span></p>
-                        <p><strong>Fecha de nacimiento:</strong> <span id="modalBirthDate"></span></p>
-                        <p><strong>Género:</strong> <span id="modalGender"></span></p>
-                        <p><strong>Motivo de contacto:</strong> <span id="modalContactReason"></span></p>
-                        <p><strong>Número de pedido:</strong> <span id="modalOrderNumber"></span></p>
-                        <p><strong>Tipo de consulta:</strong> <span id="modalQueryType"></span></p>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
 
 
 
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-
-<script>
-    
-        // datebirthDate no puede ser mayor a la fecha actual
-        const today = new Date();
-        const maxDate = today.toISOString().split('T')[0];  
-        document.getElementById('birthDate').setAttribute('max', maxDate);
-        
-   
-        //obtengo id del forms y modal
-        const form = document.getElementById('AimControlForms');
-        const modal = new bootstrap.Modal(document.getElementById('ModalForms'));
-
-        form.addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            if (!form.checkValidity()) {
-                form.classList.add('was-validated');
-            } else {
-                //lleno modal con datos del formulario
-                document.getElementById('modalEmail').textContent = form.email.value;
-                document.getElementById('modalName').textContent = form.fullName.value;
-                document.getElementById('modalBirthDate').textContent = form.birthDate.value;
-                document.getElementById('modalGender').textContent = form.gender.value;
-                document.getElementById('modalContactReason').textContent = form.contactReason.value;
-                document.getElementById('modalOrderNumber').textContent = form.orderNumber.value || 'No especificado';
-                document.getElementById('modalQueryType').textContent = form.queryType.value;
-
-                modal.show();
-                form.classList.remove('was-validated');
-                form.reset();
-            }
-        });
-    </script>
-
- 
+  
+</div>
 
 
 
 
 
+    <!-- mostrar la info enviada modal-->
+    <div class="modal fade" id="ModalForms" tabindex="-1" aria-labelledby="summaryModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="summaryModalLabel">Resumen de Datos</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body">
+            <p><strong>Correo:</strong> <span id="modalEmail"></span></p>
+            <p><strong>Nombre completo:</strong> <span id="modalName"></span></p>
+            <p><strong>Fecha de nacimiento:</strong> <span id="modalBirthDate"></span></p>
+            <p><strong>Género:</strong> <span id="modalGender"></span></p>
+            <p><strong>Motivo de contacto:</strong> <span id="modalContactReason"></span></p>
+            <p><strong>Número de pedido:</strong> <span id="modalOrderNumber"></span></p>
+            <p><strong>Tipo de consulta:</strong> <span id="modalQueryType"></span></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
 
-
-
+  </main>
 
   <!-- Footer -->
-
-
-  <footer class="bg-black text-white text-center py-3">   
+  <footer class="text-white text-center py-3 bg-black mt-5 h-100 w-100">
     <div class="container d-flex align-items-start">
-    <div class="left-container">
-      <h5 style="font-weight: bold;" ">Aim Control</h5>
-      <p><a href="acercade.html" style="color: #757575; text-decoration: none;">Acerca de</a></p>
-      <p><a href="contactenos.html" style="color: #757575; text-decoration: none;">Contáctenos</a></p>
-  
+      <div class="left-container">
+        <h5 style="font-weight: bold;">Aim Control</h5>
+        <p><a href=" acercade.html" style="color: #757575; text-decoration: none;">Acerca de</a></p>
+        <p><a href="contactenos.html" style="color: #757575; text-decoration: none;">Contáctenos</a></p>
+
+      </div>
+
+      <div class="vr mx-3 bg-white" style="opacity: 0.5;"></div>
+
+      <div class="center-container">
+        <div class="mb-3">
+          <label for="nombre" class="form-label" style="color: #757575; font-size: 0.45cm;">
+            Obtén ofertas personalizadas de videojuegos
+          </label>
+          <input type="text" class="form-control" id="nombre" placeholder="correo@ejemplo.com">
+        </div>
+
+        <div class="d-flex justify-content-end">
+          <button type="button" class="btn"
+            style="background-color:#df6011; color:#fff; border-radius:15px; border:none;">
+            Suscribirse
+          </button>
+
+        </div>
+      </div>
+
+      <div class="vr mx-3 bg-white" style="opacity: 0.5;"></div>
+
+      <div class="right-container">
+        <h5 style="font-weight: 200;">Síguenos</h5>
+        <div class="d-flex justify-content-center gap-3">
+          <a href="#"><img src="img/facebook.png" alt="Facebook" width="30" height="30"></a>
+          <a href="#"><img src="img/twitter.png" alt="Twitter" width="30" height="30"></a>
+          <a href="#"><img src="img/instagram.png" alt="Instagram" width="30" height="30"></a>
+          <a href="#"><img src="img/youtube.png" alt="YouTube" width="30" height="30"></a>
+        </div>
+
+      </div>
     </div>
-    
-    <div class="vr mx-3 bg-white" style="opacity: 0.5;"></div>
 
-    <div class="center-container">
-<div class="mb-3">
-  <label for="nombre" class="form-label" style="color: #757575; font-size: 0.45cm;">
-    Obtén ofertas personalizadas de videojuegos
-  </label>
-  <input type="text" class="form-control" id="nombre" placeholder="correo@ejemplo.com">
-</div>
+    <hr style="border: none; height: 2px; background-color: #df6011; width: 80%; margin: 20px auto;">
 
-<div class="d-flex justify-content-end">
- <button type="button" class="btn" style="background-color:#df6011; color:#fff; border-radius:15px; border:none;">
-  Suscribirse
-</button>
+    <div class="down d-flex justify-content-between align-items-center mt-3 px-3">
 
-</div>
+      <div class="down-container">
+        <p style="color: #ffffff; font-size: 0.45cm; margin: 0;">
+          © 2023 Aim Control. Todos los derechos reservados.
+        </p>
+      </div>
+
+      <div class="canales-container d-flex">
+        <p style="color: #df6011;">Canales de pago aceptados </p>
+
+        <div class="px-3 mb-2 d-flex">
+          <img src="img/Otros/visa.png" alt="Visa" width="40" height="40" class="mx-2">
+          <img src="img//Otros/logotipo-de-paypal.png" alt="Paypal" width="40" height="40" class="mx-2">
+          <img src="img/Otros/pago-de-apple.png" alt="Apple Pay" width="40" height="40" class="mx-2">
+          <img src="img/Otros/redondo.png" alt="Mastercard" width="40" height="40" class="mx-2">
+
+        </div>
+
+      </div>
+
     </div>
 
-  <div class="vr mx-3 bg-white" style="opacity: 0.5;"></div>
 
-  <div class="right-container">
-    <h5 style="font-weight: 200;">Síguenos</h5>
-    <div class="d-flex justify-content-center gap-3">
-      <a href="#"><img src="img/facebook.png" alt="Facebook" width="30" height="30"></a>
-      <a href="#"><img src="img/twitter.png" alt="Twitter" width="30" height="30"></a>
-      <a href="#"><img src="img/instagram.png" alt="Instagram" width="30" height="30"></a>
-      <a href="#"><img src="img/youtube.png" alt="YouTube" width="30" height="30"></a>
-    </div>
+  </footer>
 
-  </div>
-    </div>
+  <script>
 
-<hr style="border: none; height: 2px; background-color: #df6011; width: 80%; margin: 20px auto;">
-
-<div class="down d-flex justify-content-between align-items-center mt-3 px-3">
-
-  <div class="down-container">
-    <p style="color: #ffffff; font-size: 0.45cm; margin: 0;">
-      © 2023 Aim Control. Todos los derechos reservados.
-    </p>
-  </div>
-
-  <div class="canales-container d-flex">
-    <p style="color: #df6011;">Canales de pago aceptados</p>
-    <img src="img/visa.png" alt="Visa" width="40" height="40" class="mx-2">
-    <img src="img/logotipo-de-paypal.png" alt="Paypal" width="40" height="40" class="mx-2">
-    <img src="img/pago-de-apple.png" alt="Apple Pay" width="40" height="40" class="mx-2">
-    <img src="img/redondo.png" alt="Mastercard" width="40" height="40" class="mx-2">
-  </div>
-
-</div>
+    // datebirthDate no puede ser mayor a la fecha actual
+    const today = new Date();
+    const maxDate = today.toISOString().split('T')[0];
+    document.getElementById('birthDate').setAttribute('max', maxDate);
 
 
-    </footer>
+    //obtengo id del forms y modal
+    const form = document.getElementById('AimControlForms');
+    const modal = new bootstrap.Modal(document.getElementById('ModalForms'));
 
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
 
+      if (!form.checkValidity()) {
+        form.classList.add('was-validated');
+      } else {
+        //lleno modal con datos del formulario
+        document.getElementById('modalEmail').textContent = form.email.value;
+        document.getElementById('modalName').textContent = form.fullName.value;
+        document.getElementById('modalBirthDate').textContent = form.birthDate.value;
+        document.getElementById('modalGender').textContent = form.gender.value;
+        document.getElementById('modalContactReason').textContent = form.contactReason.value;
+        document.getElementById('modalOrderNumber').textContent = form.orderNumber.value || 'No especificado';
+        document.getElementById('modalQueryType').textContent = form.queryType.value;
 
-    <script src="js/bootstrap.bundle.min.js"></script>
+        modal.show();
+        form.classList.remove('was-validated');
+        form.reset();
+      }
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

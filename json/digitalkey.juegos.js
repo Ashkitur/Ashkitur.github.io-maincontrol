@@ -5,7 +5,7 @@ const juegos = [
     precio: 25000,
     stock: true,
     disponibilidad: "Solo online",
-    portada: "img/minecraft.jpg",
+    portada: "img/ImagenesJuegos/ImagenesCaratulas/Minecraft.jpg",
     descripcion: "Código digital original de Minecraft Java Edition, entrega inmediata por email.",
     plataformas: [
       "PC"
@@ -31,7 +31,7 @@ const juegos = [
   precio: 18000,
   stock: true,
   disponibilidad: "Solo online",
-  portada: "img/peak.jpg",
+  portada: "img/ImagenesJuegos/ImagenesCaratulas/Peak.jpg",
   descripcion: "Peak es un juego de entrenamiento cerebral diseñado para mejorar habilidades cognitivas como la memoria, concentración, resolución de problemas y velocidad mental a través de divertidos y desafiantes minijuegos. Ideal para todas las edades, Peak ofrece una experiencia personalizada para ayudarte a mantener tu mente ágil y activa.",
   plataformas: [
     "PC"
@@ -58,7 +58,7 @@ const juegos = [
     precio: 13000,
     stock: true,
     disponibilidad: "Solo online",
-    portada: "img/Signalis.jpg",
+    portada: "img/ImagenesJuegos/ImagenesCaratulas/Signalis.jpg",
     descripcion: "Código digital original de Signalis, entrega inmediata por email.",
     plataformas: [
       "Xbox"

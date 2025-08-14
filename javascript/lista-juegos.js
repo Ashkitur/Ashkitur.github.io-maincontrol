@@ -70,6 +70,10 @@ data.forEach(juego => {
 
 }
 
+function displayJuegosRandomTendencia(data){
+
+}
+
 function comprarJuegos(juegoId) {
   alert("Juego agregado al carrito: " + juegoId)
   //dps poner function de agregar al carrito
