@@ -79,5 +79,32 @@ const juegos = [
         { usuario: "Sofía M.", texto: "Muy rápido y fácil de canjear.", calificacion: 5 }
       ]
     }
-  }
+  },
+    {
+    id:5,
+    nombre: "Key Digital - Minecraft Java Edition",
+    precio: 25000,
+    stock: true,
+    disponibilidad: "Solo online",
+    portada: "img/ImagenesJuegos/ImagenesCaratulas/Minecraft.jpg",
+    descripcion: "Código digital original de Minecraft Java Edition, entrega inmediata por email.",
+    plataformas: [
+      "PC"
+    ],
+    imagenes: [
+      "img/ImagenesJuegos/ImagenesExtras/McExtra1.jpg",
+      "img/ImagenesJuegos/ImagenesExtras/McExtra2.jpg",
+      "img/ImagenesJuegos/ImagenesExtras/McExtra3.jpg"
+    ],
+    envio: {
+      tiempoEstimado: "3 minutos",
+      costo: 0
+    },
+    resenas: {
+      comentarios: [
+        { usuario: "Carlos G.", texto: "Me llegó el código en 1 minuto, todo perfecto.", calificacion: 5 },
+        { usuario: "Sofía M.", texto: "Muy rápido y fácil de canjear.", calificacion: 5 }
+      ]
+    }
+  },
 ];
