@@ -24,8 +24,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
   
   document.getElementById("price").textContent = "₡" + juego.precio;
-  document.getElementById("descripcion").textContent = juego.descripcion || "Sin descripción";
+
+
+
+
+
   
+ const descripcion = document.getElementById("descripcion");
+if (descripcion) {
+    descripcion.textContent = juego.descripcion || "Sin descripción";
+} else {
+    console.warn("⚠️ Elemento con id 'descripcion' no encontrado");
+}
+
+
 
 const burbujitas = document.getElementById("plataformas");
 burbujitas.innerHTML = ""; 
@@ -43,31 +55,40 @@ juego.plataformas.forEach(plataforma => {
   document.getElementById("stock").textContent = juego.stock ? "En stock" : "Agotado";
   
 
-  document.getElementById("envio-tiempo").textContent = juego.envio?.tiempoEstimado || "N/A";
-  document.getElementById("envio-costo").textContent = juego.envio?.costo === 0 ? "Gratis" : "₡" + juego.envio?.costo;
-  
 
-  
+  const contenedor = document.getElementById("contenedorImagenesExtra");
 
+if (contenedor) {
+  contenedor.innerHTML = ""; // limpiar contenido previo
 
+  if (juego.imagenes && juego.imagenes.length > 0) {
+    juego.imagenes.forEach(src => {
+      // Crear columna
+      const col = document.createElement("div");
+      col.classList.add("col-4");
 
+      // Crear imagen
+      const imgGaleria = document.createElement("img");
+      imgGaleria.src = src;
+      imgGaleria.alt = juego.nombre;
+      imgGaleria.classList.add("img-fluid", "rounded", "popup-img");
 
-  const galeria = document.getElementById("galeria");
-  if (galeria) {
-    galeria.innerHTML = "";
-    if (juego.imagenes && juego.imagenes.length > 0) {
-      juego.imagenes.forEach(src => {
-        const imgGaleria = document.createElement("img");
-        imgGaleria.src = src;
-        imgGaleria.alt = juego.nombre;
-        imgGaleria.style.width = "100px";
-        imgGaleria.style.marginRight = "5px";
-        galeria.appendChild(imgGaleria);
-      });
-    } else {
-      galeria.textContent = "Sin imágenes adicionales";
-    }
+      // Poner la imagen dentro de la columna
+      col.appendChild(imgGaleria);
+
+      // Agregar columna al contenedor
+      contenedor.appendChild(col);
+    });
+  } else {
+    contenedor.textContent = "Sin imágenes adicionales";
   }
+}
+
+
+
+
+
+
 
 
  

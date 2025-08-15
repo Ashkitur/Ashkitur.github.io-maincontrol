@@ -11,8 +11,9 @@ const juegos = [
       "PC"
     ],
     imagenes: [
-      "img/mcgaleria1.jpg",
-      "img/mcgaleria2.jpg"
+      "img/ImagenesJuegos/ImagenesExtras/McExtra1.jpg",
+      "img/ImagenesJuegos/ImagenesExtras/McExtra2.jpg",
+      "img/ImagenesJuegos/ImagenesExtras/McExtra3.jpg"
     ],
     envio: {
       tiempoEstimado: "3 minutos",
@@ -61,11 +62,12 @@ const juegos = [
     portada: "img/ImagenesJuegos/ImagenesCaratulas/Signalis.jpg",
     descripcion: "Código digital original de Signalis, entrega inmediata por email.",
     plataformas: [
-      "Xbox", "PC"
+      "Xbox",
     ],
     imagenes: [
-      "img/mcgaleria1.jpg",
-      "img/mcgaleria2.jpg"
+      "img/ImagenesJuegos/ImagenesExtras/signalis1.jpg",
+      "img/ImagenesJuegos/ImagenesExtras/signalis2.jpg",
+      "img/ImagenesJuegos/ImagenesExtras/signalis3.jpg"
     ],
     envio: {
       tiempoEstimado: "3 minutos",
