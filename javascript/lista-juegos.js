@@ -20,13 +20,14 @@ function displayJuegos(data) {
   const juegosList = document.getElementById("juegos-list");
   juegosList.innerHTML = "";
 
-  juegosList.style.display = "flex";
-  juegosList.style.justifyContent = "flex-start"; 
-  juegosList.style.gap = "28px 30px"; //hori y vert
+juegosList.style.display = "flex";
+juegosList.style.flexWrap = "wrap";
+juegosList.style.justifyContent = "flex-center";
+juegosList.style.gap = "28px 80px";
 
-  data.forEach(juego => {   // <-- usar 'data' en lugar de 'juegos'
+
+  data.forEach(juego => { 
     const col = document.createElement("div");
-
     col.innerHTML = `
       <div class="card h-100 d-flex flex-column shadow-sm"
         style="background-color: black; color: white; border-radius: 33px; overflow: hidden; width: 100%; max-width: 650px; min-width: 290px; padding: 28px 24px 24px 24px; box-sizing: border-box;">
