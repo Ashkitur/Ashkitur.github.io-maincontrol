@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const burbujitas = document.getElementById("plataformas");
 burbujitas.innerHTML = ""; 
+
 juego.plataformas.forEach(plataforma => {
   const div = document.createElement("div");
   div.classList.add("burbujita");
