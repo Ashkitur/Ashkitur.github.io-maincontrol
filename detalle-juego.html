@@ -3,12 +3,16 @@
 
 <head>
   <meta charset="UTF-8">
+
   <title>Main Control</title>
+   <link rel="stylesheet" href="cssweb/footerheader.css" />
 
   <link rel="stylesheet" href="css/bootstrap.min.css" />
-  <link rel="stylesheet" href="cssweb/footerheader.css" />
+ 
   <link rel="stylesheet" href="cssweb/detalle-juego.css" />
-  <link rel="stylesheet" href="cssweb/StarsPrueba.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  
+
 
 </head>
 
@@ -72,70 +76,124 @@
 
     </div>
   </nav>
-
   <!-- Toda la vara acá, TODO CONTENIDO. -->
-
   <main>
 
-    <div class="mx-auto pt-4 pb-4 px-4 mt-4 mb-4 border rounded-4 bg-white w-75 h-100 " id="ContenedorPrincipal">
+  <div class="container my-4 p-4 border rounded-4 bg-white" id="ContenedorPrincipal">
 
-
-      <div class="row align-items-center" id="Titulo">
-
-        <div class="col-sm-6 px-4 pb-3" id="Nombre resena">
-          <h1 class="title">Titulo del Juego</h1>
-
-          <!-- Investiga una vaina pa poner estrellas -->
-
-        </div>
-        <div class="col-sm-6 d-flex justify-content-end " id="Disponibilidad">
-
-          <div class="rounded-pill w-50  " style="background-color: #df6011;">
-            <h5 class="text-center p-1 "> Disponibilidad: <span id="disponibilidad"></span> </h5>
-          </div>
-
-
-        </div>
-
-      </div>
-
-      <div class="row align-items-center" id="Campos">
-
-        <div class="col-sm-4" id="Tarjeta de Juego">
-
-
-          <div class="card p-4 " style="width: 300px; border-radius: 20px; background-color:#4a4646;">
-
-            <img src="img/ImagenesJuegos/ImagenesCaratulas/Minecraft.jpg" class="card-img-top rounded" alt="Img"
-              style="border-radius: 20px 20px 0 0 ;">
-
-
-            <div class="d-flex justify-content-between mt-3 gap-2">
-
-
-              <img src="/img/ImagenesJuegos/Imagenes extras/McExtra2.jpg" class="img-fluid rounded" style=" width:  33%" alt="" >
-              <img src="/img/ImagenesJuegos/Imagenes extras/McExtra1.jpg" class="img-fluid rounded" style=" width:  33%"  alt="">
-              <img src="/img/ImagenesJuegos/Imagenes extras/McExtra3.jpg" class="img-fluid rounded" style=" width:  33%" alt="">
-
-    <!-- Si puedes hacer que las imagenes se coloquen al lado al pasar al pixel 7 😊-->
-
+        <!-- Título y disponibilidad -->
+        <div class="row align-items-center mb-4">
+            <div class="col-12 col-sm-6" id="titulo">
+                <h1 class="title" id="title">Titulo del Juego</h1>
             </div>
-          </div>
-
-        </div>
-        <div class="col-sm-8" id="Informacion del Juego">
-
-          
-
-
+            <div class="col-12 col-sm-6 d-flex justify-content-sm-end justify-content-center mt-3 mt-md-0"
+                id="Disponibilidad">
+                <div class="rounded-pill px-3 py-2" style="background-color: #df6011; max-width: 300px;">
+                    <h5 class="text-center mb-0">Disponibilidad: <h5 id="disponibilidad"></h5> </h5>
+                </div>
+            </div>
         </div>
 
+        <!-- Contenido principal -->
+        <div class="row g-4" id="InformacionJuegos">
 
-      </div>
+            <!-- Columna izquierda: Tarjeta -->
+            <div class="col-12 col-sm-4" id="TarjetaJuego">
+                <div class="card h-100 p-3" style="border-radius: 20px; background-color:#4a4646;">
+                    <!-- Imagen principal -->
+                  
+                    <img id="image" src="img/ImagenesJuegos/ImagenesCaratulas/Minecraft.jpg" class="card-img-top rounded mb-3"
+                        alt="Img" style="border-radius: 20px 20px 0 0;">
+
+                    <!-- Imágenes extra pequeñas -->
+                    <div class="row g-2" id="contenedorImagenesExtra">
+                        <div class="col-4" id>
+                            <img src="/img/ImagenesJuegos/Imagenes extras/McExtra2.jpg"
+                                class="img-fluid rounded popup-img" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img src="/img/ImagenesJuegos/Imagenes extras/McExtra1.jpg"
+                                class="img-fluid rounded popup-img" alt="">
+                        </div>
+                        <div class="col-4">
+                            <img src="/img/ImagenesJuegos/Imagenes extras/McExtra3.jpg"
+                                class="img-fluid rounded popup-img" alt="">
+                        </div>
+                    </div>
+                    
+                     <div class="overlay" id="popup">
+              <span class="close-btn" id="close">&times;</span>
+              <img id="popupImage" src="" alt="Imagen Grande">
+            </div>
+      
 
 
+                    
+                </div>
+            </div>
+
+
+            <!-- Columna derecha -->
+            <div class="col-12 col-md-8">
+
+                <!-- Caja de compra -->
+                <div class="mb-4">
+                    <div class="p-4 rounded-4" style="background-color: #d9d9d9;">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="fas fa-key me-3 fs-4"></i>
+                            <div>
+                                <h6 class="mb-0 fw-bold">Digital Key:</h6>
+                                <small class="text-muted">Instant delivery</small>
+                            </div>
+                        </div>
+
+                        <div class="text-md-end text-center">
+                            <div class="d-inline-block px-4 py-3 rounded-4 text-white fw-bold mb-3"
+                                style="background-color: #df6011; font-size: 1.5rem;">
+                                ₡ 17.000 Col
+                            </div>
+                            <div>
+                                <button class="btn btn-dark px-5 py-3 rounded-4 fw-semibold w-100 w-md-auto">
+                                    Añadir al carrito
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Caja de descripción -->
+                <div class="border rounded-4 p-4"
+                    style="background-color: #f8f9fa; border-color: #df6011 !important; border-width: 3px !important;">
+                    <p class="mb-4" style="text-align: justify; line-height: 1.6;">
+                        Sumérgete en el universo de Cyberpunk: desde la historia original de Cyberpunk 2077 y su
+                        fascinante
+                        expansión Phantom Liberty, al premiado anime Cyberpunk: Edgerunners. Infinitas historias te
+                        esperan en
+                        Night City.
+                    </p>
+
+                    <div>
+                        <h6 class="fw-bold mb-3">Categoría:</h6>
+                        <button class="btn text-white rounded-pill px-4 py-2 me-2 mb-2"
+                            style="background-color: #4a4646;">
+                            PC
+                        </button>
+                        <button class="btn text-white rounded-pill px-4 py-2 mb-2" style="background-color: #4a4646;">
+                            PlayStation
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+
+
+
+
   </main>
+
+
 
 
   <!-- Footer -->
@@ -210,10 +268,12 @@
   </footer>
 
 
+
+
+  <script src="javascript/ImagenesCode.js"></script>
   <script src="/javascript/StarsPrueba.Js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="https://code.jquery.com/jquery-2.2.4.js" crossorigin="anonymous"></script>
-  <!-- Notificaciones Toastr -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
   <script src="./json/digitalkey.juegos.js"> </script>
   <script src="./javascript/lista-juegos.js"></script>
@@ -221,6 +281,13 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
     crossorigin="anonymous"></script>
+
+
+
+
+
+
+
 </body>
 
 </html>
