@@ -102,9 +102,11 @@
                 <div class="card h-100 p-3" style="border-radius: 20px; background-color:#4a4646;">
                     <!-- Imagen principal -->
                   
+            
                     <img id="image" src="img/ImagenesJuegos/ImagenesCaratulas/Minecraft.jpg" class="card-img-top rounded mb-3"
                         alt="Img" style="border-radius: 20px 20px 0 0;">
-
+  
+      
                     <!-- Imágenes extra pequeñas -->
                     <div class="row g-2" id="contenedorImagenesExtra">
                         <div class="col-4" id>
@@ -121,13 +123,11 @@
                         </div>
                     </div>
                     
+                    
                      <div class="overlay" id="popup">
               <span class="close-btn" id="close">&times;</span>
               <img id="popupImage" src="" alt="Imagen Grande">
             </div>
-      
-
-
                     
                 </div>
             </div>
@@ -147,10 +147,13 @@
                             </div>
                         </div>
 
+                            <!-- precio-->
                         <div class="text-md-end text-center">
                             <div class="d-inline-block px-4 py-3 rounded-4 text-white fw-bold mb-3"
-                                style="background-color: #df6011; font-size: 1.5rem;">
-                                ₡ 17.000 Col
+                                style="background-color: #df6011; font-size: 1.5rem;">      
+                            <h2 id="price"> 
+
+                            </h2>
                             </div>
                             <div>
                                 <button class="btn btn-dark px-5 py-3 rounded-4 fw-semibold w-100 w-md-auto">
@@ -158,30 +161,30 @@
                                 </button>
                             </div>
                         </div>
+
+
+
+
+
+
+
                     </div>
                 </div>
 
                 <!-- Caja de descripción -->
                 <div class="border rounded-4 p-4"
                     style="background-color: #f8f9fa; border-color: #df6011 !important; border-width: 3px !important;">
-                    <p class="mb-4" style="text-align: justify; line-height: 1.6;">
-                        Sumérgete en el universo de Cyberpunk: desde la historia original de Cyberpunk 2077 y su
-                        fascinante
-                        expansión Phantom Liberty, al premiado anime Cyberpunk: Edgerunners. Infinitas historias te
-                        esperan en
-                        Night City.
+                    <p class="mb-4" style="text-align: justify; line-height: 1.6;" id="descripcion">
+                    
                     </p>
 
-                    <div>
-                        <h6 class="fw-bold mb-3">Categoría:</h6>
-                        <button class="btn text-white rounded-pill px-4 py-2 me-2 mb-2"
-                            style="background-color: #4a4646;">
-                            PC
-                        </button>
-                        <button class="btn text-white rounded-pill px-4 py-2 mb-2" style="background-color: #4a4646;">
-                            PlayStation
-                        </button>
-                    </div>
+                 <div>
+    <h6 class="fw-bold mb-3">Categoría:</h6>
+    <div id="plataformas" class="d-flex flex-wrap gap-2">
+        <!-- Los bloques de cada plataforma se generarán aquí -->
+    </div>
+</div>
+
                 </div>
             </div>
         </div>
@@ -270,17 +273,17 @@
 
 
 
-  <script src="javascript/ImagenesCode.js"></script>
-  <script src="/javascript/StarsPrueba.Js"></script>
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="https://code.jquery.com/jquery-2.2.4.js" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-  <script src="./json/digitalkey.juegos.js"> </script>
-  <script src="./javascript/lista-juegos.js"></script>
-  <script src="./javascript/juego-detalle.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+<script src="https://code.jquery.com/jquery-2.2.4.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
     crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script src="javascript/ImagenesCode.js"></script>
+<script src="javascript/StarsPrueba.js"></script> 
+<script src="./json/digitalkey.juegos.js"></script>
+<script src="./javascript/lista-juegos.js"></script>
+<script src="./javascript/juego-detalle.js"></script>
+
 
 
 

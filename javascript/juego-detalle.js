@@ -15,12 +15,28 @@ document.addEventListener("DOMContentLoaded", () => {
   console.log("Juego encontrado", juego);
   
   document.getElementById("title").textContent = juego.nombre;
+  
+  const img = document.getElementById("image");
+  if (juego.portada) {
+    img.src = juego.portada;
+    img.alt = juego.nombre;
+  }
+
+  
   document.getElementById("price").textContent = "₡" + juego.precio;
   document.getElementById("descripcion").textContent = juego.descripcion || "Sin descripción";
   
 
-  document.getElementById("plataformas").textContent = juego.plataformas.join(", ") || "Sin plataformas";
-  
+const burbujitas = document.getElementById("plataformas");
+burbujitas.innerHTML = ""; 
+juego.plataformas.forEach(plataforma => {
+  const div = document.createElement("div");
+  div.classList.add("burbujita");
+  div.textContent = plataforma;
+  burbujitas.appendChild(div);
+});
+
+
 
   document.getElementById("disponibilidad").textContent = juego.disponibilidad || "No disponible";
   document.getElementById("stock").textContent = juego.stock ? "En stock" : "Agotado";
@@ -30,13 +46,11 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("envio-costo").textContent = juego.envio?.costo === 0 ? "Gratis" : "₡" + juego.envio?.costo;
   
 
-  const img = document.getElementById("image");
-  if (juego.portada) {
-    img.src = juego.portada;
-    img.alt = juego.nombre;
-  }
   
-  
+
+
+
+
   const galeria = document.getElementById("galeria");
   if (galeria) {
     galeria.innerHTML = "";
@@ -53,7 +67,8 @@ document.addEventListener("DOMContentLoaded", () => {
       galeria.textContent = "Sin imágenes adicionales";
     }
   }
-  
+
+
  
   const reseñasContainer = document.getElementById("resenas");
   if (reseñasContainer) {

@@ -61,7 +61,7 @@ const juegos = [
     portada: "img/ImagenesJuegos/ImagenesCaratulas/Signalis.jpg",
     descripcion: "Código digital original de Signalis, entrega inmediata por email.",
     plataformas: [
-      "Xbox"
+      "Xbox", "PC"
     ],
     imagenes: [
       "img/mcgaleria1.jpg",
