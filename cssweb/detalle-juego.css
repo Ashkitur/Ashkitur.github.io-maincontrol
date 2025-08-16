@@ -60,4 +60,13 @@
     justify-content: center;
 }
 
+.botonCalif{
+ cursor: pointer;
+  transition: transform 0.3s ease;
+
+}
+.botonCalif:hover{
+  transform: scale(1.05);
+}
+
 
