@@ -6,14 +6,9 @@
 
   <title>Main Control</title>
   <link rel="stylesheet" href="cssweb/footerheader.css" />
-
   <link rel="stylesheet" href="css/bootstrap.min.css" />
-
   <link rel="stylesheet" href="cssweb/detalle-juego.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-
-
 </head>
 
 <body style="background-color: #757575;">
@@ -77,15 +72,10 @@
 
     </div>
   </nav>
-
-
-
-
   <!-- Toda la vara acá, TODO CONTENIDO. -->
   <main>
-
-    <div class="container d-block my-4 p-4 border rounded-4 bg-white" id="ContenedorPrincipal" style="max-width: 1200px; margin: 0 auto">
-
+    <div class="container d-block my-4 p-4 border rounded-4 bg-white" id="ContenedorPrincipal"
+      style="max-width: 1200px; margin: 0 auto">
       <!-- Título y disponibilidad -->
       <div class="row align-items-center mb-4">
         <div class="col-12 col-sm-6" id="titulo">
@@ -98,43 +88,25 @@
           </div>
         </div>
       </div>
-
-
       <!-- Contenido principal -->
       <div class="row g-4" id="InformacionJuegos">
-
         <!-- Columna izquierda: Tarjeta -->
         <div class="col-12 col-sm-6 col-md-5 col-lg-4" id="TarjetaJuego">
-
-
           <div class="card h-80 p-2" style="border-radius: 20px; background-color:#4a4646;">
             <!-- Imagen principal -->
-
-
             <img id="image" src="img/ImagenesJuegos/ImagenesCaratulas/Minecraft.jpg" class="card-img-top rounded mb-3"
               alt="Img" style="border-radius: 20px 20px 0 0;">
-
-
-            <!-- Imágenes extra pequeñas -->
-
+            <!-- Imagenes extra pequeñas -->
             <div class="row g-1" id="contenedorImagenesExtra">
-
             </div>
-
             <div class="overlay" id="popup">
               <span class="close-btn" id="close">&times;</span>
               <img id="popupImage" src="" alt="Imagen Grande">
             </div>
-
-
-
           </div>
         </div>
-
-
         <!-- Columna derecha -->
         <div class="col-12 col-md-7 col-lg-8" id="InformacionJuego">
-
           <!-- Caja de compra -->
           <div class="mb-4">
             <div class="p-4 rounded-4" style="background-color: #d9d9d9;">
@@ -144,9 +116,7 @@
                   <h6 class="mb-0 fw-bold">Digital Key:</h6>
                   <small class="text-muted">Instant delivery</small>
                 </div>
-
               </div>
-
               <div class="col-12 col-sm-6 d-flex justify-content-start mt-3 mt-md-0">
                 <div class="rounded-pill px-3 py-2" style="background-color: #7e7c7b; max-width: 300px; color: #fff;">
                   <h5 class="text-center mb-0" id="stock"></h5>
@@ -171,9 +141,7 @@
           <div class="border rounded-4 p-4"
             style="background-color: #f8f9fa; border-color: #df6011 !important; border-width: 3px !important;">
             <p class="mb-4" style="text-align: justify; line-height: 1.6;" id="descripcion">
-
             </p>
-
             <div>
               <h6 class="fw-bold mb-3">Categoría:</h6>
               <div id="plataformas" class="d-flex flex-wrap gap-2">
@@ -184,9 +152,8 @@
         </div>
       </div>
     </div>
-
-
-    <div class="my-4 p-2 border border-white container border rounded-4 bg-white " id="ContenedorComentarios" style="max-width: 1200px; margin: 0 auto">
+    <div class="my-4 p-2 border border-white container border rounded-4 bg-white " id="ContenedorComentarios"
+      style="max-width: 1200px; margin: 0 auto">
 
 
       <div class=" align-items-center text-start bg-white pt-3 px-3 border border-white" id="Titulo">
@@ -201,7 +168,7 @@
           <div class="row align-items-center">
 
 
-            <div class="col-md-6 text-white " >
+            <div class="col-md-6 text-white ">
               <h3 class="mb-3">Calificación general</h3>
 
               <div id="ResenasGenerales" class="d-flex flex-row align-items-center gap-3">
@@ -222,130 +189,106 @@
       </div>
 
 
-      <div id="ResenasIncluidas " class="row g-1">
-
-        <div class="container my-3 w-75 ms-0">
-          <div class="p-4 rounded-4 shadow-lg text-white" style="background-color: #000;">
-
-
+      <div id="ResenasIncluidas" class="row g-2">
+        <div class="col-12">
+          <div class="p-3 rounded-4 shadow-lg text-white" style="background-color: #000;">
             <div class="d-flex align-items-center mb-2">
-              <h5 class="mb-0 me-2">Usuario</h5>
+              <h5 class="mb-0 me-2" style="font-size: 1rem;">Usuario</h5>
               <div class="text-warning">
                 ★★★☆☆
               </div>
-              <span class="ms-2">3</span>
+              <span class="ms-2" style="font-size: 0.9rem;">3</span>
             </div>
 
-
-            <p class=" mx-3 mb-3">
+            <p class="mb-2" style="font-size: 0.9rem;">
               Muy buen juego, tiene sus bugs pero me gusta
             </p>
 
-            <hr class="border-light">
+            <hr class="border-secondary">
 
-            <!-- Parte inferior -->
             <div class="d-flex justify-content-between align-items-center">
-              <small class="text-light">¿Esta reseña es útil?</small>
-              <div class="d-flex align-items-center gap-3">
-                <span> 👍1</span>
-                <span> 👎3</span>
+              <small class="text-light" style="font-size: 0.8rem;">¿Esta reseña es útil?</small>
+              <div class="d-flex align-items-center gap-2">
+                <button class="btn btn-sm btn-outline-light p-1">👍1</button>
+                <button class="btn btn-sm btn-outline-light p-1">👎3</button>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+    <footer class="text-white text-center py-3 bg-black mt-5 h-30 w-100">
+      <div class="container d-flex align-items-start">
+        <div class="left-container">
+          <h5 style="font-weight: bold;">Aim Control</h5>
+          <p><a href=" acercade.html" style="color: #757575; text-decoration: none;">Acerca de</a></p>
+          <p><a href="contactenos.html" style="color: #757575; text-decoration: none;">Contáctenos</a></p>
+
+        </div>
+
+        <div class="vr mx-3 bg-white" style="opacity: 0.5;"></div>
+
+        <div class="center-container">
+          <div class="mb-3">
+            <label for="nombre" class="form-label" style="color: #757575; font-size: 0.45cm;">
+              Obtén ofertas personalizadas de videojuegos
+            </label>
+            <input type="text" class="form-control" id="nombre" placeholder="correo@ejemplo.com">
+          </div>
+
+          <div class="d-flex justify-content-end">
+            <button type="button" class="btn"
+              style="background-color:#df6011; color:#fff; border-radius:15px; border:none;">
+              Suscribirse
+            </button>
 
           </div>
         </div>
 
+        <div class="vr mx-3 bg-white" style="opacity: 0.5;"></div>
 
-
-
-
-
-
-      </div>
-    </div>
-
-
-
-
-
-
-
-  </main>
-
-
-
-
-  <!-- Footer -->
-  <footer class="text-white text-center py-3 bg-black mt-5 h-30 w-100">
-    <div class="container d-flex align-items-start">
-      <div class="left-container">
-        <h5 style="font-weight: bold;">Aim Control</h5>
-        <p><a href=" acercade.html" style="color: #757575; text-decoration: none;">Acerca de</a></p>
-        <p><a href="contactenos.html" style="color: #757575; text-decoration: none;">Contáctenos</a></p>
-
-      </div>
-
-      <div class="vr mx-3 bg-white" style="opacity: 0.5;"></div>
-
-      <div class="center-container">
-        <div class="mb-3">
-          <label for="nombre" class="form-label" style="color: #757575; font-size: 0.45cm;">
-            Obtén ofertas personalizadas de videojuegos
-          </label>
-          <input type="text" class="form-control" id="nombre" placeholder="correo@ejemplo.com">
-        </div>
-
-        <div class="d-flex justify-content-end">
-          <button type="button" class="btn"
-            style="background-color:#df6011; color:#fff; border-radius:15px; border:none;">
-            Suscribirse
-          </button>
+        <div class="right-container">
+          <h5 style="font-weight: 200;">Síguenos</h5>
+          <div class="d-flex justify-content-center gap-3">
+            <a href="#"><img src="img/facebook.png" alt="Facebook" width="30" height="30"></a>
+            <a href="#"><img src="img/twitter.png" alt="Twitter" width="30" height="30"></a>
+            <a href="#"><img src="img/instagram.png" alt="Instagram" width="30" height="30"></a>
+            <a href="#"><img src="img/youtube.png" alt="YouTube" width="30" height="30"></a>
+          </div>
 
         </div>
       </div>
 
-      <div class="vr mx-3 bg-white" style="opacity: 0.5;"></div>
+      <hr style="border: none; height: 2px; background-color: #df6011; width: 80%; margin: 20px auto;">
 
-      <div class="right-container">
-        <h5 style="font-weight: 200;">Síguenos</h5>
-        <div class="d-flex justify-content-center gap-3">
-          <a href="#"><img src="img/facebook.png" alt="Facebook" width="30" height="30"></a>
-          <a href="#"><img src="img/twitter.png" alt="Twitter" width="30" height="30"></a>
-          <a href="#"><img src="img/instagram.png" alt="Instagram" width="30" height="30"></a>
-          <a href="#"><img src="img/youtube.png" alt="YouTube" width="30" height="30"></a>
+      <div class="down d-flex justify-content-between align-items-center mt-3 px-3">
+
+        <div class="down-container">
+          <p style="color: #ffffff; font-size: 0.45cm; margin: 0;">
+            © 2023 Aim Control. Todos los derechos reservados.
+          </p>
         </div>
 
-      </div>
-    </div>
+        <div class="canales-container d-flex">
+          <p style="color: #df6011;">Canales de pago aceptados </p>
 
-    <hr style="border: none; height: 2px; background-color: #df6011; width: 80%; margin: 20px auto;">
+          <div class="px-3 mb-2 d-flex">
+            <img src="img/Otros/visa.png" alt="Visa" width="40" height="40" class="mx-2">
+            <img src="img//Otros/logotipo-de-paypal.png" alt="Paypal" width="40" height="40" class="mx-2">
+            <img src="img/Otros/pago-de-apple.png" alt="Apple Pay" width="40" height="40" class="mx-2">
+            <img src="img/Otros/redondo.png" alt="Mastercard" width="40" height="40" class="mx-2">
 
-    <div class="down d-flex justify-content-between align-items-center mt-3 px-3">
-
-      <div class="down-container">
-        <p style="color: #ffffff; font-size: 0.45cm; margin: 0;">
-          © 2023 Aim Control. Todos los derechos reservados.
-        </p>
-      </div>
-
-      <div class="canales-container d-flex">
-        <p style="color: #df6011;">Canales de pago aceptados </p>
-
-        <div class="px-3 mb-2 d-flex">
-          <img src="img/Otros/visa.png" alt="Visa" width="40" height="40" class="mx-2">
-          <img src="img//Otros/logotipo-de-paypal.png" alt="Paypal" width="40" height="40" class="mx-2">
-          <img src="img/Otros/pago-de-apple.png" alt="Apple Pay" width="40" height="40" class="mx-2">
-          <img src="img/Otros/redondo.png" alt="Mastercard" width="40" height="40" class="mx-2">
+          </div>
 
         </div>
 
       </div>
 
-    </div>
 
-
-  </footer>
-
+    </footer>
 
 
 

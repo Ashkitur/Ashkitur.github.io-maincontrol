@@ -52,9 +52,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const popupImage = document.getElementById("popupImage");
   const close = document.getElementById("close");
 
-
   if (contenedor) {
-    contenedor.innerHTML = ""; 
+    contenedor.innerHTML = "";
 
     if (juego.imagenes && juego.imagenes.length > 0) {
       juego.imagenes.forEach((src) => {
@@ -62,23 +61,19 @@ document.addEventListener("DOMContentLoaded", () => {
         const col = document.createElement("div");
         col.classList.add("col-4");
 
-     
         const imgGaleria = document.createElement("img");
         imgGaleria.src = src;
         imgGaleria.alt = juego.nombre;
         imgGaleria.classList.add("img-fluid", "rounded", "popup-img");
 
-     
         col.appendChild(imgGaleria);
 
-     
         contenedor.appendChild(col);
       });
     } else {
       contenedor.textContent = "Sin imágenes adicionales";
     }
   }
-
 
   if (contenedor) {
     contenedor.addEventListener("click", (e) => {
@@ -89,14 +84,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-
   if (close) {
     close.addEventListener("click", () => {
       popup.style.display = "none";
     });
   }
 
- 
   if (popup) {
     popup.addEventListener("click", (e) => {
       if (e.target === popup) {
