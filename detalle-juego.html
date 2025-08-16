@@ -17,7 +17,8 @@
 </head>
 
 <body style="background-color: #757575;">
-  <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+<nav class="navbar navbar-expand-lg navbar-dark bg-black">
+
 
     <div class="container-fluid">
       <a class="navbar-brand" href="index.html" style="font-weight: bold;" id="texto-logito">
@@ -76,32 +77,36 @@
 
     </div>
   </nav>
+
+
+
+  
   <!-- Toda la vara acá, TODO CONTENIDO. -->
   <main>
 
   <div class="container my-4 p-4 border rounded-4 bg-white" id="ContenedorPrincipal">
 
         <!-- Título y disponibilidad -->
-        <div class="row align-items-center mb-4">
-            <div class="col-12 col-sm-6" id="titulo">
-                <h1 class="title" id="title">Titulo del Juego</h1>
-            </div>
-            <div class="col-12 col-sm-6 d-flex justify-content-sm-end justify-content-center mt-3 mt-md-0"
-                id="Disponibilidad">
-                <div class="rounded-pill px-3 py-2" style="background-color: #df6011; max-width: 300px;">
-                    <h5 class="text-center mb-0">Disponibilidad: <h5 id="disponibilidad"></h5> </h5>
-                </div>
-            </div>
-
-
+     <div class="row align-items-center mb-4">
+        <div class="col-12 col-sm-6" id="titulo">
+            <h1 class="title" id="title">Titulo del Juego</h1>
         </div>
+        <div class="col-12 col-sm-6 d-flex justify-content-sm-end justify-content-center mt-3 mt-md-0" id="Disponibilidad">
+            <div class="rounded-pill px-3 py-2" style="background-color: #df6011; max-width: 300px;">
+                <h5 class="text-center mb-0">Disponibilidad: <span id="disponibilidad"></span></h5>
+            </div>
+        </div>
+    </div>
+
 
         <!-- Contenido principal -->
         <div class="row g-4" id="InformacionJuegos">
 
             <!-- Columna izquierda: Tarjeta -->
-            <div class="col-12 col-sm-4" id="TarjetaJuego">
-                <div class="card h-100 p-3" style="border-radius: 20px; background-color:#4a4646;">
+           <div class="col-12 col-sm-6 col-md-5 col-lg-4" id="TarjetaJuego">
+
+
+                <div class="card h-80 p-2" style="border-radius: 20px; background-color:#4a4646;">
                     <!-- Imagen principal -->
                   
             
@@ -111,20 +116,19 @@
       
                     <!-- Imágenes extra pequeñas -->
               
-                <div class="row g-2" id="contenedorImagenesExtra">
+                <div class="row g-1" id="contenedorImagenesExtra">
 
                 </div>
 
                
                     
-                  
-                    
+              
                 </div>
             </div>
 
 
             <!-- Columna derecha -->
-            <div class="col-12 col-md-8">
+            <div class="col-12 col-md-7 col-lg-8" id="InformacionJuego">
 
                 <!-- Caja de compra -->
                 <div class="mb-4">
@@ -139,7 +143,7 @@
                         </div>
 
                         <div class="col-12 col-sm-6 d-flex justify-content-start mt-3 mt-md-0">
-                        <div class="rounded-pill px-3 py-2" style="background-color: #7e7c7b; max-width: 300px;">
+                        <div class="rounded-pill px-3 py-2" style="background-color: #7e7c7b; max-width: 300px; color: #fff;">
                             <h5 class="text-center mb-0" id="stock"></h5>
                         </div>
                     </div>
