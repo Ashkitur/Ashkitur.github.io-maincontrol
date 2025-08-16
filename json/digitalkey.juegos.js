@@ -89,7 +89,7 @@ const juegos = [
     portada: "img/ImagenesJuegos/ImagenesCaratulas/Minecraft.jpg",
     descripcion: "Código digital original de Minecraft Java Edition, entrega inmediata por email.",
     plataformas: [
-      "PC"
+      "PlayStation", "Xbox", "Accion"
     ],
     imagenes: [
       "img/ImagenesJuegos/ImagenesExtras/McExtra1.jpg",
