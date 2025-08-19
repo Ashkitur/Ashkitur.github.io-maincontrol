@@ -163,7 +163,8 @@
       </div>
 
 
-      <div class="container my-4">
+      <div class="container my-4"  id="CrearComentario">
+
         <div class="border rounded-3 shadow-lg p-4 border border-dark" style="background-color:#37322e;"
           id="CrearComentario">
           <div class="row align-items-center">
@@ -180,9 +181,10 @@
             </div>
 
             <div class="col-md-4 ms-auto text-md-end text-center">
-              <button class=" botonCalif btn btn-lg border-0 rounded-3 shadow px-4 py-2"
-                style="background-color: #df6011; color: #fff;">
-                <Strong> Agregar una Calificación</Strong>
+              <button class="botonCalif btn btn-lg border-0 rounded-3 shadow px-4 py-2"
+                style="background-color: #df6011; color: #fff;" data-bs-toggle="collapse" data-bs-target="#reviewCard"
+                aria-expanded="false" aria-controls="reviewCard">
+                <strong>Agregar una Calificación</strong>
               </button>
             </div>
           </div>
@@ -190,106 +192,108 @@
       </div>
 
 
+      <div class="collapse mt-3 pb-4" id="reviewCard">
+          <div class="card bg-black text-white rounded-4 p-4">
+    <div class="mb-3">
+      <input type="text" class="form-control w-50" placeholder="Tu nombre" required>
+    </div>
+    
+    <div class="rating d-flex align-items-center mb-3">
+      <span class="star" data-value="1">★</span>
+      <span class="star" data-value="2">★</span>
+      <span class="star" data-value="3">★</span>
+      <span class="star" data-value="4">★</span>
+      <span class="star" data-value="5">★</span>
+      <span class="ms-2" id="rating-value">3</span>
+    </div>
+
+    <textarea class="form-control rounded border border-light mb-3 p-3" 
+              placeholder="Escriba una reseña..."></textarea>
+
+    <div class="text-end">
+      <button class="btn btn-orange rounded-pill px-4 py-2">Enviar Reseña</button>
+    </div>
+  </div>
+      </div>
+
+
       <div id="ResenasIncluidas" class="row g-2">
-        <div class="col-12">
-          <div class="p-3 rounded-4 shadow-lg text-white" style="background-color: #000;">
-            <div class="d-flex align-items-center mb-2">
-              <h5 class="mb-0 me-2" style="font-size: 1rem;">Usuario</h5>
-              <div class="text-warning">
-                ★★★☆☆
-              </div>
-              <span class="ms-2" style="font-size: 0.9rem;">3</span>
-            </div>
+        
 
-            <p class="mb-2" style="font-size: 0.9rem;">
-              Muy buen juego, tiene sus bugs pero me gusta
-            </p>
-
-            <hr class="border-secondary">
-
-            <div class="d-flex justify-content-between align-items-center">
-              <small class="text-light" style="font-size: 0.8rem;">¿Esta reseña es útil?</small>
-              <div class="d-flex align-items-center gap-2">
-                <button class="btn btn-sm btn-outline-light p-1">👍1</button>
-                <button class="btn btn-sm btn-outline-light p-1">👎3</button>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </main>
 
   <!-- Footer -->
-    <footer class="text-white text-center py-3 bg-black mt-5 h-50 w-100">
-      <div class="container d-flex align-items-start">
-        <div class="left-container">
-          <h5 style="font-weight: bold;">Aim Control</h5>
-          <p><a href=" acercade.html" style="color: #757575; text-decoration: none;">Acerca de</a></p>
-          <p><a href="contactenos.html" style="color: #757575; text-decoration: none;">Contáctenos</a></p>
+  <footer class="text-white text-center py-3 bg-black mt-5 h-50 w-100">
+    <div class="container d-flex align-items-start">
+      <div class="left-container">
+        <h5 style="font-weight: bold;">Aim Control</h5>
+        <p><a href=" acercade.html" style="color: #757575; text-decoration: none;">Acerca de</a></p>
+        <p><a href="contactenos.html" style="color: #757575; text-decoration: none;">Contáctenos</a></p>
 
+      </div>
+
+      <div class="vr mx-3 bg-white" style="opacity: 0.5;"></div>
+
+      <div class="center-container">
+        <div class="mb-3">
+          <label for="nombre" class="form-label" style="color: #757575; font-size: 0.45cm;">
+            Obtén ofertas personalizadas de videojuegos
+          </label>
+          <input type="text" class="form-control" id="nombre" placeholder="correo@ejemplo.com">
         </div>
 
-        <div class="vr mx-3 bg-white" style="opacity: 0.5;"></div>
-
-        <div class="center-container">
-          <div class="mb-3">
-            <label for="nombre" class="form-label" style="color: #757575; font-size: 0.45cm;">
-              Obtén ofertas personalizadas de videojuegos
-            </label>
-            <input type="text" class="form-control" id="nombre" placeholder="correo@ejemplo.com">
-          </div>
-
-          <div class="d-flex justify-content-end">
-            <button type="button" class="btn"
-              style="background-color:#df6011; color:#fff; border-radius:15px; border:none;">
-              Suscribirse
-            </button>
-
-          </div>
-        </div>
-
-        <div class="vr mx-3 bg-white" style="opacity: 0.5;"></div>
-
-        <div class="right-container">
-          <h5 style="font-weight: 200;">Síguenos</h5>
-          <div class="d-flex justify-content-center gap-3">
-            <a href="#"><img src="img/facebook.png" alt="Facebook" width="30" height="30"></a>
-            <a href="#"><img src="img/twitter.png" alt="Twitter" width="30" height="30"></a>
-            <a href="#"><img src="img/instagram.png" alt="Instagram" width="30" height="30"></a>
-            <a href="#"><img src="img/youtube.png" alt="YouTube" width="30" height="30"></a>
-          </div>
+        <div class="d-flex justify-content-end">
+          <button type="button" class="btn"
+            style="background-color:#df6011; color:#fff; border-radius:15px; border:none;">
+            Suscribirse
+          </button>
 
         </div>
       </div>
 
-      <hr style="border: none; height: 2px; background-color: #df6011; width: 80%; margin: 20px auto;">
+      <div class="vr mx-3 bg-white" style="opacity: 0.5;"></div>
 
-      <div class="down d-flex justify-content-between align-items-center mt-3 px-3">
-
-        <div class="down-container">
-          <p style="color: #ffffff; font-size: 0.45cm; margin: 0;">
-            © 2023 Aim Control. Todos los derechos reservados.
-          </p>
+      <div class="right-container">
+        <h5 style="font-weight: 200;">Síguenos</h5>
+        <div class="d-flex justify-content-center gap-3">
+          <a href="#"><img src="img/facebook.png" alt="Facebook" width="30" height="30"></a>
+          <a href="#"><img src="img/twitter.png" alt="Twitter" width="30" height="30"></a>
+          <a href="#"><img src="img/instagram.png" alt="Instagram" width="30" height="30"></a>
+          <a href="#"><img src="img/youtube.png" alt="YouTube" width="30" height="30"></a>
         </div>
 
-        <div class="canales-container d-flex">
-          <p style="color: #df6011;">Canales de pago aceptados </p>
+      </div>
+    </div>
 
-          <div class="px-3 mb-2 d-flex">
-            <img src="img/Otros/visa.png" alt="Visa" width="40" height="40" class="mx-2">
-            <img src="img//Otros/logotipo-de-paypal.png" alt="Paypal" width="40" height="40" class="mx-2">
-            <img src="img/Otros/pago-de-apple.png" alt="Apple Pay" width="40" height="40" class="mx-2">
-            <img src="img/Otros/redondo.png" alt="Mastercard" width="40" height="40" class="mx-2">
+    <hr style="border: none; height: 2px; background-color: #df6011; width: 80%; margin: 20px auto;">
 
-          </div>
+    <div class="down d-flex justify-content-between align-items-center mt-3 px-3">
+
+      <div class="down-container">
+        <p style="color: #ffffff; font-size: 0.45cm; margin: 0;">
+          © 2023 Aim Control. Todos los derechos reservados.
+        </p>
+      </div>
+
+      <div class="canales-container d-flex">
+        <p style="color: #df6011;">Canales de pago aceptados </p>
+
+        <div class="px-3 mb-2 d-flex">
+          <img src="img/Otros/visa.png" alt="Visa" width="40" height="40" class="mx-2">
+          <img src="img//Otros/logotipo-de-paypal.png" alt="Paypal" width="40" height="40" class="mx-2">
+          <img src="img/Otros/pago-de-apple.png" alt="Apple Pay" width="40" height="40" class="mx-2">
+          <img src="img/Otros/redondo.png" alt="Mastercard" width="40" height="40" class="mx-2">
 
         </div>
 
       </div>
 
+    </div>
 
-    </footer>
+
+  </footer>
 
   <script src="https://code.jquery.com/jquery-2.2.4.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
@@ -301,12 +305,15 @@
   <script src="./json/digitalkey.juegos.js"></script>
   <script src="./javascript/lista-juegos.js"></script>
   <script src="./javascript/juego-detalle.js"></script>
+  <script src="./javascript/juego-detalle-comentario.js"></script>
+<script src="./json/digitalkey.juegos.js"></script>
 
+  <script>
 
-
-
-
-
+    document.addEventListener("DOMContentLoaded", () => {
+        displayResenas(reseñas);
+    });
+  </script>
 
 
 </body>

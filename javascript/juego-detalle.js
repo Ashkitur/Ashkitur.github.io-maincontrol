@@ -118,3 +118,23 @@ function juegoNoEncontrado() {
   document.getElementById("detalle").classList.add("d-none");
   document.getElementById("alertNotFound").classList.remove("d-none");
 }
+
+ const stars = document.querySelectorAll('.rating .star');
+  const ratingValue = document.getElementById('rating-value');
+  let currentRating = 3; // valor inicial
+
+  function updateStars(rating) {
+    stars.forEach((star, i) => {
+      star.classList.toggle('active', i < rating);
+    });
+    ratingValue.textContent = rating;
+  }
+
+  stars.forEach(star => {
+    star.addEventListener('click', () => {
+      currentRating = parseInt(star.dataset.value);
+      updateStars(currentRating);
+    });
+  });
+
+  updateStars(currentRating); // inicializar
