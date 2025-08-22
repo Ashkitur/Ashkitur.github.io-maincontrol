@@ -20,7 +20,8 @@ function addToCart(idJuego) {
     const carItem = {
         id: Juego.id,
         nombre: Juego.nombre,
-        precio: Juego.precio
+        precio: Juego.precio,
+        img: Juego.portada
     }
 
     let cartArray = getCart()
@@ -29,9 +30,6 @@ function addToCart(idJuego) {
 if(indexItem !== -1){
          alert(`"${carItem.nombre}" agregado al carrito`);
         cartArray[indexItem].quantity+=1
-
-
-
     }else{
      
         cartArray.push(carItem)

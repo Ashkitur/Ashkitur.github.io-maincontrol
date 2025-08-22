@@ -2,6 +2,8 @@ function showDetail() {
     let cartRowHTML = '';
     let itemCount = 0;
     let total = 0;
+    const impuestoPorcentaje = 0.13; // 13%
+    let impuesto = 0; // aquí guardamos el valor del impuesto
 
     const cart = getCart();
     if(cart.length > 0) {
@@ -12,36 +14,69 @@ function showDetail() {
             const price = parseFloat(item.precio) || 0;
             const subtotal = price * quantity;
 
-           cartRowHTML += `
-    <div class="row mb-4 d-flex justify-content-between align-items-center">
-        <div class="col-md-3 col-lg-3 col-xl-3">
-            <h6 class="text-white name-juego fs-4">${item.nombre}</h6>
-        </div>
-        <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-          <input type="number" min="0" value="${quantity}" 
-                    class="form-control form-control-sm" 
-                    data-id="${item.id}" onchange="cambiarCantidad(this)" />
-        </div>
-        <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-            <h6 class="mb-0 price-juego fs-5">&cent; ${price.toFixed(2)}</h6>
-        </div>
-        
-        <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-            <h6 class="mb-0 subtotal-juego fs-5">&cent; ${subtotal.toFixed(2)}</h6>
-        </div>
-        <div class="col-md-0 col-lg-1 col-xl-1"> <button type="button" class="btn btn-danger btn-sm" onclick="eliminarItem(${item.id})"> Eliminar Producto </button> </div>
+            //consulto desde el json, comparo id y tomo la portada
+            const producto = juegos.find(p => p.id === item.id);
+            const portada = producto ? producto.portada : 'img/ImagenesJuegos/ImagenesCaratulas/default.png';
+
+                       cartRowHTML += `
+<div class="row mb-4 d-flex align-items-center">
+
+    <!-- Imagen del producto -->
+    <div class="col-md-3 col-lg-3 col-xl-3 d-flex justify-content-start">
+        <img src="${portada}" 
+             alt="${item.nombre}" 
+             class="img-fluid rounded" 
+             style="width: 80px; height: 80px; object-fit: cover;">
     </div>
-    <hr class="my-4">`;
+
+    <!-- Nombre del producto -->
+    <div class="col-md-6 col-lg-6 col-xl-5 d-flex align-items-center">
+        <h6 class="text-white name-juego fs-5 mb-0 ms-3">${item.nombre}</h6>
+    </div>
+
+    <!-- Cantidad -->
+    <div class="col-md-3 col-lg-2 col-xl-2 d-flex">
+        <input type="number" min="0" value="${quantity}" 
+               class="form-control form-control-sm" 
+               data-id="${item.id}" onchange="cambiarCantidad(this)" />
+    </div>
+
+    <!-- Precio -->
+    <div class="col-md-3 col-lg-2 col-xl-2">
+        <h6 class="mb-0 price-juego fs-5 text-white"> Precio: &cent;${price.toFixed(2)}</h6>
+    </div>
+
+    <!-- Subtotal -->
+    <div class="col-md-3 col-lg-2 col-xl-2">
+        <h6 class="mb-0 subtotal-juego fs-5 text-white">Total: &cent;${subtotal.toFixed(2)}</h6>
+    </div>
+
+    <!-- Botón eliminar -->
+    <div class="col-md-0 col-lg-1 col-xl-1"> 
+        <button type="button" class="btn btn-danger btn-sm" onclick="eliminarItem(${item.id})">Eliminar</button> 
+    </div>
+</div>
+<hr class="my-4">`;
 
             total += subtotal;
         });
+
+        impuesto = total * impuestoPorcentaje; //calcular impuesto
+        const totalConImpuesto = total + impuesto;
+
+      
+        document.getElementById("impuesto-acobrar").textContent = "₡" + impuesto.toFixed(2);
+        document.getElementById("total-neto").textContent = "₡" + total.toFixed(2);
+        document.getElementById("total-compra").textContent = "₡" + totalConImpuesto.toFixed(2);
+
     } else {
-        cartRowHTML = `<p>No hay productos en el carrito</p>`;
+        cartRowHTML = `<h5>No hay productos en el carrito</h5>`;
+        document.getElementById("impuesto-acobrar").textContent = "₡0.00";
+        document.getElementById("total-compra").textContent = "₡0.00";
     }
 
     document.getElementById("detail").innerHTML = cartRowHTML;
     document.getElementById("total-items").textContent = itemCount;
-    document.getElementById("total-compra").textContent = "₡" + total.toFixed(2);
 }
 
 function cambiarCantidad(input) {
