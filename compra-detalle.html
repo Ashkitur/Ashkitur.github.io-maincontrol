@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Main Control</title>
+
+ <link rel="stylesheet" href="css/bootstrap.min.css" />
+<link rel="stylesheet" href="cssweb/footerheader.css" />
+<link rel="stylesheet" href="cssweb/acercade.css">
+</head>
+
+<body><!-- nav -->
+ <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html" style="font-weight: bold;" id="texto-logito">
+        <img src="img/LogoPrincipal/ICON.png" alt="Main Control" width="80" height="80">
+        Aim Control
+      </a>
+
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+
+        <!-- LINEA Q DIVIDE  -->
+        <div class="vr mx-3 bg-white" style="opacity: 0.5;"></div>
+
+
+        <div class="navbar-nav mx-auto text-center">
+          <a class="nav-link d-flex align-items-center gap-2" aria-current="page" href="index.html?plataforma=all"
+            style="color: #df6011; font-weight: 600;">
+            <img src="img/Logos/computadora-para-juegos.png" alt="plataformas" width="40" height="40">Todas las plataformas
+          </a>
+
+          <a class="nav-link d-flex align-items-center gap-2" href="PC.html?plataforma=PC">
+            <img src="img/Logos/logotipo-de-steam.png" alt="PC" width="30" height="30"> PC
+          </a>
+
+          <a class="nav-link d-flex align-items-center gap-2" href="PlayStation.html?plataforma=PlayStation">
+            <img src="img/Logos/consoles-ps-512.png" alt="PlayStation" width="30" height="30">PlayStation
+          </a>
+
+          <a class="nav-link d-flex align-items-center gap-2" href="Xbox.html?plataforma=Xbox">
+            <img src="img/Logos/logotipo-de-xbox.png" alt="Xbox" width="30" height="30">Xbox
+          </a>
+
+          <a class="nav-link d-flex align-items-center gap-2" href="NintendoSwitch.html?plataforma=NintendoSwitch">
+            <img src="img/Logos/nintendo-switch.png" alt="Nintendo Switch" width="50" height="44">Nintendo Switch
+          </a>
+        </div>
+
+
+
+      </div>
+
+      <div class="d-flex align-items-center">
+
+        <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <a class="nav-link d-flex align-items-center gap-2" href="#">
+          <div class="icon-box" style="background-color: #df6011; padding: 9px; border-radius: 15px;">
+            <img src="img/Logos/carrito-de-compras.png" alt="Carrito de Compras" width="30" height="30">
+          </div>
+        </a>
+
+      </div>
+
+    </div>
+  </nav> <!-- Toda la vara acá, TODO CONTENIDO. -->
+
+ <main class="container-fluid pt-5">
+
+    <div class="container py-5 h-100"  style="max-width: 1400px; margin: 0 auto">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-14">
+          <div class="card card-registration card-registration-2" style="border-radius: 15px;">
+            <div class="card-body py-5">
+              <div class="row g-0">
+                <div class="col-lg-12">
+                  <div class="p-5">
+                    <div class="d-flex justify-content-between align-items-center mb-5">
+                      <h1 class="fw-bold mb-0">Compra</h1>
+                      <h6 class="fw-bold mb-0" id="total-items">3 items(s)</h6>
+                    </div>
+                    <hr class="my-4">
+                    <div class="row mb-4 d-flex justify-content-between text-primary">
+                     <div class="col-md-3 col-lg-3 col-xl-3">
+                        <h6 class="fw-bold fs-3" style="color: #df6011;">Productos</h6>
+                    </div>
+
+                      <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+                        <h6 class="fw-bold fs-3" style="color: #df6011;">Cantidad</h6>
+                      </div>
+                      <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                        <h6 class="fw-bold fs-3" style="color: #df6011;">Precio</h6>
+                      </div>
+                      <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                        <h6 class="fw-bold fs-3" style="color: #df6011;">Subtotal</h6>
+                      </div>
+                      <div class="col-md-1 col-lg-1 col-xl-1 text-end">
+
+                      </div>
+                    </div>
+                    <hr class="my-4">
+                    <!-- Detalle de compra -->
+                    <div id="detail">
+                      <!--Inicio Item -->
+                      <div class="row mb-4 d-flex justify-content-between align-items-center">
+                        <div class="col-md-3 col-lg-3 col-xl-3">
+                          <h6 class="text-muted name-juego">Juego</h6>
+                        </div>
+                        <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+
+                          <input min="0" name="quantity" value="1" type="number"
+                            class="form-control form-control-sm quantity-juego" />
+
+                        </div>
+                        <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                          <h6 class="mb-0 price-juego">&cent; 15.00</h6>
+                        </div>
+                        <div class="col-md-1 col-lg-1 col-xl-1 ">
+                          <button type="button" class="btn btn-secondary"><i class="bi bi-trash"></i></button>
+                        </div>
+                        <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                          <h6 class="mb-0 subtotal-juego">&cent; 15.00</h6>
+                        </div>
+                      </div>
+                      <hr class="my-4">
+                      <!--Fin Item -->
+                    </div>
+                    <!-- Detalle de compra -->
+                    <div class="row">
+                      <div class="col-md-3 col-lg-2 col-xl-7 offset-lg-1 text-end">
+                        <h5 class="fs-4">Total</h5>
+                      </div>
+                      <div class="col-md-3 col-lg-2 col-xl-3 offset-lg-1">
+                        <h5 class="fs-4" id="total-compra">&dollar;15.00</h5>
+                      </div>
+                    </div>
+                    <div class="pt-5">
+                      <h6 class="fs-4"><a href="index.html" class="text-body"><i
+                            class="fas fa-long-arrow-alt-left me-2"></i>Regresar a comprar</a></h6>
+                    </div>
+                   <div class="pt-5 text-end">
+                    <a href="index.html" class="btn btn-warning" >
+                      <i class="fas fa-long-arrow-alt-right me-2"></i>Procesar Pago
+                    </a>
+                  </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+ <footer class="text-white text-center py-3 bg-black mt-5 h-100 w-100">
+    <div class="container d-flex align-items-start">
+      <div class="left-container">
+        <h5 style="font-weight: bold;">Aim Control</h5>
+        <p><a href=" acercade.html" style="color: #757575; text-decoration: none;">Acerca de</a></p>
+        <p><a href="contactenos.html" style="color: #757575; text-decoration: none;">Contáctenos</a></p>
+
+      </div>
+
+      <div class="vr mx-3 bg-white" style="opacity: 0.5;"></div>
+
+      <div class="center-container">
+        <div class="mb-3">
+          <label for="nombre" class="form-label" style="color: #757575; font-size: 0.45cm;">
+            Obtén ofertas personalizadas de videojuegos
+          </label>
+          <input type="text" class="form-control" id="nombre" placeholder="correo@ejemplo.com">
+        </div>
+
+        <div class="d-flex justify-content-end">
+          <button type="button" class="btn"
+            style="background-color:#df6011; color:#fff; border-radius:15px; border:none;">
+            Suscribirse
+          </button>
+
+        </div>
+      </div>
+
+      <div class="vr mx-3 bg-white" style="opacity: 0.5;"></div>
+
+      <div class="right-container">
+        <h5 style="font-weight: 200;">Síguenos</h5>
+        <div class="d-flex justify-content-center gap-3">
+          <a href="#"><img src="img/facebook.png" alt="Facebook" width="30" height="30"></a>
+          <a href="#"><img src="img/twitter.png" alt="Twitter" width="30" height="30"></a>
+          <a href="#"><img src="img/instagram.png" alt="Instagram" width="30" height="30"></a>
+          <a href="#"><img src="img/youtube.png" alt="YouTube" width="30" height="30"></a>
+        </div>
+
+      </div>
+    </div>
+
+    <hr style="border: none; height: 2px; background-color: #df6011; width: 80%; margin: 20px auto;">
+
+    <div class="down d-flex justify-content-between align-items-center mt-3 px-3">
+
+      <div class="down-container">
+        <p style="color: #ffffff; font-size: 0.45cm; margin: 0;">
+          © 2023 Aim Control. Todos los derechos reservados.
+        </p>
+      </div>
+
+      <div class="canales-container d-flex">
+        <p style="color: #df6011;">Canales de pago aceptados </p>
+
+        <div class="px-3 mb-2 d-flex"> 
+    <img src="img/Otros/visa.png" alt="Visa" width="40" height="40" class="mx-2">
+        <img src="img//Otros/logotipo-de-paypal.png" alt="Paypal" width="40" height="40" class="mx-2">
+        <img src="img/Otros/pago-de-apple.png" alt="Apple Pay" width="40" height="40" class="mx-2">
+        <img src="img/Otros/redondo.png" alt="Mastercard" width="40" height="40" class="mx-2">
+
+        </div>
+        
+      </div>
+
+    </div>
+
+
+  </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="json/digitalkey.juegos.js"></script>
+     <script src="javascript/compra.js"></script>
+     <script src="javascript/compra-detalle.js"></script>
+        
+
+   <script>
+    document.addEventListener('DOMContentLoaded', showDetail);
+  </script>
+
+
+</body>
+
+</html>

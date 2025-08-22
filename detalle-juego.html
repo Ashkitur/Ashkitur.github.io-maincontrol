@@ -130,9 +130,11 @@
                   </h2>
                 </div>
                 <div>
-                  <button class="btn btn-dark px-5 py-3 rounded-4 fw-semibold w-100 w-md-auto">
-                    Añadir al carrito
-                  </button>
+                <button class="btn btn-dark px-5 py-3 rounded-4 fw-semibold w-100 w-md-auto" 
+                    onclick="addToCart(${juego.id})">
+                Añadir al carrito
+            </button>
+
                 </div>
               </div>
             </div>
@@ -308,6 +310,7 @@
   <script src="./javascript/juego-detalle-comentario.js"></script>
 <script src="./json/digitalkey.juegos.js"></script>
 
+<script src="./javascript/compra.js"></script>
   <script>
 
     document.addEventListener("DOMContentLoaded", () => {

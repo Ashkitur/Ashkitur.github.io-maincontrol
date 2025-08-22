@@ -15,10 +15,6 @@ const juegos = [
       "img/ImagenesJuegos/ImagenesExtras/McExtra2.jpg",
       "img/ImagenesJuegos/ImagenesExtras/McExtra3.jpg"
     ],
-    envio: {
-      tiempoEstimado: "3 minutos",
-      costo: 0
-    },
     resenas: {
       comentarios: [
         { usuario: "Carlos G.", texto: "Me llegó el código en 1 minuto, todo perfecto.", calificacion: 5 },
@@ -41,10 +37,6 @@ const juegos = [
     "img/peak-galeria1.jpg",
     "img/peak-galeria2.jpg"
   ],
-  envio: {
-    tiempoEstimado: "5 minutos",
-    costo: 0
-  },
   resenas: {
     comentarios: [
       { usuario: "Ana P.", texto: "Muy divertido y excelente para entrenar la mente.", calificacion: 5 },
@@ -69,10 +61,6 @@ const juegos = [
       "img/ImagenesJuegos/ImagenesExtras/signalis2.jpg",
       "img/ImagenesJuegos/ImagenesExtras/signalis3.jpg"
     ],
-    envio: {
-      tiempoEstimado: "3 minutos",
-      costo: 0
-    },
     resenas: {
       comentarios: [
         { usuario: "Carlos G.", texto: "Obra maestra.", calificacion: 5 },
@@ -80,31 +68,27 @@ const juegos = [
       ]
     }
   },
-    {
-    id:5,
-    nombre: "Key Digital - Minecraft Java Edition",
-    precio: 25000,
+  {
+    id:7,
+    nombre: "Key Digital - Opacangastar",
+    precio: 13000,
     stock: true,
     disponibilidad: "Solo online",
-    portada: "img/ImagenesJuegos/ImagenesCaratulas/Minecraft.jpg",
-    descripcion: "Código digital original de Minecraft Java Edition, entrega inmediata por email.",
+    portada: "img/ImagenesJuegos/ImagenesCaratulas/Signalis.jpg",
+    descripcion: "Código digital original de Signalis, entrega inmediata por email.",
     plataformas: [
-      "PlayStation", "Xbox", "Accion"
+      "Xbox",
     ],
     imagenes: [
-      "img/ImagenesJuegos/ImagenesExtras/McExtra1.jpg",
-      "img/ImagenesJuegos/ImagenesExtras/McExtra2.jpg",
-      "img/ImagenesJuegos/ImagenesExtras/McExtra3.jpg"
+      "img/ImagenesJuegos/ImagenesExtras/signalis1.jpg",
+      "img/ImagenesJuegos/ImagenesExtras/signalis2.jpg",
+      "img/ImagenesJuegos/ImagenesExtras/signalis3.jpg"
     ],
-    envio: {
-      tiempoEstimado: "3 minutos",
-      costo: 0
-    },
     resenas: {
       comentarios: [
-        { usuario: "Carlos G.", texto: "Me llegó el código en 1 minuto, todo perfecto.", calificacion: 5 },
+        { usuario: "Carlos G.", texto: "Obra maestra.", calificacion: 5 },
         { usuario: "Sofía M.", texto: "Muy rápido y fácil de canjear.", calificacion: 5 }
       ]
     }
-  },
+  },    
 ];
