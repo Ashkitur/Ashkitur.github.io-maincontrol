@@ -18,45 +18,36 @@ function showDetail() {
             const producto = juegos.find(p => p.id === item.id);
             const portada = producto ? producto.portada : 'img/ImagenesJuegos/ImagenesCaratulas/default.png';
 
-                       cartRowHTML += `
-<div class="row mb-4 d-flex align-items-center">
-
-    <!-- Imagen del producto -->
-    <div class="col-md-3 col-lg-3 col-xl-3 d-flex justify-content-start">
-        <img src="${portada}" 
-             alt="${item.nombre}" 
-             class="img-fluid rounded" 
-             style="width: 80px; height: 80px; object-fit: cover;">
+                    cartRowHTML += `
+<div class="row mb-3 align-items-center text-center">
+    <!-- Imagen -->
+    <div class="col-2">
+        <img src="${portada}" alt="${item.nombre}" class="img-fluid rounded" style="width: 50px; height: 70px; object-fit: cover;">
     </div>
-
-    <!-- Nombre del producto -->
-    <div class="col-md-6 col-lg-6 col-xl-5 d-flex align-items-center">
-        <h6 class="text-white name-juego fs-5 mb-0 ms-3">${item.nombre}</h6>
+    <!-- Nombre -->
+    <div class="col-4 d-flex align-items-center justify-content-center">
+        <span class="text-white">${item.nombre}</span>
     </div>
-
     <!-- Cantidad -->
-    <div class="col-md-3 col-lg-2 col-xl-2 d-flex">
+    <div class="col-2">
         <input type="number" min="0" value="${quantity}" 
-               class="form-control form-control-sm" 
-               data-id="${item.id}" onchange="cambiarCantidad(this)" />
+               class="form-control form-control-sm text-center" 
+               data-id="${item.id}" 
+               oninput="this.value = this.value.replace(/[^0-9]/g,'');" 
+               onchange="cambiarCantidad(this)" />
     </div>
-
     <!-- Precio -->
-    <div class="col-md-3 col-lg-2 col-xl-2">
-        <h6 class="mb-0 price-juego fs-5 text-white"> Precio: &cent;${price.toFixed(2)}</h6>
+    <div class="col-2 d-flex align-items-center justify-content-center">
+        <span class="text-white">₡${price.toFixed(2)}</span>
     </div>
-
     <!-- Subtotal -->
-    <div class="col-md-3 col-lg-2 col-xl-2">
-        <h6 class="mb-0 subtotal-juego fs-5 text-white">Total: &cent;${subtotal.toFixed(2)}</h6>
-    </div>
-
-    <!-- Botón eliminar -->
-    <div class="col-md-0 col-lg-1 col-xl-1"> 
-        <button type="button" class="btn btn-danger btn-sm" onclick="eliminarItem(${item.id})">Eliminar</button> 
+    <div class="col-2 d-flex align-items-center justify-content-center">
+        <span class="text-white">₡${subtotal.toFixed(2)}</span>
     </div>
 </div>
-<hr class="my-4">`;
+<hr class="my-2">
+`;
+
 
             total += subtotal;
         });
@@ -70,9 +61,10 @@ function showDetail() {
         document.getElementById("total-compra").textContent = "₡" + totalConImpuesto.toFixed(2);
 
     } else {
-        cartRowHTML = `<h5>No hay productos en el carrito</h5>`;
+        cartRowHTML = `<h5 style="color: white;">No hay productos en el carrito</h5>`;
         document.getElementById("impuesto-acobrar").textContent = "₡0.00";
         document.getElementById("total-compra").textContent = "₡0.00";
+       document.getElementById("total-compra").textContent = "₡0.00";
     }
 
     document.getElementById("detail").innerHTML = cartRowHTML;

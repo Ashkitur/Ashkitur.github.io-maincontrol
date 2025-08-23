@@ -14,28 +14,26 @@ function getCart() {
 }
 
 function addToCart(idJuego) {
-
     const Juego = juegos.find((b) => b.id == idJuego)
-  
+
     const carItem = {
         id: Juego.id,
         nombre: Juego.nombre,
         precio: Juego.precio,
-        img: Juego.portada
+        quantity: 1  
     }
 
     let cartArray = getCart()
     const indexItem = cartArray.findIndex((juego) => juego.id === idJuego)
 
-if(indexItem !== -1){
-         alert(`"${carItem.nombre}" agregado al carrito`);
-        cartArray[indexItem].quantity+=1
-    }else{
-     
+    if (indexItem !== -1) {
+        cartArray[indexItem].quantity += 1
+        alert(`"${carItem.nombre}" agregado al carrito`);
+    } else {
         cartArray.push(carItem)
-       alert(`"${carItem.nombre}" agregado al carrito`);
+        alert(`"${carItem.nombre}" agregado al carrito`);
     }
+
     saveCart(cartArray)
 }
-
 

@@ -72,72 +72,63 @@
 
 <main class="container-fluid pt-5">
  
+<div class="row align-items-center g-4">
 
-<div class="row align-items-center">
 
-
-    
-  <!-- Caja izquierda -->
- <div class="col-6 d-flex flex-column align-items-center">
-  <h1 class="text-black mb-3">Compra</h1> 
-  <div id="detail" style="width: 90%; height: 400px; background: black; border-radius: 10px; overflow-y: auto; padding:20px;">
-  
-  </div>
+ <div class="col-8 d-flex flex-column align-items-center mx-auto">
+    <h1 class="text-black mb-2">Compra</h1> 
+   
+<div class="row fw-bold mb-2 text-center" style="width: 90%; margin: 0 auto;">
+    <div class="col-2">Portada</div>
+    <div class="col-4">Nombre</div>
+    <div class="col-2">Cantidad</div>
+    <div class="col-2">Precio</div>
+    <div class="col-2">Subtotal</div>
 </div>
+ <div id="detail" 
+     style="width: 90%; background: black; border-radius: 10px; padding: 20px; color:white;">
 
-
-  
-
-
-
-
-
-
-    
-    <!-- Caja derecha -->
-    <div class="col-6 d-flex flex-column align-items-center">
-      <h1 >Total de pago:</h1>
-     <div class="d-flex flex-column justify-content-center align-items-center text-center bg-dark rounded" style="width: 70%; height: 300px; margin: 0 auto; border-radius: 30px;">
-
-<div class="d-flex align-items-center justify-content-center gap-3">
-    <h3 class="fs-5 text-white fw-light mb-2">Precio neto</h3>
-    <h3 class="fs-5 text-white fw-light mb-2" id="total-neto">&dollar;15.00</h3>
-</div>
-
-
-    <div class="d-flex align-items-center justify-content-center gap-3">
-      <h3 class="fs-5 text-white fw-light mb-2">Impuesto por servicio</h3>
-      <h3 class="fs-5 text-white fw-light mb-2" id="impuesto-acobrar">&dollar;15.00</h3>
-  </div>
-
-    <div class="d-flex align-items-center justify-content-center gap-3">
-        <h5 class="fs-3 text-white mb-0">Total</h5>
-          <h5 class="fs-4 text-white mb-0" id="total-compra">&dollar;15.00</h5>
-     </div>
-    <button class="btn" style="background-color: #df6011; border-radius: 15px; padding: 10px 20px; font-size: 20px; margin-top: 20px;  color: white ;">
-        Proceder al pago
-    </button>
-
-<hr style="border: 1px solid white; margin-bottom: 10px; width: 80%; margin-left: auto; margin-right: auto;">
-
-
-
-
-<div class="d-flex align-items-center justify-content-center gap-3">
-    <a href="index.html" class="fs-5 text-white fw-light mb-2 text-decoration-underline">
-        Regresar a comprar
-    </a>
-</div>
-
-
-</div>
+     
+      <div class="row fw-bold mb-3" style="border-bottom: 2px solid white; padding-bottom: 10px;">
+       
+      </div>
+      <!-- Productos dinámicos aquí -->
     </div>
-
-
-    
   </div>
-</main>
 
+  <!-- Caja derecha -->
+  <div class="col-8 d-flex flex-column align-items-center  mx-auto"">
+    <h1>Total de pago:</h1>
+    <div class="d-flex flex-column justify-content-center align-items-center text-center bg-dark" 
+         style="width: 70%; height: 330px; margin: 0 auto; border-radius: 30px;">
+      <div class="d-flex align-items-center justify-content-center gap-3">
+        <h3 class="fs-5 text-white fw-light mb-2">Precio neto</h3>
+        <h3 class="fs-5 text-white fw-light mb-2" id="total-neto">&dollar;00.00</h3>
+      </div>
+      <div class="d-flex align-items-center justify-content-center gap-3">
+        <h3 class="fs-5 text-white fw-light mb-2">Impuesto por servicio</h3>
+        <h3 class="fs-5 text-white fw-light mb-2" id="impuesto-acobrar">&dollar;00.00</h3>
+      </div>
+      <div class="d-flex align-items-center justify-content-center gap-3">
+        <h5 class="fs-3 text-white mb-0">Total</h5>
+        <h5 class="fs-4 text-white mb-0" id="total-compra">&dollar;00.00</h5>
+      </div>
+      <button class="btn" style="background-color: #df6011; border-radius: 15px; padding: 10px 20px; font-size: 20px; margin-top: 20px;  color: white;">
+        Proceder al pago
+      </button>
+      <hr style="border: 1px solid white; margin-bottom: 10px; width: 80%; margin-left: auto; margin-right: auto;">
+      <div class="d-flex align-items-center justify-content-center gap-3">
+        <a href="index.html" class="fs-5 text-white fw-light mb-2 text-decoration-underline">
+          Regresar a comprar
+        </a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+</main>
 
   <!-- Footer -->
  <footer class="text-white text-center py-md-5 bg-black mt-5 h-100 w-100">
