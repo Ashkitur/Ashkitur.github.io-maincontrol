@@ -18,14 +18,14 @@ function showDetail() {
             const producto = juegos.find(p => p.id === item.id);
             const portada = producto ? producto.portada : 'img/ImagenesJuegos/ImagenesCaratulas/default.png';
 
-                    cartRowHTML += `
+                 cartRowHTML += `
 <div class="row mb-3 align-items-center text-center">
     <!-- Imagen -->
     <div class="col-2">
-        <img src="${portada}" alt="${item.nombre}" class="img-fluid rounded" style="width: 50px; height: 70px; object-fit: cover;">
+        <img src="${portada}" alt="${item.nombre}" class="img-fluid rounded" style="width: 70px; height: 100px; object-fit: cover;">
     </div>
     <!-- Nombre -->
-    <div class="col-4 d-flex align-items-center justify-content-center">
+    <div class="col-3 d-flex align-items-center justify-content-center">
         <span class="text-white">${item.nombre}</span>
     </div>
     <!-- Cantidad -->
@@ -44,9 +44,14 @@ function showDetail() {
     <div class="col-2 d-flex align-items-center justify-content-center">
         <span class="text-white">₡${subtotal.toFixed(2)}</span>
     </div>
+    <!-- Botón eliminar -->
+    <div class="col-1 d-flex align-items-center justify-content-center">
+        <button type="button" class="btn btn-danger btn-sm" onclick="eliminarItem(${item.id})">X</button>
+    </div>
 </div>
 <hr class="my-2">
 `;
+
 
 
             total += subtotal;
