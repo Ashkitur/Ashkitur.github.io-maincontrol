@@ -73,18 +73,15 @@
   </nav>
 
   <!-- Toda la vara acá, TODO CONTENIDO. -->
-  <main>
+<main>
 
-<div class="" id="Contenedor-Grid">
+  <div class="" id="Contenedor-Grid">
 
-
-      <div class="container-contactenos">
-
+    <div class="container-contactenos">
       <div class="col-md-12 text-center">
         <h1 class="display-4" style="font-weight: bold; padding-top: 35px;">Contáctenos</h1>
         <p class="lead">Estamos aquí para ayudarte y brindar nuestros servicios a usted.</p>
       </div>
-
     </div>
 
     <div class="datos-empresa-container">
@@ -97,14 +94,12 @@
         <p><strong>Horarios de atención:</strong> Lunes a Viernes, 8:00 AM - 5:00 PM</p>
       </div>
 
-     <div class="map-container" style="height: 300px;">
-  <iframe
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2315.3782651420593!2d-84.21717704432533!3d10.006492217950546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0f9b83e4c328d%3A0x878148b1336a0c1e!2sUniversidad+T%C3%A9cnica+Nacional!5e1!3m2!1ses!2scr!4v1448462646011"
-    width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade"
-  ></iframe>
-</div>
-
+      <div class="map-container" style="height: 300px;">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2315.3782651420593!2d-84.21717704432533!3d10.006492217950546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0f9b83e4c328d%3A0x878148b1336a0c1e!2sUniversidad+T%C3%A9cnica+Nacional!5e1!3m2!1ses!2scr!4v1448462646011"
+          width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
     </div>
 
     <div class="formulario-container">
@@ -112,31 +107,30 @@
       <p class="lead">Complete el siguiente formulario para estar en contacto con nosotros.</p>
 
       <div class="formulario-contacto">
-
         <form id="AimControlForms" novalidate>
           <div class="mb-3">
             <label for="email" class="form-label">Correo electrónico</label>
-            <input type="email" class="form-control" id="email" placeholder="correo@ejemplo.com" required>
+            <input type="email" class="form-control" id="email" name="email"
+              placeholder="correo@ejemplo.com" required>
             <div class="invalid-feedback">Por favor ingresa un correo válido.</div>
           </div>
 
           <div class="mb-3">
             <label for="fullName" class="form-label">Nombre completo</label>
-            <input type="text" class="form-control" id="fullName" placeholder="Tu nombre completo" required
-              pattern="^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$">
+            <input type="text" class="form-control" id="fullName" name="fullName"
+              placeholder="Tu nombre completo" required pattern="^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$">
             <div class="invalid-feedback">Por favor ingresa tu nombre completo (solo letras y espacios).</div>
           </div>
 
           <div class="mb-3">
             <label for="birthDate" class="form-label">Fecha de nacimiento</label>
-            <input type="date" class="form-control" id="birthDate" required
-              max="<?= new Date().toISOString().split('T')[0] ?>">
+            <input type="date" class="form-control" id="birthDate" name="birthDate" required>
             <div class="invalid-feedback">Por favor selecciona una fecha válida.</div>
           </div>
 
           <div class="mb-3">
             <label for="gender" class="form-label">Género</label>
-            <select class="form-select" id="gender" required>
+            <select class="form-select" id="gender" name="gender" required>
               <option value="" selected disabled>Selecciona tu género</option>
               <option value="Masculino">Masculino</option>
               <option value="Femenino">Femenino</option>
@@ -146,10 +140,9 @@
             <div class="invalid-feedback">Por favor selecciona tu género.</div>
           </div>
 
-
           <div class="mb-3">
             <label for="contactReason" class="form-label">Motivo de contacto</label>
-            <select class="form-select" id="contactReason" required>
+            <select class="form-select" id="contactReason" name="contactReason" required>
               <option value="" selected disabled>Selecciona un motivo</option>
               <option value="Soporte técnico">Soporte técnico</option>
               <option value="Consulta de productos">Consulta de productos</option>
@@ -161,14 +154,14 @@
 
           <div class="mb-3">
             <label for="orderNumber" class="form-label">Número de pedido (opcional)</label>
-            <input type="text" class="form-control" id="orderNumber" placeholder="Ejemplo: 12345678"
-              pattern="^[0-9]{0,10}$">
+            <input type="text" class="form-control" id="orderNumber" name="orderNumber"
+              placeholder="Ejemplo: 12345678" pattern="^[0-9]{0,10}$">
             <div class="invalid-feedback">El número de pedido debe ser numérico (máx 10 dígitos).</div>
           </div>
 
           <div class="mb-3">
             <label for="queryType" class="form-label">Tipo de consulta</label>
-            <select class="form-select" id="queryType" required>
+            <select class="form-select" id="queryType" name="queryType" required>
               <option value="" selected disabled>Selecciona un tipo</option>
               <option value="Consulta general">Consulta general</option>
               <option value="Devolución">Devolución</option>
@@ -178,54 +171,43 @@
             <div class="invalid-feedback">Por favor selecciona un tipo de consulta.</div>
           </div>
 
-
-          <!-- captcha-->
+          <!-- captcha -->
           <div class="mb-3">
             <div class="g-recaptcha" data-sitekey="TU_SITE_KEY"></div>
           </div>
           <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
           <button type="submit" class="btn"
             style="background-color:#df6011; color:#fff; border-radius:15px; border:none;">Enviar</button>
         </form>
-
       </div>
     </div>
+  </div>
 
-
-
-  
-</div>
-
-
-
-
-
-    <!-- mostrar la info enviada modal-->
-    <div class="modal fade" id="ModalForms" tabindex="-1" aria-labelledby="summaryModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="summaryModalLabel">Resumen de Datos</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-          </div>
-          <div class="modal-body">
-            <p><strong>Correo:</strong> <span id="modalEmail"></span></p>
-            <p><strong>Nombre completo:</strong> <span id="modalName"></span></p>
-            <p><strong>Fecha de nacimiento:</strong> <span id="modalBirthDate"></span></p>
-            <p><strong>Género:</strong> <span id="modalGender"></span></p>
-            <p><strong>Motivo de contacto:</strong> <span id="modalContactReason"></span></p>
-            <p><strong>Número de pedido:</strong> <span id="modalOrderNumber"></span></p>
-            <p><strong>Tipo de consulta:</strong> <span id="modalQueryType"></span></p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-          </div>
+  <!-- Modal -->
+  <div class="modal fade" id="ModalForms" tabindex="-1" aria-labelledby="summaryModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="summaryModalLabel">Resumen de Datos</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <p><strong>Correo:</strong> <span id="modalEmail"></span></p>
+          <p><strong>Nombre completo:</strong> <span id="modalName"></span></p>
+          <p><strong>Fecha de nacimiento:</strong> <span id="modalBirthDate"></span></p>
+          <p><strong>Género:</strong> <span id="modalGender"></span></p>
+          <p><strong>Motivo de contacto:</strong> <span id="modalContactReason"></span></p>
+          <p><strong>Número de pedido:</strong> <span id="modalOrderNumber"></span></p>
+          <p><strong>Tipo de consulta:</strong> <span id="modalQueryType"></span></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
         </div>
       </div>
     </div>
-    </div>
-
-  </main>
+  </div>
+</main>
 
   <!-- Footer -->
   <footer class="text-white text-center py-3 bg-black mt-5 h-100 w-100">
@@ -297,41 +279,40 @@
 
 
   </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-  <script>
+<script>
+  
+  const today = new Date();
+  const maxDate = today.toISOString().split('T')[0];
+  document.getElementById('birthDate').setAttribute('max', maxDate);
 
-    // datebirthDate no puede ser mayor a la fecha actual
-    const today = new Date();
-    const maxDate = today.toISOString().split('T')[0];
-    document.getElementById('birthDate').setAttribute('max', maxDate);
+  
+  const form = document.getElementById('AimControlForms');
+  const modal = new bootstrap.Modal(document.getElementById('ModalForms'));
 
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
 
-    //obtengo id del forms y modal
-    const form = document.getElementById('AimControlForms');
-    const modal = new bootstrap.Modal(document.getElementById('ModalForms'));
+    if (!form.checkValidity()) {
+      form.classList.add('was-validated');
+    } else {
+      
+      document.getElementById('modalEmail').textContent = form.email.value;
+      document.getElementById('modalName').textContent = form.fullName.value;
+      document.getElementById('modalBirthDate').textContent = form.birthDate.value;
+      document.getElementById('modalGender').textContent = form.gender.value;
+      document.getElementById('modalContactReason').textContent = form.contactReason.value;
+      document.getElementById('modalOrderNumber').textContent = form.orderNumber.value || 'No especificado';
+      document.getElementById('modalQueryType').textContent = form.queryType.value;
 
-    form.addEventListener('submit', function (event) {
-      event.preventDefault();
+      modal.show();
+      form.classList.remove('was-validated');
+      form.reset();
+    }
+  });
+</script>
 
-      if (!form.checkValidity()) {
-        form.classList.add('was-validated');
-      } else {
-        //lleno modal con datos del formulario
-        document.getElementById('modalEmail').textContent = form.email.value;
-        document.getElementById('modalName').textContent = form.fullName.value;
-        document.getElementById('modalBirthDate').textContent = form.birthDate.value;
-        document.getElementById('modalGender').textContent = form.gender.value;
-        document.getElementById('modalContactReason').textContent = form.contactReason.value;
-        document.getElementById('modalOrderNumber').textContent = form.orderNumber.value || 'No especificado';
-        document.getElementById('modalQueryType').textContent = form.queryType.value;
-
-        modal.show();
-        form.classList.remove('was-validated');
-        form.reset();
-      }
-    });
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   
 </body>
 
