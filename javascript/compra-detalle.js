@@ -69,7 +69,7 @@ function showDetail() {
         cartRowHTML = `<h5 style="color: white;">No hay productos en el carrito</h5>`;
         document.getElementById("impuesto-acobrar").textContent = "₡0.00";
         document.getElementById("total-compra").textContent = "₡0.00";
-       document.getElementById("total-compra").textContent = "₡0.00";
+       document.getElementById("total-neto").textContent = "₡0.00";
     }
 
     document.getElementById("detail").innerHTML = cartRowHTML;
