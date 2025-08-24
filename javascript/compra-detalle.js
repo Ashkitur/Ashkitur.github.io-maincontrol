@@ -19,37 +19,74 @@ function showDetail() {
             const portada = producto ? producto.portada : 'img/ImagenesJuegos/ImagenesCaratulas/default.png';
 
                  cartRowHTML += `
-<div class="row mb-3 align-items-center text-center">
+<div class="cart-item  text-white">
+  <div class="row align-items-center g-0 cart-item-row">
     <!-- Imagen -->
-    <div class="col-2">
-        <img src="${portada}" alt="${item.nombre}" class="img-fluid rounded" style="width: 70px; height: 100px; object-fit: cover;">
+    <div class="col-auto col-img">
+      <img src="${portada}" alt="${item.nombre}" class="thumb rounded">
     </div>
+
     <!-- Nombre -->
-    <div class="col-3 d-flex align-items-center justify-content-center">
-        <span class="text-white">${item.nombre}</span>
+    <div class="col-7 col-sm-3 col-name">
+      <span class="item-name text-truncate" title="${item.nombre}">${item.nombre}</span>
     </div>
-    <!-- Cantidad -->
-    <div class="col-2">
-        <input type="number" min="0" value="${quantity}" 
-               class="form-control form-control-sm text-center" 
-               data-id="${item.id}" 
-               oninput="this.value = this.value.replace(/[^0-9]/g,'');" 
-               onchange="cambiarCantidad(this)" />
+
+    <!-- Cantidad (desktop) -->
+    <div class="col-2 d-none d-sm-block">
+      <input type="number"
+             min="0"
+             value="${quantity}"
+             class="form-control form-control-sm text-center qty-input"
+             data-id="${item.id}"
+             oninput="this.value = this.value.replace(/[^0-9]/g,'');"
+             onchange="cambiarCantidad(this)" />
     </div>
-    <!-- Precio -->
-    <div class="col-2 d-flex align-items-center justify-content-center">
-        <span class="text-white">₡${price.toFixed(2)}</span>
+
+    <!-- Precio (desktop) -->
+    <div class="col-2 d-none d-sm-flex justify-content-center">
+      <span class="price">₡${price.toFixed(2)}</span>
     </div>
-    <!-- Subtotal -->
-    <div class="col-2 d-flex align-items-center justify-content-center">
-        <span class="text-white">₡${subtotal.toFixed(2)}</span>
+
+    <!-- Subtotal (desktop) -->
+    <div class="col-2 d-none d-sm-flex justify-content-center">
+      <span class="subtotal">₡${subtotal.toFixed(2)}</span>
     </div>
+
     <!-- Botón eliminar -->
-    <div class="col-1 d-flex align-items-center justify-content-center">
-        <button type="button" class="btn btn-danger btn-sm" onclick="eliminarItem(${item.id})">X</button>
+    <div class="col-auto col-remove">
+      <button type="button"
+              class="btn btn-danger btn-sm remove-btn"
+              onclick="eliminarItem(${item.id})"
+              aria-label="Eliminar ${item.nombre}">
+        x
+      </button>
     </div>
+
+    <!-- Layout compacto (mobile) -->
+    <div class="col-12 d-sm-none mt-2 mobile-details">
+      <div class="d-flex align-items-stretch justify-content-between gap-2">
+        <div class="flex-fill">
+          <div class="mini-label">Cantidad</div>
+          <input type="number"
+                 min="0"
+                 value="${quantity}"
+                 class="form-control form-control-sm text-center qty-input"
+                 data-id="${item.id}"
+                 oninput="this.value = this.value.replace(/[^0-9]/g,'');"
+                 onchange="cambiarCantidad(this)" />
+        </div>
+        <div class="text-end flex-fill">
+          <div class="mini-label">Precio</div>
+          <div class="price fw-semibold">₡${price.toFixed(2)}</div>
+        </div>
+        <div class="text-end flex-fill">
+          <div class="mini-label">Subtotal</div>
+            <div class="subtotal fw-semibold">₡${subtotal.toFixed(2)}</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<hr class="my-2">
 `;
 
 

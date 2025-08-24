@@ -1,304 +1,352 @@
+/* =========================================================
+   VARIABLES / THEME
+   ========================================================= */
+:root {
+  --color-bg-dark: #1b1b1b;
+  --color-bg-darker: #2b2b2b;
+  --color-section: #37322e;
+  --color-section-alt: #b3b2b0;
+  --color-accent: #df6011;
+  --color-accent-hover: #c75008;
+  --color-text-light: #ffffff;
+  --color-text-muted: #b3b3b3;
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 28px;
+  --transition-fast: 0.25s ease;
+  --shadow-soft: 0 4px 18px -4px rgba(0,0,0,.35);
+  --shadow-elev: 0 8px 25px -4px rgba(0,0,0,.55);
+  --gradient-bg: linear-gradient(135deg,#1b1b1b,#2b2b2b);
+  --font-scale-h2: clamp(1.4rem, 2.4vw, 2.4rem);
+  --font-scale-h1: clamp(1.6rem, 3vw, 2.8rem);
+}
+
+/* =========================================================
+   GLOBAL BASE
+   ========================================================= */
 html, body {
-  height: 100%;
   margin: 0;
-  color: #000;
+  padding: 0;
+  min-height: 100%;
+  background: var(--gradient-bg);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--color-text-light);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
   display: flex;
   flex-direction: column;
-  background-color: #d9d9d9;
-    background: linear-gradient(135deg, #1b1b1b, #2b2b2b);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: white;
 }
 
-
-footer {
+main {
   width: 100%;
-  background-color: #000;
-  color: #fff;
-  padding: 15px 0;
-  box-sizing: border-box;
 }
 
+/* Utilidades */
+.bg-accent { background: var(--color-accent) !important; }
+.text-accent { color: var(--color-accent) !important; }
+
+.btn-accent {
+  background: var(--color-accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  transition: var(--transition-fast);
+}
+.btn-accent:hover {
+  background: var(--color-accent-hover);
+  color:#fff;
+}
 
 .icon-box {
-  margin-right: 1cm;
-  border-radius: 15px;
-  transition: background-color 0.3s ease;
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  transition: var(--transition-fast);
+}
+.icon-box:hover {
+  filter: brightness(1.1);
 }
 
-.icon-box img {
-  transition: filter 0.3s ease;
+/* Links nav activos */
+.active-link {
+  color: var(--color-accent) !important;
+  font-weight: 600;
 }
 
-.icon-box:hover img {
-  filter: brightness(0) invert(2);
-}
 
-.nav-link {
+.navbar .nav-link {
   color: #fff;
-  text-decoration: none;
-  padding: 10px 15px;
-  transition: background-color 0.3s ease;
+  font-size: 0.95rem;
+  transition: var(--transition-fast);
+}
+.navbar .nav-link:hover {
+  color: var(--color-accent);
 }
 
 
-
-
-.left-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; 
-  margin-bottom: 10px;
-  margin-left: 70px;
+#bienvenida-wrapper {
+  background-image: url(/img/Banners/Fondo.svg);
+  background-size: cover;
 }
 
-.left-container a {
-  color: #fff;
-  text-decoration: none;
+.bienvenida-carrusel {
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(4px);
+  border-radius: var(--radius-lg);
+  padding: 14px;
+  box-shadow: var(--shadow-elev);
+  transition: transform var(--transition-fast);
 }
 
-.center-container {
-padding: 30px;
-}
-
-.right-container {
-  flex-direction: column;
-  align-items: flex-start;
-  margin-bottom: 10px;
-  margin-right: 70px;
-}
-
-.down-container {
-  display: flex;
-  justify-content: flex-start; 
-  padding-left: 180px;  
-  gap: 15px; 
-}
-
-.canales-container {
-  display: flex;
-  align-items: flex-end;  /* para alinear verticalmente al final */
-  margin-top: 20px;
-  padding-right: 180px;
-}
-
-
-.btn-orange {
-  color: #df6011;
-  border: none;
-  border-radius: 15px;
-}
-
-.btn-orange:hover {
-  background-color: #c75008; 
-}
-
-
-.custom-card {
-  background-color: black !important;
-  color: white !important;
-}
-
-.img-container {
-  padding: 10px;
-  text-align: center;
-}
-
-.custom-img {
-  max-height: 200px;
-  width: auto;
-  object-fit: contain;
-  border: 3px solid #df6011;
-  border-radius: 22px;
-}
-
-/*imagen tlou*/
-
-  .contenedor {
-      position: relative;
-      width: 100%;
-      max-width: 1200px; /* ancho máximo */
-      margin: 0 auto; /* centrar horizontalmente */
-    }
-    .imagen-gris {
-      width: 100%; /* ancho completo */
-      height: auto;
-      filter: grayscale(9%);
-      display: block;
-    }
-
-    .texto-encima {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: white;
-      font-weight: 700;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
-      pointer-events: none;
-      font-size: 4vw; /* tamaño responsivo */
-      text-align: center;
-      width: 100%;
-      padding: 0 1rem;
-      box-sizing: border-box;
-    }
-
-
-
-
-
-/* Carrusel de bienvenida responsivo */
-
-
-#bienvenidaCarrusel {
-  background: rgba(0, 0, 0, 0.85);
-  padding: 20px;
-  border-radius: 20px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
-
-  transition: transform 0.3s ease-in-out;
-
-}
-
-
-#bienvenidaCarrusel:hover {
+.bienvenida-carrusel:hover {
   transform: scale(1.01);
 }
 
-
-#bienvenidaCarrusel img {
-  border-radius: 16px;
+.banner-img {
+  max-height: 500px;
   object-fit: cover;
-  filter: brightness(0.9);
-  transition: filter 0.4s ease-in-out;
-    transition: transform 0.3s ease-in-out;
+  border-radius: var(--radius-md);
+  filter: brightness(.9);
+  transition: filter var(--transition-fast);
+}
+.banner-img:hover {
+  filter: brightness(1);
 }
 
-
-
-#bienvenidaCarrusel .carousel-caption {
+.custom-caption {
+  background: rgba(0,0,0,0.55);
   backdrop-filter: blur(6px);
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  border-radius: var(--radius-md);
+  padding: 1.2rem 1.4rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,.4);
 }
-
-#bienvenidaCarrusel h2 {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #ff6600;
-  text-shadow: 0 0 8px rgb(255, 102, 0), 0 0 15px rgba(255, 251, 0, 0.753);
+.custom-caption h2 {
+  font-size: var(--font-scale-h2);
+  font-weight: 700;
+  color: var(--color-accent);
+  text-shadow: 0 0 6px rgba(223,96,17,.65);
+  margin-bottom: .6rem;
 }
-
-#bienvenidaCarrusel p {
-  font-size: 1.1rem;
+.custom-caption p {
+  font-size: clamp(.9rem, 1.1vw, 1.1rem);
+  margin: 0;
   color: #eaeaea;
+  line-height: 1.35;
 }
 
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  background-size: 60% 60%;
-  background-color: rgba(0, 0, 0, 0.7);
+/* Controles del carousel */
+.control-icon,
+.control-icon-lg {
+  background-color: rgba(0,0,0,.7);
   border-radius: 50%;
-  padding: 15px;
-  transition: all 0.3s ease-in-out;
+  padding: 14px;
+  transition: var(--transition-fast);
+  background-size: 60% 60%;
+}
+.control-icon-lg { padding: 18px; }
+.control-icon:hover,
+.control-icon-lg:hover {
+  background: var(--color-accent);
 }
 
-.carousel-control-prev-icon:hover,
-.carousel-control-next-icon:hover {
-  background-color: #ff6600;
-  transform: scale(1.1);
-}
-
-
+/* Ajustes móviles para el carousel */
 @media (max-width: 600px) {
-  #bienvenidaCarrusel {
-    padding-left: 0;
-    padding-right: 0;
+  .bienvenida-carrusel {
+    padding: 8px;
   }
-  #bienvenidaCarrusel .carousel-inner img {
-    max-height: 180px;
-    border-radius: 0 !important;
+  .banner-img {
+    max-height: 220px;
+    border-radius: var(--radius-sm);
   }
-  #bienvenidaCarrusel .carousel-caption {
-    font-size: 1rem;
-    padding: 1rem 0.5rem;
-    margin-top: 0.5rem;
+  .custom-caption {
+    padding: .75rem .9rem;
   }
-  #bienvenidaCarrusel h2 {
+  .custom-caption h2 {
     font-size: 1.2rem;
   }
-  #bienvenidaCarrusel p {
-    font-size: 0.95rem;
+  .custom-caption p {
+    font-size: .85rem;
   }
 }
 
-/* Tarjetas de juegos: 4 por fila en escritorio, 3 por fila en móvil */
-/* Mejor responsividad para tarjetas de juegos */
 
-/* Escritorio: 4 por fila */
-#juegos-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px 18px;
+/* =========================================================
+   SECCIONES JUEGOS
+   ========================================================= */
+#bloque-juegos {
+  background: var(--color-section);
+}
+
+.seccion-wrapper {
+  max-width: 1400px;
   margin: 0 auto;
+  padding: 0;
+}
+
+.seccion-header {
+  background-color: var(--color-accent);
+  padding: .9rem 1rem;
+}
+
+.seccion-titulo {
+  font-size: var(--font-scale-h1);
+  margin: 0;
+  color: black;
+  font-weight: 600;
+  text-align: center;
+
+}
+
+/* GRID de juegos (CSS Grid auto-fit) */
+.juegos-grid {
+  display: grid;
+  gap: 24px 18px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+/* Tarjetas juego (general, dependerá de tu JS) */
+.juegos-grid .card,
+.juego-item {
+  background: #000;
+  color: #fff;
+  border: 1px solid #2d2d2d;
+  border-radius: 20px;
+  padding: 14px;
+  box-shadow: var(--shadow-soft);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.juegos-grid .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 26px -4px rgba(0,0,0,.6);
+}
+
+.juegos-grid img {
+  border: 3px solid var(--color-accent);
+  border-radius: 16px;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  background: #111;
+}
+
+/* Responsive tarjetas */
+@media (max-width: 900px) {
+  .juegos-grid {
+    gap: 20px 14px;
+  }
+  .juegos-grid img {
+    height: 190px;
+  }
+}
+@media (max-width: 600px) {
+  .juegos-grid {
+    gap: 18px;
+  }
+  .juegos-grid .card {
+    border-radius: 18px;
+    padding: 16px;
+  }
+  .juegos-grid img {
+    height: 180px;
+    border-radius: 14px;
+  }
+}
+
+/* =========================================================
+   GIFT CARDS CAROUSEL
+   ========================================================= */
+#giftcards {
+  background: var(--color-section-alt);
+}
+
+.gift-carousel .gift-img {
+  min-height: 320px;
+  object-fit: cover;
+}
+
+.gift-card-info {
+  background: var(--color-section);
+  color:#fff;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
 }
-
-#juegos-list > div {
-  flex: 1 1 22%;
-  max-width: 22%;
-  min-width: 220px;
-  box-sizing: border-box;
+.gift-card-info h3 {
+  font-weight: 600;
+  margin-bottom: .5rem;
+  font-size: clamp(1.3rem,2vw,1.8rem);
+}
+.gift-card-info .precio {
+  color: #fff;
 }
 
-/* Tablet: 2 por fila */
-@media (max-width: 900px) {
-  #juegos-list > div {
-    flex: 1 1 45%;
-    max-width: 45%;
-    min-width: 160px;
-  }
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.footer {
+  background: #000;
+  color: #fff;
+  font-size: .95rem;
+  margin-top: auto;
 }
 
-/* Celular: 1 tarjeta grande por fila */
-@media (max-width: 600px) {
-  #juegos-list {
-    gap: 18px 0;
-    padding: 0 6px;
-  }
-  #juegos-list > div {
-    flex: 1 1 100%;
-    max-width: 98%;
-    min-width: 0;
-    margin-bottom: 0;
-  }
-  .juego-item {
-    padding: 16px !important;
-    border-radius: 18px !important;
-  }
-  .juego-item img {
-    height: 180px !important;
-    border-radius: 14px !important;
-    object-fit: cover;
-  }
-  .card-title {
-    font-size: 1.25rem !important;
-    margin-bottom: 10px !important;
-  }
-  .card {
-    padding: 16px !important;
-  }
+.footer-links a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  font-size: .9rem;
+  transition: var(--transition-fast);
+}
+.footer-links a:hover {
+  color: var(--color-accent);
 }
 
-/* Ajuste para pantallas muy pequeñas */
-@media (max-width: 400px) {
-  #juegos-list > div {
-    flex: 1 1 98%;
-    max-width: 98%;
-  }
+.footer-divider {
+  border: none;
+  background: var(--color-accent);
+  height: 2px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer img {
+  display: inline-block;
+}
+
+.footer small, .footer p {
+  color: #ddd;
+}
+
+.footer .btn-accent {
+  border-radius: 12px;
 }
 
 
 
+
+.custom-card { background:#000 !important; color:#fff !important; }
+.custom-img { max-height:200px; width:100%; object-fit:cover; border:3px solid var(--color-accent); border-radius:22px; }
+
+.icon-box img { transition: filter var(--transition-fast); }
+.icon-box:hover img { filter: brightness(1.2); }
+
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #1e1e1e;
+}
+::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 20px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

@@ -1,214 +1,147 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-  <meta charset="UTF-8">
-  <title>Main Control</title>
-
- <link rel="stylesheet" href="css/bootstrap.min.css" />
-<link rel="stylesheet" href="cssweb/footerheader.css" />
-<link rel="stylesheet" href="cssweb/acercade.css">
+  <meta charset="UTF-8" />
+  <title>Aim Control - Acerca de</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="cssweb/footerheader.css" />
+  <link rel="stylesheet" href="cssweb/acercade.css" />
 </head>
+<body>
 
-<body><!-- nav -->
- <nav class="navbar navbar-expand-lg navbar-dark bg-black">
-
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.html" style="font-weight: bold;" id="texto-logito">
-        <img src="img/LogoPrincipal/ICON.png" alt="Main Control" width="80" height="80">
-        Aim Control
+  <!-- NAV -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-black py-2">
+    <div class="container-fluid px-3">
+      <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="index.html" id="texto-logito">
+        <img src="img/LogoPrincipal/ICON.png" alt="Logo Aim Control" width="64" height="64" class="img-fluid">
+        <span>Aim Control</span>
       </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+              aria-expanded="false" aria-label="Menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-
-        <!-- LINEA Q DIVIDE  -->
-        <div class="vr mx-3 bg-white" style="opacity: 0.5;"></div>
-
-
-        <div class="navbar-nav mx-auto text-center">
-          <a class="nav-link d-flex align-items-center gap-2" aria-current="page" href="index.html?plataforma=all"
-            style="color: #df6011; font-weight: 600;">
-            <img src="img/Logos/computadora-para-juegos.png" alt="plataformas" width="40" height="40">Todas las plataformas
+      <div class="collapse navbar-collapse mt-3 mt-lg-0" id="navbarNavAltMarkup">
+        <div class="vr mx-3 bg-white d-none d-lg-block opacity-50"></div>
+        <div class="navbar-nav mx-auto text-center gap-lg-1">
+          <a class="nav-link d-flex align-items-center gap-2" href="index.html?plataforma=all" style="color:#df6011;font-weight:600;">
+            <img src="img/Logos/computadora-para-juegos.png" width="34" height="34" alt="">Todas las plataformas
           </a>
-
           <a class="nav-link d-flex align-items-center gap-2" href="PC.html?plataforma=PC">
-            <img src="img/Logos/logotipo-de-steam.png" alt="PC" width="30" height="30"> PC
+            <img src="img/Logos/logotipo-de-steam.png" width="26" height="26" alt="">PC
           </a>
-
           <a class="nav-link d-flex align-items-center gap-2" href="PlayStation.html?plataforma=PlayStation">
-            <img src="img/Logos/consoles-ps-512.png" alt="PlayStation" width="30" height="30">PlayStation
+            <img src="img/Logos/consoles-ps-512.png" width="26" height="26" alt="">PlayStation
           </a>
-
           <a class="nav-link d-flex align-items-center gap-2" href="Xbox.html?plataforma=Xbox">
-            <img src="img/Logos/logotipo-de-xbox.png" alt="Xbox" width="30" height="30">Xbox
+            <img src="img/Logos/logotipo-de-xbox.png" width="26" height="26" alt="">Xbox
           </a>
-
           <a class="nav-link d-flex align-items-center gap-2" href="NintendoSwitch.html?plataforma=NintendoSwitch">
-            <img src="img/Logos/nintendo-switch.png" alt="Nintendo Switch" width="50" height="44">Nintendo Switch
+            <img src="img/Logos/nintendo-switch.png" width="40" height="34" alt="">Nintendo Switch
           </a>
         </div>
-
-
-
+        <div class="d-flex justify-content-center mt-3 mt-lg-0">
+            <a class="nav-link d-flex align-items-center gap-2" href="compra-detalle.html">
+              <div class="icon-box bg-accent d-inline-flex justify-content-center align-items-center">
+                <img src="img/Logos/carrito-de-compras.png" alt="Carrito" width="26" height="26">
+              </div>
+            </a>
+        </div>
       </div>
+    </div>
+  </nav>
 
-      <div class="d-flex align-items-center">
+  <!-- CONTENIDO -->
+  <main class="py-5">
+    <div class="container">
+      <header class="text-center mb-5">
+        <h1 class="titulo-pagina">Acerca de</h1>
+        <p class="lead subtitulo-pagina">Personas participantes de este proyecto web.</p>
+      </header>
 
-        <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+      <div class="personas-wrapper d-flex flex-column gap-5">
 
-        <a class="nav-link d-flex align-items-center gap-2" href="#">
-          <div class="icon-box" style="background-color: #df6011; padding: 9px; border-radius: 15px;">
-            <img src="img/Logos/carrito-de-compras.png" alt="Carrito de Compras" width="30" height="30">
+        <!-- CARD PERSONA -->
+        <article class="persona-card mx-auto">
+          <div class="row g-4 align-items-center flex-column flex-md-row">
+            <div class="col-12 col-md-4 text-center">
+              <img src="img/Jetas/asli.jpg" class="persona-foto" alt="Foto de Ashley Sibaja Rojas">
+            </div>
+            <div class="col-12 col-md-8 text-center text-md-start">
+              <h2 class="persona-nombre">Ashley Sibaja Rojas</h2>
+              <ul class="persona-datos list-unstyled mb-0">
+                <li><strong>Cédula:</strong> 208740713</li>
+                <li><strong>Correo:</strong> <a href="mailto:ashleysibaja92@gmail.com">ashleysibaja92@gmail.com</a></li>
+                <li><strong>Información:</strong> Estudiante universitaria con conocimientos en .NET, bases de datos, diseño web y actual desarrolladora de esta página.</li>
+              </ul>
+            </div>
           </div>
-        </a>
+        </article>
 
-      </div>
-
-    </div>
-  </nav> <!-- Toda la vara acá, TODO CONTENIDO. -->
-
-  
-<main>
-     <div class="col-md-12 text-center">
-  <h1 class="display-4" style="font-weight: bold; padding-top: 32px;">Acerca de</h1>
-
-       <p class="lead">Personas participantes de este proyecto web.</p>
-     </div>
-   
-
- 
-<div class="container">
-    <div class="Ashley-contenedor">
-
-  
-  <div class="row justify-content-center">
-    <div class="contenido-cuadrado p-4">
-      <div class="row align-items-center">
-
-        <!-- Columna de la imagen -->
-        <div class="col-md-4 text-center">
-          <img src="img/Jetas/asli.jpg" alt="Foto de Ashley Sibaja Rojas" id="foto-ashley">
-        </div>
-
-        <!-- Columna del texto -->
-        <div class="col-md-8">
-          <h2 class="display-6" style="font-weight: bold; color: #ffffff;">Ashley Sibaja Rojas</h2>
-          <p class="lead" style="color: #ffffff;" id="info-ashley">
-            <strong>Cédula:</strong> 208740713<br>
-            <strong>Correo electrónico:</strong> ashleysibaja92@gmail.com<br>
-            <strong>Información adicional:</strong> Estudiante universitaria con conocimientos en .NET, base de datos, diseño web y actual desarrolladora de esta página.
-          </p>
-        </div>
+        <article class="persona-card mx-auto">
+          <div class="row g-4 align-items-center flex-column flex-md-row">
+            <div class="col-12 col-md-4 text-center">
+              <img src="img/Jetas/eduard2.jpg" class="persona-foto" alt="Foto de Eduardo Ulloa Murillo">
+            </div>
+            <div class="col-12 col-md-8 text-center text-md-start">
+              <h2 class="persona-nombre">Eduardo Ulloa Murillo</h2>
+              <ul class="persona-datos list-unstyled mb-0">
+                <li><strong>Cédula:</strong> 208650437</li>
+                <li><strong>Correo:</strong> <a href="mailto:Edu18088@gmail.com">Edu18088@gmail.com</a></li>
+                <li><strong>Información:</strong> Estudiante universitario con conocimientos en bases de datos, Java, C#, C++, Python e inglés avanzado (C1).</li>
+              </ul>
+            </div>
+          </div>
+        </article>
 
       </div>
     </div>
-  </div>
-    </div>
+  </main>
 
-
-   <div class="eduardo-contenedor">
-
-   
-  <div class="row justify-content-center">
-    <div class="contenido-cuadrado p-4">
-        <div class="row align-items-center">
-
-         <div class="col-md-4 text-center">
-          <img src="img/Jetas/eduard2.jpg" alt="Foto de Eduardo Ulloa Murillo" id="foto-eduardo">
+  <!-- FOOTER -->
+  <footer class="footer text-white mt-auto">
+    <div class="container py-4">
+      <div class="row gy-4 align-items-start">
+        <div class="col-12 col-md-4">
+          <h5 class="fw-bold mb-2">Aim Control</h5>
+          <ul class="list-unstyled footer-links mb-0">
+            <li><a href="acercade.html">Acerca de</a></li>
+            <li><a href="contactenos.html">Contáctenos</a></li>
+          </ul>
         </div>
-
-      <div class="col-md-8">
-          <h2 class="display-6" style="font-weight: bold; color: #ffffff;">Eduardo Ulloa Murillo</h2>
-          <p class="lead" style="color: #ffffff;" id="info-eduardo">
-            <strong>Cédula:</strong> 208650437<br>
-            <strong>Correo electrónico:</strong> Edu18088@gmail.com<br>
-            <strong>Información adicional:</strong> Estudiante universitario, conocimientos en base de datos, manejo lenguajes como java c# c++ y python, inglés avanzado c1.
-          </p>
+        <div class="col-12 col-md-4">
+          <h6 class="text-secondary mb-2">Ofertas personalizadas</h6>
+          <form class="d-flex flex-column flex-sm-row gap-2">
+            <input type="email" class="form-control form-control-sm" placeholder="correo@ejemplo.com" aria-label="Correo">
+            <button type="button" class="btn btn-accent btn-sm">Suscribirse</button>
+          </form>
         </div>
-        </div>
-         </div>
-  </div>
-</div>
-</div>
-</div>
-</main>
-
-  <!-- Footer -->
- <footer class="text-white text-center py-3 bg-black mt-5 h-100 w-100">
-    <div class="container d-flex align-items-start">
-      <div class="left-container">
-        <h5 style="font-weight: bold;">Aim Control</h5>
-        <p><a href=" acercade.html" style="color: #757575; text-decoration: none;">Acerca de</a></p>
-        <p><a href="contactenos.html" style="color: #757575; text-decoration: none;">Contáctenos</a></p>
-
-      </div>
-
-      <div class="vr mx-3 bg-white" style="opacity: 0.5;"></div>
-
-      <div class="center-container">
-        <div class="mb-3">
-          <label for="nombre" class="form-label" style="color: #757575; font-size: 0.45cm;">
-            Obtén ofertas personalizadas de videojuegos
-          </label>
-          <input type="text" class="form-control" id="nombre" placeholder="correo@ejemplo.com">
-        </div>
-
-        <div class="d-flex justify-content-end">
-          <button type="button" class="btn"
-            style="background-color:#df6011; color:#fff; border-radius:15px; border:none;">
-            Suscribirse
-          </button>
-
+        <div class="col-12 col-md-4">
+          <h6 class="text-secondary mb-2">Síguenos</h6>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="#" aria-label="Facebook"><img src="img/facebook.png" width="30" height="30" alt=""></a>
+            <a href="#" aria-label="Twitter"><img src="img/twitter.png" width="30" height="30" alt=""></a>
+            <a href="#" aria-label="Instagram"><img src="img/instagram.png" width="30" height="30" alt=""></a>
+            <a href="#" aria-label="YouTube"><img src="img/youtube.png" width="30" height="30" alt=""></a>
+          </div>
         </div>
       </div>
-
-      <div class="vr mx-3 bg-white" style="opacity: 0.5;"></div>
-
-      <div class="right-container">
-        <h5 style="font-weight: 200;">Síguenos</h5>
-        <div class="d-flex justify-content-center gap-3">
-          <a href="#"><img src="img/facebook.png" alt="Facebook" width="30" height="30"></a>
-          <a href="#"><img src="img/twitter.png" alt="Twitter" width="30" height="30"></a>
-          <a href="#"><img src="img/instagram.png" alt="Instagram" width="30" height="30"></a>
-          <a href="#"><img src="img/youtube.png" alt="YouTube" width="30" height="30"></a>
+      <hr class="footer-divider my-4">
+      <div class="d-flex flex-column flex-lg-row justify-content-between align-items-center gap-3 small">
+        <p class="mb-0">&copy; 2023 Aim Control. Todos los derechos reservados.</p>
+        <div class="d-flex align-items-center flex-wrap gap-2">
+          <span class="text-accent fw-semibold">Canales</span>
+          <img src="img/Otros/visa.png" width="36" height="36" alt="Visa">
+          <img src="img/Otros/logotipo-de-paypal.png" width="36" height="36" alt="PayPal">
+          <img src="img/Otros/pago-de-apple.png" width="36" height="36" alt="Apple Pay">
+          <img src="img/Otros/redondo.png" width="36" height="36" alt="Mastercard">
         </div>
-
       </div>
     </div>
-
-    <hr style="border: none; height: 2px; background-color: #df6011; width: 80%; margin: 20px auto;">
-
-    <div class="down d-flex justify-content-between align-items-center mt-3 px-3">
-
-      <div class="down-container">
-        <p style="color: #ffffff; font-size: 0.45cm; margin: 0;">
-          © 2023 Aim Control. Todos los derechos reservados.
-        </p>
-      </div>
-
-      <div class="canales-container d-flex">
-        <p style="color: #df6011;">Canales de pago aceptados </p>
-
-        <div class="px-3 mb-2 d-flex"> 
-    <img src="img/Otros/visa.png" alt="Visa" width="40" height="40" class="mx-2">
-        <img src="img//Otros/logotipo-de-paypal.png" alt="Paypal" width="40" height="40" class="mx-2">
-        <img src="img/Otros/pago-de-apple.png" alt="Apple Pay" width="40" height="40" class="mx-2">
-        <img src="img/Otros/redondo.png" alt="Mastercard" width="40" height="40" class="mx-2">
-
-        </div>
-        
-      </div>
-
-    </div>
-
-
   </footer>
 
-    <script src="js/bootstrap.bundle.min.js"></script>
-  
+  <script src="js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>

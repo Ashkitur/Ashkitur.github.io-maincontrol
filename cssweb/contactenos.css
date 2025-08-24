@@ -1,70 +1,285 @@
-
-.datos-empresa-container {
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 35px;
-   border: 1px solid #ccc;
+:root {
+  --color-bg: #1b1b1b;
+  --color-bg-alt: #242424;
+  --color-panel: #101010;
+  --color-panel-accent: #181818;
+  --color-accent: #df6011;
+  --color-accent-hover: #c6500a;
+  --color-border: #333;
+  --color-text: #ffffff;
+  --color-text-muted: #c6c6c6;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 24px;
+  --radius-pill: 48px;
+  --shadow-soft: 0 4px 18px -4px rgba(0,0,0,.45);
+  --shadow-hover: 0 10px 32px -6px rgba(0,0,0,.6);
+  --transition: .28s cubic-bezier(.4,.2,.2,1);
+  --font-h1: clamp(1.9rem, 3.5vw, 3rem);
+  --font-h2: clamp(1.25rem, 2.4vw, 1.95rem);
+  --focus-ring: 0 0 0 3px rgba(223,96,17,.45);
 }
 
-.contactenos-container {
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-
+html, body {
+  background: linear-gradient(135deg,#1b1b1b,#2b2b2b);
+  color: var(--color-text);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100dvh;
+  scroll-behavior: smooth;
 }
 
-.formulario-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
+body { display:flex; flex-direction:column; }
+
+/* Utilidades */
+.bg-accent { background: var(--color-accent) !important; }
+.text-accent { color: var(--color-accent) !important; }
+
+.icon-box {
+  width:46px; height:46px; border-radius:14px;
+  transition: var(--transition);
+}
+.icon-box:hover { filter:brightness(1.1); }
+
+main { flex-grow:1; }
+
+.titulo-pagina {
+  font-size: var(--font-h1);
+  font-weight:700;
+  margin-bottom:.5rem;
+  letter-spacing:.5px;
+}
+.subtitulo-pagina {
+  color: var(--color-text-muted);
+  max-width: 620px;
+  margin:0 auto;
+  font-size: clamp(.9rem,1rem,.95rem);
 }
 
-.formulario-contacto {
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: black;
-  color: white;           /* Aquí el color del texto */
-  border-radius: 10px;
+/* GRID PRINCIPAL */
+.contact-grid {
+  display:grid;
+  gap: clamp(1.5rem,2.5vw,2.75rem);
+  grid-template-columns: 1fr;
+}
+@media (min-width: 992px) {
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+    align-items:start;
+  }
 }
 
-.btn
-{
-    background-color: #df6011;
-    color: white;
-    border-radius: 15px;
-    border: none;
-    padding: 10px 20px;
-    font-size: 18px;
-    cursor: pointer;
+/* Paneles */
+.info-panel,
+.form-panel {
+  background: linear-gradient(145deg,var(--color-panel),var(--color-panel-accent));
+  padding: clamp(1.25rem,2vw,2.2rem);
+  border-radius: var(--radius-lg);
+  position: relative;
+  overflow:hidden;
+  box-shadow: var(--shadow-soft);
+  transition: var(--transition);
+  border:1px solid #222;
+}
+.info-panel::before,
+.form-panel::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(223,96,17,.10), transparent 60%),
+    radial-gradient(circle at 80% 80%, rgba(223,96,17,.08), transparent 65%);
+  opacity:.8;
+}
+.info-panel:hover,
+.form-panel:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
 }
 
-@media (max-width: 991px) {
-
-    .formulario-contacto {
-        padding: 10px;
-    }
-
-    .datos-empresa-container {
-        border: 1px solid #ccc;
-        border-radius: 3px;
-        font-size: 25px;
-    }
-
-    #head-formulario {
-        font-size: 50px;
-        text-align: center;
-    }
-
-    .btn {
-      
-        font-size: 20px;
-    }
-
-
+.panel-titulo {
+  font-size: var(--font-h2);
+  font-weight:600;
+  letter-spacing:.5px;
+  margin:0 0 .75rem;
+  color:#fff;
 }
+.panel-desc {
+  font-size:.95rem;
+  color: var(--color-text-muted);
+  margin-bottom:1.25rem;
+}
+
+/* Datos Empresa */
+.datos-empresa {
+  background: #0c0c0c;
+  border:1px solid #222;
+  padding:1.15rem 1.2rem 1.2rem;
+  border-radius: var(--radius-md);
+  box-shadow: inset 0 0 0 1px #1d1d1d;
+}
+.datos-empresa h2 { font-size:1.2rem; margin:0 0 .9rem; }
+.datos-list li {
+  margin-bottom:.55rem;
+  line-height:1.35;
+  font-size:.93rem;
+}
+.datos-list li:last-child { margin-bottom:0; }
+.datos-list a { color:#ffcaa8; }
+.datos-list a:hover { color:#ffb78a; }
+
+/* Mapa */
+.map-wrapper { width:100%; }
+.map-inner iframe {
+  border:0;
+  border-radius: var(--radius-md);
+  filter: grayscale(.15) brightness(.95);
+  transition: var(--transition);
+}
+.map-inner iframe:hover {
+  filter: grayscale(0) brightness(1);
+}
+
+/* Formulario */
+.contact-form {
+  background:#0c0c0c;
+  border:1px solid #222;
+  padding: clamp(1.1rem,2vw,1.8rem);
+  border-radius: var(--radius-md);
+  box-shadow: inset 0 0 0 1px #1d1d1d;
+  position:relative;
+}
+
+.contact-form .form-label {
+  font-size:.8rem;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  color:#bbb;
+  font-weight:600;
+  margin-bottom:.35rem;
+}
+
+.contact-form .form-control,
+.contact-form .form-select {
+  background:#181818;
+  border:1px solid #2d2d2d;
+  color:#fff;
+  font-size:.95rem;
+  padding:.62rem .85rem;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+.contact-form .form-control:focus,
+.contact-form .form-select:focus {
+  border-color: var(--color-accent);
+  box-shadow: var(--focus-ring);
+  background:#1f1f1f;
+  color:#fff;
+}
+
+.contact-form .form-control.is-invalid,
+.contact-form .form-select.is-invalid,
+.was-validated .contact-form .form-control:invalid,
+.was-validated .contact-form .form-select:invalid {
+  border-color:#b63c3c;
+  box-shadow:0 0 0 3px rgba(182,60,60,.25);
+}
+
+.invalid-feedback { font-size:.75rem; }
+
+/* Botón */
+.btn-accent {
+  background: var(--color-accent);
+  color:#fff;
+  border:none;
+  border-radius: var(--radius-sm);
+  font-weight:600;
+  letter-spacing:.5px;
+  transition: var(--transition);
+  position:relative;
+  overflow:hidden;
+  z-index:0;
+}
+.btn-accent::after {
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(120deg, rgba(255,255,255,.15), transparent 60%);
+  transform:translateX(-70%);
+  transition: .55s ease;
+  z-index:-1;
+}
+.btn-accent:hover::after {
+  transform:translateX(0);
+}
+.btn-accent:hover {
+  background: var(--color-accent-hover);
+  color:#fff;
+  transform:translateY(-2px);
+}
+.btn-accent:active { transform:translateY(0); }
+
+/* Captcha */
+.captcha-box {
+  padding:.65rem .5rem .3rem;
+  background:#141414;
+  border:1px dashed #333;
+  border-radius: var(--radius-sm);
+  display:flex;
+  justify-content:center;
+}
+
+/* Modal */
+.modal-content {
+  background:#141414;
+  color:#fff;
+  border:1px solid #333;
+}
+.modal-header {
+  border-bottom:1px solid #262626;
+}
+.modal-footer {
+  border-top:1px solid #262626;
+}
+
+/* Footer */
+.footer {
+  background:#000;
+  font-size:.95rem;
+}
+.footer-links a {
+  color: var(--color-text-muted);
+  text-decoration:none;
+  font-size:.9rem;
+  transition: var(--transition);
+}
+.footer-links a:hover { color: var(--color-accent); }
+.footer-divider {
+  border:none;
+  height:2px;
+  background: var(--color-accent);
+  width:80%;
+  margin:1.5rem auto;
+}
+
+/* Accesibilidad */
+.form-control:focus-visible,
+.form-select:focus-visible,
+.btn-accent:focus-visible {
+  outline:none;
+  box-shadow: var(--focus-ring);
+}
+
+/* Ajustes Responsive Menores */
+@media (max-width: 575px) {
+  .panel-titulo { font-size:1.35rem; }
+  .contact-form { padding:1rem; }
+  .datos-empresa { padding:1rem 1rem 1.1rem; }
+  .datos-list li { font-size:.88rem; }
+}
+
+/* Scrollbar (opcional) */
+::-webkit-scrollbar { width:10px; }
+::-webkit-scrollbar-track { background:#1e1e1e; }
+::-webkit-scrollbar-thumb { background:#444; border-radius:20px; }
+::-webkit-scrollbar-thumb:hover { background:#555; }

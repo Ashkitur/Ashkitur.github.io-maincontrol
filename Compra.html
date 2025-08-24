@@ -1,215 +1,218 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Compra</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Zona de Compra</title>
   <link rel="stylesheet" href="css/bootstrap.min.css" />
   <link rel="stylesheet" href="cssweb/footerheader.css" />
-  <link rel="stylesheet" href="cssweb/acercade.css">
-  <link rel="stylesheet" href="cssweb/Stepper.css">
+  <link rel="stylesheet" href="cssweb/Stepper.css" />
+  <link rel="stylesheet" href="cssweb/ZonaCompra.css" />
+  <link rel="stylesheet" href="cssweb/pago-responsive.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
 </head>
-
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-dark bg-black">
-
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.html" style="font-weight: bold;" id="texto-logito">
-        <img src="img/LogoPrincipal/ICON.png" alt="Main Control" width="80" height="80">
-        Aim Control
-      </a>
-
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-
-        <!-- LINEA Q DIVIDE  -->
-        <div class="vr mx-3 bg-white" style="opacity: 0.5;"></div>
-
-
-        <div class="navbar-nav mx-auto text-center">
-          <a class="nav-link d-flex align-items-center gap-2" aria-current="page" href="index.html?plataforma=all">
-            <img src="img/Logos/computadora-para-juegos.png" alt="plataformas" width="40" height="40">Todas las
-            plataformas
-          </a>
-
-          <a class="nav-link d-flex align-items-center gap-2" href="PC.html?plataforma=PC">
-            <img src="img/Logos/logotipo-de-steam.png" alt="PC" width="30" height="30"> PC
-          </a>
-
-          <a class="nav-link d-flex align-items-center gap-2" href="PlayStation.html?plataforma=PlayStation">
-            <img src="img/Logos/consoles-ps-512.png" alt="PlayStation" width="30" height="30">PlayStation
-          </a>
-
-          <a class="nav-link d-flex align-items-center gap-2" href="Xbox.html?plataforma=Xbox">
-            <img src="img/Logos/logotipo-de-xbox.png" alt="Xbox" width="30" height="30">Xbox
-          </a>
-
-          <a class="nav-link d-flex align-items-center gap-2" href="NintendoSwitch.html?plataforma=NintendoSwitch">
-            <img src="img/Logos/nintendo-switch.png" alt="Nintendo Switch" width="50" height="44">Nintendo Switch
-          </a>
-        </div>
-
-
-
-      </div>
-
-      <div class="d-flex align-items-center">
-
-        <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <a class="nav-link d-flex align-items-center gap-2" href="compra-detalle.html">
-          <div class="icon-box" style="background-color: #df6011; padding: 9px; border-radius: 15px;">
-            <img src="img/Logos/carrito-de-compras.png" alt="Carrito de Compras" width="30" height="30">
-          </div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-black">
+  <div class="container-fluid">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html" id="texto-logito" style="font-weight:700;">
+      <img src="img/LogoPrincipal/ICON.png" alt="Logo" width="64" height="64" />
+      <span>Aim Control</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+            aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="vr mx-3 bg-white d-none d-lg-block" style="opacity:.4;"></div>
+      <div class="navbar-nav mx-auto text-center">
+        <a class="nav-link d-flex align-items-center gap-2 active" href="index.html?plataforma=all">
+          <img src="img/Logos/computadora-para-juegos.png" width="36" height="36" alt="">Todas las plataformas
         </a>
-
+        <a class="nav-link d-flex align-items-center gap-2" href="PC.html?plataforma=PC">
+          <img src="img/Logos/logotipo-de-steam.png" width="28" height="28" alt="">PC
+        </a>
+        <a class="nav-link d-flex align-items-center gap-2" href="PlayStation.html?plataforma=PlayStation">
+          <img src="img/Logos/consoles-ps-512.png" width="28" height="28" alt="">PlayStation
+        </a>
+        <a class="nav-link d-flex align-items-center gap-2" href="Xbox.html?plataforma=Xbox">
+          <img src="img/Logos/logotipo-de-xbox.png" width="28" height="28" alt="">Xbox
+        </a>
+        <a class="nav-link d-flex align-items-center gap-2" href="NintendoSwitch.html?plataforma=NintendoSwitch">
+          <img src="img/Logos/nintendo-switch.png" width="40" height="34" alt="">Nintendo Switch
+        </a>
       </div>
-
+      <a class="nav-link ms-lg-3" href="compra-detalle.html">
+        <div class="icon-box" style="background:#df6011;padding:9px;border-radius:15px;">
+          <img src="img/Logos/carrito-de-compras.png" width="30" height="30" alt="Carrito">
+        </div>
+      </a>
     </div>
-  </nav>
-
-
-  <div class="container-fluid ">
-
-    <div class="stepper">
-      <div class="step active">
-        <span class="circle">1</span>
-        <p class="mt-2">Carrito</p>
-      </div>
-      <div class="step">
-        <span class="circle">2</span>
-        <p class="mt-2">Informacion</p>
-      </div>
-      <div class="step">
-        <span class="circle">3</span>
-        <p class="mt-2">Confirmación</p>
-      </div>
-      <div class="step">
-        <span class="circle">4</span>
-        <p class="mt-2">Envio</p>
-      </div>
-    </div>
-
   </div>
+</nav>
 
-  <main>
-
-    <div id="Metodos de Pago">
-
-
-      <div class="container-fluid">
-
-        <div class="row">
-          <div class="col">
-          </div>
-          <div class="col">
-          </div>
-          <div class="col">
-          </div>
-        </div>
-
-      </div>
+<main class="py-4">
+  <div class="container">
+    <!-- Stepper -->
+    <div class="stepper d-flex flex-wrap gap-4 justify-content-center mb-4">
+      <div class="step active"><span class="circle">2</span><p class="mt-2 mb-0">Información</p></div>
+      <div class="step"><span class="circle">3</span><p class="mt-2 mb-0">Confirmación</p></div>
+      <div class="step"><span class="circle">4</span><p class="mt-2 mb-0">Envío</p></div>
     </div>
 
-
-
-
-
-
-
-
-    </div>
-    </div>
-
-
-
-
-
-
-
-
-  </main>
-
-
-  <footer class="text-white text-center py-3 bg-black mt-5 h-100 w-100">
-    <div class="container d-flex align-items-start">
-      <div class="left-container">
-        <h5 style="font-weight: bold;">Aim Control</h5>
-        <p><a href=" acercade.html" style="color: #757575; text-decoration: none;">Acerca de</a></p>
-        <p><a href="contactenos.html" style="color: #757575; text-decoration: none;">Contáctenos</a></p>
-
-      </div>
-
-      <div class="vr mx-3 bg-white" style="opacity: 0.5;"></div>
-
-      <div class="center-container">
-        <div class="mb-3">
-          <label for="nombre" class="form-label" style="color: #757575; font-size: 0.45cm;">
-            Obtén ofertas personalizadas de videojuegos
+    <div class="row g-4">
+      <!-- Columna principal -->
+      <div class="col-12 col-lg-8">
+        <!-- Métodos -->
+        <fieldset class="metodos-pago" aria-label="Métodos de pago">
+          <legend class="visually-hidden">Selecciona método de pago</legend>
+          <label class="opcion-pago">
+            <input type="radio" name="metodo_pago" value="tarjeta" checked>
+            <span class="contenido-opcion">
+              <span class="iconos-pago">
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+              </span>
+              <span>Tarjeta</span>
+            </span>
           </label>
-          <input type="text" class="form-control" id="nombre" placeholder="correo@ejemplo.com">
-        </div>
+          <label class="opcion-pago">
+            <input type="radio" name="metodo_pago" value="paypal">
+            <span class="contenido-opcion">
+              <span class="iconos-pago">
+                <i class="fab fa-cc-paypal"></i>
+              </span>
+              <span>PayPal</span>
+            </span>
+          </label>
+          <label class="opcion-pago">
+            <input type="radio" name="metodo_pago" value="movil">
+            <span class="contenido-opcion">
+              <span class="iconos-pago">
+                <i class="fab fa-apple-pay"></i>
+                <i class="fab fa-google-pay"></i>
+              </span>
+              <span>Pago Móvil</span>
+            </span>
+          </label>
+        </fieldset>
 
-        <div class="d-flex justify-content-end">
-          <button type="button" class="btn"
-            style="background-color:#df6011; color:#fff; border-radius:15px; border:none;">
-            Suscribirse
-          </button>
+        <!-- FORM TARJETA -->
+        <form id="form-tarjeta" class="formulario-tarjeta formulario-pago activo" novalidate>
+          <div class="mb-3">
+            <label class="etiqueta-formulario" for="numero-tarjeta">Número de Tarjeta</label>
+            <input type="text" id="numero-tarjeta" class="campo-formulario form-control" placeholder="1234 5678 9012 3456" required inputmode="numeric" autocomplete="cc-number">
+          </div>
+          <div class="mb-3">
+            <label class="etiqueta-formulario" for="titular-tarjeta">Titular de tarjeta</label>
+            <input type="text" id="titular-tarjeta" class="campo-formulario form-control" placeholder="Nombre completo" required autocomplete="cc-name">
+          </div>
+            <div class="row g-3">
+              <div class="col-6">
+                <label class="etiqueta-formulario" for="fecha-expiracion">Fecha de caducidad</label>
+                <input type="text" id="fecha-expiracion" class="campo-formulario form-control" placeholder="MM/AA" required inputmode="numeric" autocomplete="cc-exp">
+              </div>
+              <div class="col-6">
+                <label class="etiqueta-formulario" for="cvv">CVV</label>
+                <input type="password" id="cvv" class="campo-formulario form-control" placeholder="123" maxlength="4" required inputmode="numeric" autocomplete="cc-csc">
+              </div>
+            </div>
+        </form>
 
+        <!-- FORM PAYPAL -->
+        <form id="form-paypal" class="formulario-tarjeta formulario-pago d-none" novalidate>
+          <div class="mb-3">
+            <label class="etiqueta-formulario" for="paypal-email">Correo PayPal</label>
+            <input type="email" id="paypal-email" class="campo-formulario form-control" placeholder="tu-email@ejemplo.com" required>
+          </div>
+          <div class="mb-3">
+            <label class="etiqueta-formulario" for="paypal-pass">Contraseña</label>
+            <input type="password" id="paypal-pass" class="campo-formulario form-control" placeholder="Tu contraseña" required>
+          </div>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="recordar-paypal">
+            <label for="recordar-paypal" class="form-check-label">Recordar mi cuenta</label>
+          </div>
+        </form>
+
+        <!-- FORM MOVIL -->
+        <form id="form-movil" class="formulario-tarjeta formulario-pago d-none" novalidate>
+          <div class="mb-3">
+            <label class="etiqueta-formulario" for="movil-email">Correo electrónico</label>
+            <input type="email" id="movil-email" class="campo-formulario form-control" placeholder="tu-email@ejemplo.com" required>
+          </div>
+          <div class="alert alert-info p-2 small mb-3" style="background:#2c5aa0;border:none;">
+            <i class="fas fa-info-circle me-1"></i> Serás redirigido a Apple Pay o Google Pay para completar el pago.
+          </div>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="terminos-movil" required>
+            <label class="form-check-label" for="terminos-movil">Acepto los términos y condiciones</label>
+          </div>
+        </form>
+
+        <div class="text-end mt-3">
+          <button id="boton-pagar" class="boton-pagar">Pagar</button>
         </div>
       </div>
 
-      <div class="vr mx-3 bg-white" style="opacity: 0.5;"></div>
-
-      <div class="right-container">
-        <h5 style="font-weight: 200;">Síguenos</h5>
-        <div class="d-flex justify-content-center gap-3">
-          <a href="#"><img src="img/facebook.png" alt="Facebook" width="30" height="30"></a>
-          <a href="#"><img src="img/twitter.png" alt="Twitter" width="30" height="30"></a>
-          <a href="#"><img src="img/instagram.png" alt="Instagram" width="30" height="30"></a>
-          <a href="#"><img src="img/youtube.png" alt="YouTube" width="30" height="30"></a>
+      <!-- Columna resumen -->
+      <div class="col-12 col-lg-4">
+        <div class="tarjeta-resumen" id="tarjeta-resumen">
+          <h5>Resumen</h5>
+          <div id="lista-resumen">
+            <!-- Items dinámicos -->
+          </div>
+          <div class="item-resumen total">
+            <span class="titulo-resumen">Total</span>
+            <span class="valor-resumen" id="total-resumen">$0.00</span>
+          </div>
         </div>
-
       </div>
     </div>
+  </div>
+</main>
 
-    <hr style="border: none; height: 2px; background-color: #df6011; width: 80%; margin: 20px auto;">
-
-    <div class="down d-flex justify-content-between align-items-center mt-3 px-3">
-
-      <div class="down-container">
-        <p style="color: #ffffff; font-size: 0.45cm; margin: 0;">
-          © 2023 Aim Control. Todos los derechos reservados.
-        </p>
-      </div>
-
-      <div class="canales-container d-flex">
-        <p style="color: #df6011;">Canales de pago aceptados </p>
-
-        <div class="px-3 mb-2 d-flex">
-          <img src="img/Otros/visa.png" alt="Visa" width="40" height="40" class="mx-2">
-          <img src="img//Otros/logotipo-de-paypal.png" alt="Paypal" width="40" height="40" class="mx-2">
-          <img src="img/Otros/pago-de-apple.png" alt="Apple Pay" width="40" height="40" class="mx-2">
-          <img src="img/Otros/redondo.png" alt="Mastercard" width="40" height="40" class="mx-2">
-
-        </div>
-
-      </div>
-
+<footer class="text-white text-center py-4 bg-black mt-5">
+  <div class="container d-flex flex-wrap gap-4 justify-content-between align-items-start">
+    <div>
+      <h5 class="fw-bold">Aim Control</h5>
+      <p class="mb-1"><a href="acercade.html" class="text-secondary text-decoration-none">Acerca de</a></p>
+      <p class="mb-0"><a href="contactenos.html" class="text-secondary text-decoration-none">Contáctenos</a></p>
     </div>
+    <div class="flex-grow-1" style="max-width:380px;">
+      <label for="correo-news" class="form-label text-secondary small mb-1">Obtén ofertas personalizadas de videojuegos</label>
+      <div class="d-flex gap-2">
+        <input type="email" id="correo-news" class="form-control form-control-sm" placeholder="correo@ejemplo.com">
+        <button class="btn btn-sm" style="background:#df6011;color:#fff;">Suscribirse</button>
+      </div>
+    </div>
+    <div>
+      <h6 class="fw-light">Síguenos</h6>
+      <div class="d-flex gap-3 justify-content-center">
+        <a href="#"><img src="img/facebook.png" width="28" height="28" alt=""></a>
+        <a href="#"><img src="img/twitter.png" width="28" height="28" alt=""></a>
+        <a href="#"><img src="img/instagram.png" width="28" height="28" alt=""></a>
+        <a href="#"><img src="img/youtube.png" width="28" height="28" alt=""></a>
+      </div>
+    </div>
+  </div>
+  <hr style="border:none;height:2px;background:#df6011;width:80%;margin:1.2rem auto;">
+  <div class="container small d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+    <p class="mb-0">&copy; 2023 Aim Control. Todos los derechos reservados.</p>
+    <div class="d-flex align-items-center gap-2">
+      <span style="color:#df6011;">Canales</span>
+      <img src="img/Otros/visa.png" width="34" height="34" alt="Visa">
+      <img src="img/Otros/logotipo-de-paypal.png" width="34" height="34" alt="PayPal">
+      <img src="img/Otros/pago-de-apple.png" width="34" height="34" alt="Apple Pay">
+      <img src="img/Otros/redondo.png" width="34" height="34" alt="Mastercard">
+    </div>
+  </div>
+</footer>
 
-
-  </footer>
-
-  <script src="js/bootstrap.bundle.min.js"></script>
-  <script src="json/digitalkey.juegos.js"></script>
-  <script src="javascript/compra.js"></script>
-  <script src="javascript/compra-detalle.js"></script>
-
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="javascript/compra.js"></script>
+<script src="javascript/compra-detalle.js"></script>
+<script src="javascript/Zona-Compra.js"></script>
 </body>
-
 </html>
