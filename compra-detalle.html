@@ -182,22 +182,35 @@
   </script>
 
 
-  <script>
-              document.addEventListener('DOMContentLoaded', function() {
-              const btn = document.getElementById('btnProceder');
-              if (typeof countCartItems === 'function' && countCartItems() > 0) {
-                btn.disabled = false;
-                btn.onclick = function() {
-                window.location.href = 'Compra.html';
-                };
-              } else {
-                btn.disabled = true;
-                btn.onclick = null;
-              }
-              });
+<script>
 
-              
-            </script>
+  function actualizarBotonProceder() {
+    const btn = document.getElementById('btnProceder');
+    const cart = getCart() || []; 
+
+    if (cart.length > 0) {
+      btn.disabled = false;
+      btn.onclick = function() {
+        window.location.href = 'Compra.html';
+      };
+    } else {
+      btn.disabled = true;
+      btn.onclick = null;
+    }
+  }
+
+
+  document.addEventListener('DOMContentLoaded', actualizarBotonProceder);
+ 
+  function eliminarItem(idJuego) {
+    let cartArray = getCart() || [];
+    cartArray = cartArray.filter(item => item.id !== idJuego);
+    
+    saveCart(cartArray);
+    showDetail();
+    actualizarBotonProceder(); 
+  }
+</script>
 
 
 
