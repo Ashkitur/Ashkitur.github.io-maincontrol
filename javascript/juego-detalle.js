@@ -12,6 +12,13 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
 
+
+      // Asignar el ID al data-attribute del botón
+  const button = document.getElementById('addToCartBtn');
+  button.dataset.productId = idParam;
+
+
+  
   console.log("Juego encontrado", juego);
 
   document.getElementById("title").textContent = juego.nombre;

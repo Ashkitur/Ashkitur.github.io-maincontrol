@@ -12,28 +12,30 @@ function getCart() {
     const cart = localStorage.getItem("compra")
     return cart ? JSON.parse(cart) : []
 }
-
 function addToCart(idJuego) {
-    const Juego = juegos.find((b) => b.id == idJuego)
+
+    const idJuegoNum = parseInt(idJuego);
+    
+    const Juego = juegos.find((b) => b.id == idJuegoNum);
 
     const carItem = {
         id: Juego.id,
         nombre: Juego.nombre,
         precio: Juego.precio,
         quantity: 1  
-    }
+    };
 
-    let cartArray = getCart()
-    const indexItem = cartArray.findIndex((juego) => juego.id === idJuego)
+    let cartArray = getCart();
+    
+    const indexItem = cartArray.findIndex((juego) => juego.id === idJuegoNum);
 
     if (indexItem !== -1) {
-        cartArray[indexItem].quantity += 1
-        alert(`"${carItem.nombre}" agregado al carrito`);
+        cartArray[indexItem].quantity += 1;
+        alert(`"${carItem.nombre}" agregado al carrito. Cantidad: ${cartArray[indexItem].quantity}`);
     } else {
-        cartArray.push(carItem)
+        cartArray.push(carItem);
         alert(`"${carItem.nombre}" agregado al carrito`);
     }
 
-    saveCart(cartArray)
+    saveCart(cartArray);
 }
-
