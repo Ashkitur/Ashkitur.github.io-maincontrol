@@ -56,7 +56,7 @@ function showDetail() {
     <div class="col-auto col-remove">
       <button type="button"
               class="btn btn-danger btn-sm remove-btn"
-              onclick="eliminarItem(${item.id})"
+              onclick="eliminarItem(${item.id}) "
               aria-label="Eliminar ${item.nombre}">
         x
       </button>
@@ -114,41 +114,50 @@ function showDetail() {
 }
 
 function cambiarCantidad(input) {
-    const id = input.dataset.id;
-    let carrito = getCart();
-    const index = carrito.findIndex(item => item.id == id);
+  const id = input.dataset.id;
+  let carrito = getCart() || [];
+  const index = carrito.findIndex(item => item.id == id);
 
-    if (index !== -1) {
-        const cantidad = parseInt(input.value, 10);
+  if (index !== -1) {
+    const cantidad = parseInt(input.value, 10) || 0;
 
-        if (cantidad <= 0) {
-         
-             carrito.splice(index, 1);
-            
-        } else {
-            carrito[index].quantity = cantidad;
-        
-        }
-
-        saveCart(carrito);
-        showDetail();
-    }
-}
-
-
-
-function eliminarItem(idJuego){
-    let cartArray = getCart();
-    if(cartArray.length > 0){
-        cartArray = cartArray.filter(item => item.id !== idJuego);
-      
-        saveCart(cartArray);
-        showDetail();
+    if (cantidad <= 0) {
+   
+      carrito.splice(index, 1);
     } else {
-        
-
+   
+      carrito[index].quantity = cantidad;
     }
+
+    saveCart(carrito);
+
+   
+    showDetail();
+
+    actualizarBotonProceder();
+  }
 }
+
+
+
+function eliminarItem(idJuego) {
+  let cartArray = getCart() || []; 
+
+  if (cartArray.length > 0) {
+    cartArray = cartArray.filter(item => item.id !== idJuego);
+
+    saveCart(cartArray);  
+    showDetail();          
+
+    updateProceedButton(); 
+  } else {
+    
+    saveCart([]);          
+    showDetail();
+    updateProceedButton();
+  }
+}
+
 
 function updateCartItemQty(element) {
     const idJuego = element.dataset.id;
