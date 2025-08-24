@@ -13,62 +13,46 @@
 <body>
 
   <!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-black">
-
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.html" style="font-weight: bold;" id="texto-logito">
-        <img src="img/LogoPrincipal/ICON.png" alt="Main Control" width="80" height="80">
-        Aim Control
+  <nav class="navbar navbar-expand-lg navbar-dark bg-black py-2">
+    <div class="container-fluid px-3">
+      <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="index.html" id="texto-logito">
+        <img src="img/LogoPrincipal/ICON.png" alt="Logo Aim Control" width="64" height="64" class="img-fluid">
+        <span>Aim Control</span>
       </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+              aria-expanded="false" aria-label="Menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="collapse navbar-collapse mt-3 mt-lg-0" id="navbarNavAltMarkup">
+        <div class="vr mx-3 bg-white d-none d-lg-block opacity-50"></div>
+        <div class="navbar-nav mx-auto text-center gap-lg-1">
 
-        <!-- LINEA Q DIVIDE  -->
-        <div class="vr mx-3 bg-white" style="opacity: 0.5;"></div>
-
-
-        <div class="navbar-nav mx-auto text-center">
-          <a style= "color: #df6011; font-weight: 600;" class="nav-link d-flex align-items-center gap-2" aria-current="page" href="index.html?plataforma=all"
-           >
-            <img src="img/Logos/computadora-para-juegos.png" alt="plataformas" width="40" height="40">Todas las plataformas
+          <a class="nav-link d-flex align-items-center gap-2" href="index.html?plataforma=all" style="color: #df6011; font-weight: 600;">
+            <img src="img/Logos/computadora-para-juegos.png" width="34" height="34" alt="">Todas las plataformas
           </a>
-
-          <a  class="nav-link d-flex align-items-center gap-2" href="PC.html?plataforma=PC">
-            <img src="img/Logos/logotipo-de-steam.png" alt="PC" width="30" height="30"> PC
+          <a class="nav-link d-flex align-items-center gap-2" href="PC.html?plataforma=PC">
+            <img src="img/Logos/logotipo-de-steam.png" width="26" height="26" alt="">PC
           </a>
-
           <a class="nav-link d-flex align-items-center gap-2" href="PlayStation.html?plataforma=PlayStation">
-            <img src="img/Logos/consoles-ps-512.png" alt="PlayStation" width="30" height="30">PlayStation
+            <img src="img/Logos/consoles-ps-512.png" width="26" height="26" alt="">PlayStation
           </a>
-
           <a class="nav-link d-flex align-items-center gap-2" href="Xbox.html?plataforma=Xbox">
-            <img src="img/Logos/logotipo-de-xbox.png" alt="Xbox" width="30" height="30">Xbox
+            <img src="img/Logos/logotipo-de-xbox.png" width="26" height="26" alt="">Xbox
           </a>
-
           <a class="nav-link d-flex align-items-center gap-2" href="NintendoSwitch.html?plataforma=NintendoSwitch">
-            <img src="img/Logos/nintendo-switch.png" alt="Nintendo Switch" width="50" height="44">Nintendo Switch
+            <img src="img/Logos/nintendo-switch.png" width="40" height="34" alt="">Nintendo Switch
           </a>
         </div>
-
-
-
+        <div class="d-flex justify-content-center mt-3 mt-lg-0">
+            <a class="nav-link d-flex align-items-center gap-2" href="compra-detalle.html">
+              <div class="icon-box bg-accent d-inline-flex justify-content-center align-items-center">
+                <img src="img/Logos/carrito-de-compras.png" alt="Carrito" width="26" height="26">
+              </div>
+            </a>
+        </div>
       </div>
-
-      <div class="d-flex align-items-center">
-
-        <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-       <a class="nav-link d-flex align-items-center gap-2" href="compra-detalle.html">
-          <div class="icon-box" style="background-color: #df6011; padding: 9px; border-radius: 15px;" >
-            <img src="img/Logos/carrito-de-compras.png" alt="Carrito de Compras" width="30" height="30">
-          </div>
-        </a>
-
-      </div>
-
     </div>
   </nav>
   <main id="index" class="flex-grow-1">

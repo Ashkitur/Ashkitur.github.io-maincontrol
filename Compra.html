@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="css/bootstrap.min.css" />
   <link rel="stylesheet" href="cssweb/footerheader.css" />
   <link rel="stylesheet" href="cssweb/Stepper.css" />
+    <link rel="stylesheet" href="cssweb/indexstyles.css" />
   <link rel="stylesheet" href="cssweb/ZonaCompra.css" />
   <link rel="stylesheet" href="cssweb/pago-responsive.css" />
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
@@ -137,7 +138,7 @@
         </form>
 
         <!-- FORM MOVIL -->
-        <form id="form-movil" class="formulario-tarjeta formulario-pago d-none" novalidate>
+        <form id="form-movil" class="formulario-tarjeta formulario-pago d-none" novalidate>   
           <div class="mb-3">
             <label class="etiqueta-formulario" for="movil-email">Correo electrónico</label>
             <input type="email" id="movil-email" class="campo-formulario form-control" placeholder="tu-email@ejemplo.com" required>
@@ -152,7 +153,35 @@
         </form>
 
         <div class="text-end mt-3">
-          <button id="boton-pagar" class="boton-pagar">Pagar</button>
+          <button id="boton-pagar" class="boton-pagar" type="button" onclick="redirigirAPagar(); mostrarMetodoPago(document.querySelector('input[name=&quot;metodo_pago&quot;]:checked').value);">Pagar</button>
+          <script>
+            function validarFormularios() {
+       
+              const metodo = document.querySelector('input[name="metodo_pago"]:checked').value;
+              let form;
+              if (metodo === "tarjeta") form = document.getElementById("form-tarjeta");
+              else if (metodo === "paypal") form = document.getElementById("form-paypal");
+              else if (metodo === "movil") form = document.getElementById("form-movil");
+              if (!form) return false;
+        
+              const campos = form.querySelectorAll("[required]");
+              for (const campo of campos) {
+                if (!campo.value || (campo.type === "checkbox" && !campo.checked)) {
+                  campo.focus();
+                  return false;
+                }
+              }
+              return true;
+            }
+
+            function redirigirAPagar() {
+              if (validarFormularios()) {
+                window.location.href = "pagar.html";
+              } else {
+                alert("Por favor, completa todos los campos requeridos.");
+              }
+            }
+          </script>
         </div>
       </div>
 
@@ -165,31 +194,44 @@
           </div>
           <div class="item-resumen total">
             <span class="titulo-resumen">Total</span>
-            <span class="valor-resumen" id="total-resumen">$0.00</span>
+            <span class="valor-resumen" id="total-compra">$0.00</span>
           </div>
+
+  <div class="item-resumen subtotal">
+    <span class="titulo-resumen">Subtotal</span>
+    <span class="valor-resumen" id="total-neto">$0.00</span>
+  </div>
+
+    <div class="item-resumen impuestos">
+      <span class="titulo-resumen">Impuestos</span>
+      <span class="valor-resumen" id="impuesto-acobrar">$0.00</span>
+    </div>
+
         </div>
       </div>
     </div>
   </div>
 </main>
-
-<footer class="text-white text-center py-4 bg-black mt-5">
-  <div class="container d-flex flex-wrap gap-4 justify-content-between align-items-start">
-    <div>
-      <h5 class="fw-bold">Aim Control</h5>
-      <p class="mb-1"><a href="acercade.html" class="text-secondary text-decoration-none">Acerca de</a></p>
-      <p class="mb-0"><a href="contactenos.html" class="text-secondary text-decoration-none">Contáctenos</a></p>
-    </div>
-    <div class="flex-grow-1" style="max-width:380px;">
-      <label for="correo-news" class="form-label text-secondary small mb-1">Obtén ofertas personalizadas de videojuegos</label>
-      <div class="d-flex gap-2">
-        <input type="email" id="correo-news" class="form-control form-control-sm" placeholder="correo@ejemplo.com">
-        <button class="btn btn-sm" style="background:#df6011;color:#fff;">Suscribirse</button>
-      </div>
-    </div>
-    <div>
-      <h6 class="fw-light">Síguenos</h6>
-     <div class="d-flex flex-wrap gap-3">
+<footer class="footer text-white mt-auto">
+    <div class="container py-4">
+      <div class="row gy-4 align-items-start">
+        <div class="col-12 col-md-4">
+          <h5 class="fw-bold mb-2">Aim Control</h5>
+          <ul class="list-unstyled footer-links mb-0">
+            <li><a href="acercade.html">Acerca de</a></li>
+            <li><a href="contactenos.html">Contáctenos</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-4">
+          <h6 class="text-secondary mb-2">Ofertas personalizadas</h6>
+          <form class="d-flex flex-column flex-sm-row gap-2">
+            <input type="email" class="form-control form-control-sm" placeholder="correo@ejemplo.com" aria-label="Correo">
+            <button type="button" class="btn btn-accent btn-sm">Suscribirse</button>
+          </form>
+        </div>
+        <div class="col-12 col-md-4">
+          <h6 class="text-secondary mb-2">Síguenos</h6>
+         <div class="d-flex flex-wrap gap-3">
         <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
           <img src="img/Logos/facebook.png" width="30" height="30" alt="Facebook">
         </a>
@@ -203,24 +245,32 @@
           <img src="img/Logos/youtube.png" width="30" height="30" alt="YouTube">
         </a>
       </div>
+        </div>
+      </div>
+      <hr class="footer-divider my-4">
+      <div class="d-flex flex-column flex-lg-row justify-content-between align-items-center gap-3 small">
+        <p class="mb-0">&copy; 2023 Aim Control. Todos los derechos reservados.</p>
+        <div class="d-flex align-items-center flex-wrap gap-2">
+          <span class="text-accent fw-semibold">Canales</span>
+          <img src="img/Otros/visa.png" width="36" height="36" alt="Visa">
+          <img src="img/Otros/logotipo-de-paypal.png" width="36" height="36" alt="PayPal">
+          <img src="img/Otros/pago-de-apple.png" width="36" height="36" alt="Apple Pay">
+          <img src="img/Otros/redondo.png" width="36" height="36" alt="Mastercard">
+        </div>
+      </div>
     </div>
-  </div>
-  <hr style="border:none;height:2px;background:#df6011;width:80%;margin:1.2rem auto;">
-  <div class="container small d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
-    <p class="mb-0">&copy; 2023 Aim Control. Todos los derechos reservados.</p>
-    <div class="d-flex align-items-center gap-2">
-      <span style="color:#df6011;">Canales</span>
-      <img src="img/Otros/visa.png" width="34" height="34" alt="Visa">
-      <img src="img/Otros/logotipo-de-paypal.png" width="34" height="34" alt="PayPal">
-      <img src="img/Otros/pago-de-apple.png" width="34" height="34" alt="Apple Pay">
-      <img src="img/Otros/redondo.png" width="34" height="34" alt="Mastercard">
-    </div>
-  </div>
-</footer>
+  </footer>
+
 
 <script src="js/bootstrap.bundle.min.js"></script>
-<script src="javascript/compra.js"></script>
-<script src="javascript/compra-detalle.js"></script>
 <script src="javascript/Zona-Compra.js"></script>
+  <script src="json/digitalkey.juegos.js"></script>
+  <script src="javascript/compra.js"></script>
+  <script src="javascript/compra-detalle.js"></script>
+ 
+ <script>
+    document.addEventListener('DOMContentLoaded', showDetail);
+  </script>
+
 </body>
 </html>

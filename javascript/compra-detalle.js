@@ -110,7 +110,7 @@ function showDetail() {
     }
 
     document.getElementById("detail").innerHTML = cartRowHTML;
-    document.getElementById("total-items").textContent = itemCount;
+   // document.getElementById("total-items").textContent = itemCount;
 }
 
 function cambiarCantidad(input) {
