@@ -29,14 +29,14 @@ function displayJuegos(data) {
     const col = document.createElement("div");
     col.style.flex = "1 1 calc(25% - 30px)"; // 4 por fila, resta el gap
     col.style.maxWidth = "calc(25% - 30px)";
-    col.style.minWidth = "260px"; // Opcional: para responsividad
+    col.style.minWidth = "290px"; 
 
    
     col.classList.add("animate__animated", "animate__fadeInUp");
 
     col.innerHTML = `
       <div class="card h-100 d-flex flex-column shadow-lg juego-item"
-        style="background-color: #121212; color: white; border-radius: 28px; overflow: hidden; width: 100%; max-width: 100%; min-width: 220px; padding: 20px; box-sizing: border-box;">
+        style="background-color: #121212; color: white; border-radius: 28px; overflow: hidden; width: 100%; max-width: 100%; min-width: 220px; padding: 15px; box-sizing: border-box;">
         <!-- Portada -->
         <div class="text-center mb-3">
           <img src="${juego.portada}" 
