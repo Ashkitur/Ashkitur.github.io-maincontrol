@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function mostrarForm(valor){
     Object.entries(forms).forEach(([k, f]) => {
+      if (!f) return;
       if (k === valor){
         f.classList.add('activo');
         f.classList.remove('d-none');
@@ -26,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Formato simple para número de tarjeta y fecha
   const numeroTarjeta = document.getElementById('numero-tarjeta');
   const fecha = document.getElementById('fecha-expiracion');
+  const cvv = document.getElementById('cvv'); // NUEVO
 
   numeroTarjeta?.addEventListener('input', e => {
     let v = e.target.value.replace(/\D/g,'').slice(0,16);
@@ -38,30 +40,59 @@ document.addEventListener('DOMContentLoaded', () => {
     e.target.value = v;
   });
 
+  // Control CVV: solo dígitos, máximo 3
+  cvv?.addEventListener('input', e => {
+    const soloDigitos = e.target.value.replace(/\D/g,'').slice(0,3);
+    if (e.target.value !== soloDigitos) {
+      e.target.value = soloDigitos;
+    }
+  });
+
+  // (Opcional) Evitar tecleo de no dígitos (cubre antes de insertarse)
+  cvv?.addEventListener('keydown', e => {
+    // Permitir teclas de control
+    const controlKeys = ['Backspace','Delete','Tab','ArrowLeft','ArrowRight','Home','End'];
+    if (controlKeys.includes(e.key) || (e.ctrlKey || e.metaKey)) return;
+    if (!/^\d$/.test(e.key) || e.target.value.length >= 3) {
+      e.preventDefault();
+    }
+  });
+
   payBtn?.addEventListener('click', () => {
-  const metodo = document.querySelector('input[name="metodo_pago"]:checked')?.value;
-  const formActivo = forms[metodo];
-  if (!formActivo) return;
+    const metodo = document.querySelector('input[name="metodo_pago"]:checked')?.value;
+    const formActivo = forms[metodo];
+    if (!formActivo) return;
 
-  // Validación básica
-  const invalid = [...formActivo.querySelectorAll('input[required]')]
-    .some(inp => !inp.value.trim());
+    // Validación básica
+    const requiredInputs = [...formActivo.querySelectorAll('input[required]')];
+    let invalid = false;
 
-  if (invalid) {
-    formActivo.querySelectorAll('input[required]').forEach(inp => {
-      if (!inp.value.trim()) inp.classList.add('is-invalid');
-      else inp.classList.remove('is-invalid');
+    requiredInputs.forEach(inp => {
+      const vacio = !inp.value.trim();
+      // Validación específica para CVV
+      if (inp.id === 'cvv') {
+        const ok = /^\d{3}$/.test(inp.value);
+        if (!ok) {
+          invalid = true;
+          inp.classList.add('is-invalid');
+          return;
+        }
+      }
+      if (vacio) {
+        invalid = true;
+        inp.classList.add('is-invalid');
+      } else if (inp.id !== 'cvv') {
+        inp.classList.remove('is-invalid');
+      } else {
+        inp.classList.remove('is-invalid');
+      }
     });
-    return;
-  }
 
-  alert('Procesando pago con método: ' + metodo);
+    if (invalid) return;
 
-  // Guardamos el método de pago en localStorage
-  localStorage.setItem('metodoPago', metodo);
+    alert('Procesando pago con método: ' + metodo);
 
-  // Redirigimos a la página de la factura
-  window.location.href = 'pagar.html';
-});
-
+    localStorage.setItem('metodoPago', metodo);
+    window.location.href = 'pagar.html';
+  });
 });

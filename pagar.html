@@ -7,205 +7,195 @@
   <link rel="stylesheet" href="css/bootstrap.min.css" />
   <link rel="stylesheet" href="cssweb/footerheader.css" />
   <link rel="stylesheet" href="cssweb/Stepper.css" />
-    <link rel="stylesheet" href="cssweb/indexstyles.css" />
+  <link rel="stylesheet" href="cssweb/indexstyles.css" />
   <link rel="stylesheet" href="cssweb/ZonaCompra.css" />
-  <link rel="stylesheet" href="cssweb/pago-responsive.css" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  
+  <!-- NUEVO CSS de overrides responsivos -->
+                      
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-black">
-  <div class="container-fluid">
-    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html" id="texto-logito" style="font-weight:700;">
-      <img src="img/LogoPrincipal/ICON.png" alt="Logo" width="64" height="64" />
-      <span>Aim Control</span>
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
-            aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="vr mx-3 bg-white d-none d-lg-block" style="opacity:.4;"></div>
-      <div class="navbar-nav mx-auto text-center">
-        <a class="nav-link d-flex align-items-center gap-2 active" href="index.html?plataforma=all">
-          <img src="img/Logos/computadora-para-juegos.png" width="36" height="36" alt="">Todas las plataformas
-        </a>
-        <a class="nav-link d-flex align-items-center gap-2" href="PC.html?plataforma=PC">
-          <img src="img/Logos/logotipo-de-steam.png" width="28" height="28" alt="">PC
-        </a>
-        <a class="nav-link d-flex align-items-center gap-2" href="PlayStation.html?plataforma=PlayStation">
-          <img src="img/Logos/consoles-ps-512.png" width="28" height="28" alt="">PlayStation
-        </a>
-        <a class="nav-link d-flex align-items-center gap-2" href="Xbox.html?plataforma=Xbox">
-          <img src="img/Logos/logotipo-de-xbox.png" width="28" height="28" alt="">Xbox
-        </a>
-        <a class="nav-link d-flex align-items-center gap-2" href="NintendoSwitch.html?plataforma=NintendoSwitch">
-          <img src="img/Logos/nintendo-switch.png" width="40" height="34" alt="">Nintendo Switch
-        </a>
-      </div>
-      <a class="nav-link ms-lg-3" href="compra-detalle.html">
-        <div class="icon-box" style="background:#df6011;padding:9px;border-radius:15px;">
-          <img src="img/Logos/carrito-de-compras.png" width="30" height="30" alt="Carrito">
-        </div>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-black py-2">
+    <div class="container-fluid px-3">
+      <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="index.html" id="texto-logito">
+        <img src="img/LogoPrincipal/ICON.png" alt="Logo Aim Control" width="64" height="64" class="img-fluid">
+        <span>Aim Control</span>
       </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+              aria-expanded="false" aria-label="Menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse mt-3 mt-lg-0" id="navbarNavAltMarkup">
+        <div class="vr mx-3 bg-white d-none d-lg-block opacity-50"></div>
+        <div class="navbar-nav mx-auto text-center gap-lg-1">
+
+          <a class="nav-link d-flex align-items-center gap-2" href="index.html?plataforma=all" style="color: #df6011; font-weight: 600;">
+            <img src="img/Logos/computadora-para-juegos.png" width="34" height="34" alt="">Todas las plataformas
+          </a>
+          <a class="nav-link d-flex align-items-center gap-2" href="PC.html?plataforma=PC">
+            <img src="img/Logos/logotipo-de-steam.png" width="26" height="26" alt="">PC
+          </a>
+          <a class="nav-link d-flex align-items-center gap-2" href="PlayStation.html?plataforma=PlayStation">
+            <img src="img/Logos/consoles-ps-512.png" width="26" height="26" alt="">PlayStation
+          </a>
+          <a class="nav-link d-flex align-items-center gap-2" href="Xbox.html?plataforma=Xbox">
+            <img src="img/Logos/logotipo-de-xbox.png" width="26" height="26" alt="">Xbox
+          </a>
+          <a class="nav-link d-flex align-items-center gap-2" href="NintendoSwitch.html?plataforma=NintendoSwitch">
+            <img src="img/Logos/nintendo-switch.png" width="40" height="34" alt="">Nintendo Switch
+          </a>
+        </div>
+        <div class="d-flex justify-content-center mt-3 mt-lg-0">
+            <a class="nav-link d-flex align-items-center gap-2" href="compra-detalle.html">
+              <div class="icon-box bg-accent d-inline-flex justify-content-center align-items-center">
+                <img src="img/Logos/carrito-de-compras.png" alt="Carrito" width="26" height="26">
+              </div>
+            </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+<main class="py-4 main-compra">
+  <div class="container">
+    <!-- Stepper -->
+    <div class="stepper d-flex flex-nowrap flex-lg-wrap gap-4 justify-content-center mb-4" aria-label="Progreso de compra">
+      <div class="step"><span class="circle">2</span><p class="mt-2 mb-0">Información</p></div>
+      <div class="step active" aria-current="step"><span class="circle">3</span><p class="mt-2 mb-0">Confirmación</p></div>
+      <div class="step"><span class="circle">4</span><p class="mt-2 mb-0">Envío</p></div>
+    </div>
+
+    <!-- GRID RESPONSIVE (sin JS) -->
+    <div class="compra-grid">
+      <!-- Detalle Factura -->
+      <div id="detalle-factura-container" class="mb-4 panel-factura">
+        <div class="card shadow-sm factura-card" style="border-radius:16px;">
+          <div class="card-body p-3">
+            <h5 class="card-title mb-3 title-section">
+              <i class="fa-solid fa-file-invoice-dollar me-2 text-accent"></i>Detalle de la Factura
+            </h5>
+            <div class="table-responsive tabla-wrapper">
+              <table class="table table-bordered mb-0 tabla-factura"
+                     style="--col1:'Nombre';--col2:'Cantidad';--col3:'Precio';--col4:'Subtotal';">
+                <thead class="table-light">
+                  <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Subtotal</th>
+                  </tr>
+                </thead>
+                <tbody id="detalle-factura" >
+                  <!-- Filas dinámicas -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Resumen -->
+      <aside class="tarjeta-resumen" id="tarjeta-resumen">
+        <div class="resumen-inner">
+          <h5 class="mb-3 title-section"><i class="fa-solid fa-receipt me-2 text-accent"></i>Resumen</h5>
+          <div id="lista-resumen" class="lista-resumen">
+            <!-- Items dinámicos -->
+          </div>
+          <div class="item-resumen total">
+            <span class="titulo-resumen">Total</span>
+            <span class="valor-resumen" id="total-compra">$0.00</span>
+          </div>
+          <div class="item-resumen subtotal">
+            <span class="titulo-resumen">Subtotal</span>
+            <span class="valor-resumen" id="total-neto">$0.00</span>
+          </div>
+            <div class="item-resumen impuestos">
+              <span class="titulo-resumen">Impuestos</span>
+              <span class="valor-resumen" id="impuesto-acobrar">$0.00</span>
+            </div>
+          <div class="item-resumen metodopago">
+            <span class="titulo-resumen">Método de Pago</span>
+            <span class="valor-resumen badge-metodo" id="metodo-pago-factura">-.-</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <!-- Botón Recibir Código -->
+    <div class="text-center mt-4">
+      <button type="button" class="btn btn-lg btn-recibir-codigo">
+        Recibir código
+      </button>
     </div>
   </div>
-</nav>
-
-
-
-
-<main class="py-4">
-<div class="container"></div>
-    <!-- Stepper -->
-    <div class="stepper d-flex flex-wrap gap-4 justify-content-center mb-4">
-        <div class="step"><span class="circle">2</span><p class="mt-2 mb-0">Información</p></div>
-        <div class="step active"><span class="circle">3</span><p class="mt-2 mb-0">Confirmación</p></div>
-        <div class="step"><span class="circle">4</span><p class="mt-2 mb-0">Envío</p></div>
-    </div>
-
-    <div class="row g-4">
-     
-            <!-- Lugar para mostrar el detalle de la factura -->
-            <div id="detalle-factura-container" class="col-12 col-md-8 mx-auto mb-4">
-                <div class="card shadow-sm" style="border-radius: 16px;">
-                    <div class="card-body p-3">
-                        <h5 class="card-title mb-3">Detalle de la Factura</h5>
-                        <div class="table-responsive">
-                            <table class="table table-bordered mb-0">
-                                <thead class="table-light">
-                                    <tr>
-                                        <th>Nombre</th>
-                                        <th>Cantidad</th>
-                                        <th>Precio</th>
-                                        <th>Subtotal</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="detalle-factura">
-                                 
-
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        <!-- Columna resumen -->
-        <div class="col-12 d-flex justify-content-center">
-            <div class="tarjeta-resumen" id="tarjeta-resumen" style="max-width:340px; width:100%;">
-                    <h5>Resumen</h5>
-                    <div id="lista-resumen">
-                            <!-- Items dinámicos -->
-                    </div>
-                    <div class="item-resumen total">
-                            <span class="titulo-resumen">Total</span>
-                            <span class="valor-resumen" id="total-compra">$0.00</span>
-                    </div>
-                    <div class="item-resumen subtotal">
-                            <span class="titulo-resumen">Subtotal</span>
-                            <span class="valor-resumen" id="total-neto">$0.00</span>
-                    </div>
-                    <div class="item-resumen impuestos">
-                            <span class="titulo-resumen">Impuestos</span>
-                            <span class="valor-resumen" id="impuesto-acobrar">$0.00</span>
-                    </div>
-                <div class="item-resumen metodopago">
-                <span class="titulo-resumen">Método de Pago</span>
-                <span class="valor-resumen" id="metodo-pago-factura">-.-</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Botón Recibir código centrado -->
-        <div class="col-12 d-flex justify-content-center mt-4">
-            <button type="button" class="btn btn-lg" style="background-color: #df6011; color: #fff; font-weight: bold;">
-                Recibir código
-            </button>
-        </div>
-    </div>
-</div>
 </main>
 
-
-
 <footer class="footer text-white mt-auto">
-    <div class="container py-4">
-      <div class="row gy-4 align-items-start">
-        <div class="col-12 col-md-4">
-          <h5 class="fw-bold mb-2">Aim Control</h5>
-          <ul class="list-unstyled footer-links mb-0">
-            <li><a href="acercade.html">Acerca de</a></li>
-            <li><a href="contactenos.html">Contáctenos</a></li>
-          </ul>
-        </div>
-        <div class="col-12 col-md-4">
-          <h6 class="text-secondary mb-2">Ofertas personalizadas</h6>
-          <form class="d-flex flex-column flex-sm-row gap-2">
-            <input type="email" class="form-control form-control-sm" placeholder="correo@ejemplo.com" aria-label="Correo">
-            <button type="button" class="btn btn-accent btn-sm">Suscribirse</button>
-          </form>
-        </div>
-        <div class="col-12 col-md-4">
-          <h6 class="text-secondary mb-2">Síguenos</h6>
-         <div class="d-flex flex-wrap gap-3">
-        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-          <img src="img/Logos/facebook.png" width="30" height="30" alt="Facebook">
-        </a>
-        <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-          <img src="img/Logos/twitter.png" width="30" height="30" alt="Twitter">
-        </a>
-        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-          <img src="img/Logos/instagram.png" width="30" height="30" alt="Instagram">
-        </a>
-        <a href="https://www.youtube.com/watch?v=2XhVg38cDTU" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-          <img src="img/Logos/youtube.png" width="30" height="30" alt="YouTube">
-        </a>
+  <div class="container py-4">
+    <div class="row gy-4 align-items-start">
+      <div class="col-12 col-md-4">
+        <h5 class="fw-bold mb-2">Aim Control</h5>
+        <ul class="list-unstyled footer-links mb-0">
+          <li><a href="acercade.html">Acerca de</a></li>
+          <li><a href="contactenos.html">Contáctenos</a></li>
+        </ul>
       </div>
-        </div>
+      <div class="col-12 col-md-4">
+        <h6 class="text-secondary mb-2">Ofertas personalizadas</h6>
+        <form class="d-flex flex-column flex-sm-row gap-2">
+          <input type="email" class="form-control form-control-sm" placeholder="correo@ejemplo.com" aria-label="Correo">
+          <button type="button" class="btn btn-accent btn-sm">Suscribirse</button>
+        </form>
       </div>
-      <hr class="footer-divider my-4">
-      <div class="d-flex flex-column flex-lg-row justify-content-between align-items-center gap-3 small">
-        <p class="mb-0">&copy; 2023 Aim Control. Todos los derechos reservados.</p>
-        <div class="d-flex align-items-center flex-wrap gap-2">
-          <span class="text-accent fw-semibold">Canales</span>
-          <img src="img/Otros/visa.png" width="36" height="36" alt="Visa">
-          <img src="img/Otros/logotipo-de-paypal.png" width="36" height="36" alt="PayPal">
-          <img src="img/Otros/pago-de-apple.png" width="36" height="36" alt="Apple Pay">
-          <img src="img/Otros/redondo.png" width="36" height="36" alt="Mastercard">
+      <div class="col-12 col-md-4">
+        <h6 class="text-secondary mb-2">Síguenos</h6>
+        <div class="d-flex flex-wrap gap-3">
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <img src="img/Logos/facebook.png" width="30" height="30" alt="Facebook">
+          </a>
+          <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+            <img src="img/Logos/twitter.png" width="30" height="30" alt="Twitter">
+          </a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <img src="img/Logos/instagram.png" width="30" height="30" alt="Instagram">
+          </a>
+          <a href="https://www.youtube.com/watch?v=2XhVg38cDTU" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <img src="img/Logos/youtube.png" width="30" height="30" alt="YouTube">
+          </a>
         </div>
       </div>
     </div>
-  </footer>
-
+    <hr class="footer-divider my-4">
+    <div class="d-flex flex-column flex-lg-row justify-content-between align-items-center gap-3 small">
+      <p class="mb-0">&copy; 2023 Aim Control. Todos los derechos reservados.</p>
+      <div class="d-flex align-items-center flex-wrap gap-2">
+        <span class="text-accent fw-semibold">Canales</span>
+        <img src="img/Otros/visa.png" width="36" height="36" alt="Visa">
+        <img src="img/Otros/logotipo-de-paypal.png" width="36" height="36" alt="PayPal">
+        <img src="img/Otros/pago-de-apple.png" width="36" height="36" alt="Apple Pay">
+        <img src="img/Otros/redondo.png" width="36" height="36" alt="Mastercard">
+      </div>
+    </div>
+  </div>
+</footer>
 
 <script src="js/bootstrap.bundle.min.js"></script>
 <script src="javascript/Zona-Compra.js"></script>
-  <script src="json/digitalkey.juegos.js"></script>
-  <script src="javascript/compra.js"></script>
-  <script src="javascript/compra-detalle.js"></script>
-  <script src="javascript/factura-compra.js"> </script>
- 
-
-  
- <script>
-    document.addEventListener('DOMContentLoaded', showFacturaDetalle);
-  </script>
-
+<script src="json/digitalkey.juegos.js"></script>
+<script src="javascript/compra.js"></script>
+<script src="javascript/compra-detalle.js"></script>
+<script src="javascript/factura-compra.js"></script>
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener('DOMContentLoaded', showFacturaDetalle);
+  document.addEventListener('DOMContentLoaded', showDetail);
+  document.addEventListener('DOMContentLoaded', () => {
     const metodo = localStorage.getItem('metodoPago');
     if (metodo) {
       document.getElementById('metodo-pago-factura').textContent = metodo;
     }
   });
 </script>
-  
- <script>
-    document.addEventListener('DOMContentLoaded', showDetail);
-  </script>
-
-
 </body>
 </html>

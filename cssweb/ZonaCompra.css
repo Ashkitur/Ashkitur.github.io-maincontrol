@@ -154,7 +154,7 @@
 .titulo-resumen { color:#ccc; }
 .valor-resumen { color:#fff; }
 
-/* Botón pagar */
+
 .boton-pagar {
   background:#ff6600;
   border:none;
@@ -180,3 +180,217 @@
     display:block;
   }
 }
+
+html {
+  font-size: 100%;
+}
+body {
+  font-size: clamp(.92rem, .35vw + .75rem, 1rem);
+  line-height: 1.35;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+h1, .h1 { font-size: clamp(1.9rem, 3.6vw, 2.5rem); }
+h2, .h2 { font-size: clamp(1.4rem, 2.4vw, 1.9rem); }
+h3, .h3 { font-size: clamp(1.15rem, 1.9vw, 1.4rem); }
+h5, .h5, .tarjeta-resumen h5 { font-size: clamp(1.05rem, 1.4vw, 1.2rem); }
+
+
+.main-compra .container,
+main .container {
+  max-width: 1240px;
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 2.2vw, 2.25rem);
+}
+
+@media (max-width: 576px) {
+  .main-compra .container,
+  main .container {
+    padding-inline: 1rem;
+  }
+}
+
+.compra-grid {
+  display: grid;
+  gap: clamp(1.4rem, 2.2vw, 2.2rem);
+}
+
+@media (min-width: 992px) {
+  .compra-grid {
+    grid-template-columns: minmax(0, 1fr) 350px;
+    align-items: start;
+  }
+  #detalle-factura-container { order: 1; }
+  .tarjeta-resumen {
+    order: 2;
+    position: sticky;
+    top: 1.2rem;
+  }
+}
+
+
+.tabla-factura {
+  width:100%;
+  border-collapse:separate;
+  border-spacing:0;
+  font-size:.85rem;
+  color:#fff;
+}
+
+.tabla-factura thead th {
+  background:#4d4642;
+  color:#eee;
+  font-size:.65rem;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  font-weight:600;
+  padding:.75rem .75rem;
+  border-bottom:2px solid #ff6600;
+  white-space:nowrap;
+}
+
+.tabla-factura tbody td {
+  background:white;
+  border-bottom:1px solid #5d544f;
+  padding:.65rem .75rem;
+  vertical-align:middle;
+  font-size:.8rem;
+}
+
+.tabla-factura tbody tr:nth-child(even) td {
+  background: white;
+}
+
+.tabla-factura tbody tr:hover td {
+  background:white;
+}
+
+.tabla-factura tbody tr:last-child td {
+  border-bottom:none;
+}
+
+
+@media (max-width: 640px) {
+  .tabla-factura thead {
+    display:none;
+  }
+  .tabla-factura,
+  .tabla-factura tbody,
+  .tabla-factura tr,
+  .tabla-factura td {
+    display:block;
+    width:100%;
+  }
+  .tabla-factura tbody tr {
+    background:linear-gradient(145deg,#4a4440,#3e3834);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:16px;
+    padding:.6rem .9rem .55rem;
+    margin-bottom:.9rem;
+    box-shadow:0 6px 16px -6px rgba(0,0,0,.45);
+  }
+  .tabla-factura tbody tr:last-child {
+    margin-bottom:0;
+  }
+  .tabla-factura tbody td {
+    border:none;
+    background:none;
+    padding:.4rem 0;
+    display:flex;
+    gap:.75rem;
+    font-size:.78rem;
+  }
+  .tabla-factura tbody td::before {
+    content:"";
+    flex:0 0 90px;
+    font-size:.6rem;
+    text-transform:uppercase;
+    letter-spacing:.55px;
+    font-weight:600;
+    color:#f3f3f3;
+    opacity:.75;
+  }
+  .tabla-factura tbody td:nth-child(1)::before { content:var(--col1,"Nombre"); }
+  .tabla-factura tbody td:nth-child(2)::before { content:var(--col2,"Cantidad"); }
+  .tabla-factura tbody td:nth-child(3)::before { content:var(--col3,"Precio"); }
+  .tabla-factura tbody td:nth-child(4)::before { content:var(--col4,"Subtotal"); }
+
+  /* Ajustar miniatura si la agregaste en primera celda */
+  .tabla-factura tbody td img {
+    width:54px;
+    height:54px;
+    border-radius:10px;
+    object-fit:cover;
+  }
+}
+
+/* ---------- Miniatura (si se usa en la factura adaptada) ---------- */
+.factura-thumb {
+  width:44px;
+  height:44px;
+  object-fit:cover;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,.25);
+  background:#2d2a28;
+  flex-shrink:0;
+}
+
+
+
+
+.badge-metodo {
+  background:rgba(255,102,0,.18);
+  color:#ff8a33;
+  padding:2px 10px;
+  border-radius:50px;
+  font-size:.65rem;
+  letter-spacing:.5px;
+  font-weight:600;
+}
+
+
+.boton-pagar,
+.btn-recibir-codigo {
+  background:linear-gradient(135deg,#ff6600,#ff7f2b 90%);
+  border:none;
+  border-radius:14px;
+  padding:13px 44px;
+  color:#fff;
+  font-weight:600;
+  font-size:1rem;
+  letter-spacing:.5px;
+  box-shadow:0 6px 22px -6px rgba(255,102,0,.5), 0 3px 10px -4px rgba(255,102,0,.45);
+  transition:.35s;
+  position:relative;
+  overflow:hidden;
+}
+
+.boton-pagar:hover,
+.btn-recibir-codigo:hover {
+  background:linear-gradient(135deg,#ff7a1f,#ff6600 85%);
+  transform:translateY(-3px);
+  box-shadow:0 10px 28px -10px rgba(255,102,0,.6), 0 6px 12px -6px rgba(255,102,0,.5);
+}
+
+.boton-pagar:active,
+.btn-recibir-codigo:active {
+  transform:translateY(0);
+  filter:brightness(.95);
+}
+
+.boton-pagar:focus-visible,
+.btn-recibir-codigo:focus-visible {
+  outline:2px solid #ffb678;
+  outline-offset:3px;
+}
+
+@media (max-width: 576px) {
+  .boton-pagar,
+  .btn-recibir-codigo {
+    width:100%;
+    display:block;
+    padding:14px 1.25rem;
+  }
+}
+
