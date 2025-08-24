@@ -8,6 +8,7 @@
  <link rel="stylesheet" href="css/bootstrap.min.css" />
 <link rel="stylesheet" href="cssweb/footerheader.css" />
 <link rel="stylesheet" href="cssweb/acercade.css">
+  <link rel="stylesheet" href="cssweb/Stepper.css">
 </head>
 
 <body><!-- nav -->
@@ -71,7 +72,7 @@
   </nav> <!-- Toda la vara acá, TODO CONTENIDO. -->
 
 <main class="container-fluid pt-5">
- 
+
 <div class="row align-items-center g-4">
 
 
@@ -115,12 +116,15 @@
         <h5 class="fs-3 text-white mb-0">Total</h5>
         <h5 class="fs-4 text-white mb-0" id="total-compra">&dollar;00.00</h5>
       </div>
-      <button class="btn" style="background-color: #df6011; border-radius: 15px; padding: 10px 20px; font-size: 20px; margin-top: 20px;  color: white;">
+      <a href="Compra.html">
+        <button class="btn"  style="background-color: #df6011; border-radius: 15px; padding: 10px 20px; font-size: 20px; margin-top: 20px;  color: white;">
         Proceder al pago
       </button>
+      </a>
+      
       <hr style="border: 1px solid white; margin-bottom: 10px; width: 80%; margin-left: auto; margin-right: auto;">
-      <div class="d-flex align-items-center justify-content-center gap-3">
-        <a href="index.html" class="fs-5 text-white fw-light mb-2 text-decoration-underline">
+      <div  class="d-flex align-items-center justify-content-center gap-3">
+        <a onclick="window.history.back()"  class="fs-5 text-white fw-light mb-2 text-decoration-underline" style="cursor: pointer;">
           Regresar a comprar
         </a>
       </div>

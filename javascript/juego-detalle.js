@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (descripcion) {
     descripcion.textContent = juego.descripcion || "Sin descripción";
   } else {
-    console.warn("⚠️ Elemento con id 'descripcion' no encontrado");
+    console.warn(" Elemento con id 'descripcion' no encontrado");
   }
 
   const burbujitas = document.getElementById("plataformas");

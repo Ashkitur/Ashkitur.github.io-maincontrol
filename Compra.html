@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
-  <title>Main Control</title>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compra</title>
   <link rel="stylesheet" href="css/bootstrap.min.css" />
-  <link rel="stylesheet" href="cssweb/indexstyles.css" />
+  <link rel="stylesheet" href="cssweb/footerheader.css" />
+  <link rel="stylesheet" href="cssweb/acercade.css">
+  <link rel="stylesheet" href="cssweb/Stepper.css">
 </head>
 
 <body>
-  <!-- nav -->
-  <!-- la prueba de la prueba de la prueba-->
+
   <nav class="navbar navbar-expand-lg navbar-dark bg-black">
 
     <div class="container-fluid">
@@ -27,16 +28,16 @@
 
 
         <div class="navbar-nav mx-auto text-center">
-          <a class="nav-link d-flex align-items-center gap-2" aria-current="page" href="index.html?plataforma=all"
-           >
-            <img src="img/Logos/computadora-para-juegos.png" alt="plataformas" width="40" height="40">Todas las plataformas
+          <a class="nav-link d-flex align-items-center gap-2" aria-current="page" href="index.html?plataforma=all">
+            <img src="img/Logos/computadora-para-juegos.png" alt="plataformas" width="40" height="40">Todas las
+            plataformas
           </a>
 
           <a class="nav-link d-flex align-items-center gap-2" href="PC.html?plataforma=PC">
             <img src="img/Logos/logotipo-de-steam.png" alt="PC" width="30" height="30"> PC
           </a>
 
-          <a class="nav-link d-flex align-items-center gap-2" href="PlayStation.html?plataforma=PlayStation"  style="color: #df6011; font-weight: 600;">
+          <a class="nav-link d-flex align-items-center gap-2" href="PlayStation.html?plataforma=PlayStation">
             <img src="img/Logos/consoles-ps-512.png" alt="PlayStation" width="30" height="30">PlayStation
           </a>
 
@@ -60,8 +61,8 @@
           <span class="navbar-toggler-icon"></span>
         </button>
 
-       <a class="nav-link d-flex align-items-center gap-2" href="compra-detalle.html">
-          <div class="icon-box" style="background-color: #df6011; padding: 9px; border-radius: 15px;" >
+        <a class="nav-link d-flex align-items-center gap-2" href="compra-detalle.html">
+          <div class="icon-box" style="background-color: #df6011; padding: 9px; border-radius: 15px;">
             <img src="img/Logos/carrito-de-compras.png" alt="Carrito de Compras" width="30" height="30">
           </div>
         </a>
@@ -70,37 +71,70 @@
 
     </div>
   </nav>
-  <!-- Toda la vara acá, TODO CONTENIDO. -->
-  <main id="index">
-    <div id="Imagen de bienvenida xd" class=""></div>
 
-    <div id="ContenedorJuegosRandom" class="  mb-4 mx-auto pb-4  h-80 w-100 " style="background-color: #37322e;">
 
-      <div id="TituloTend" class="mb-4 pb-3 " style="background-color: #b3b2b0;">
-        <h1 style="color: white;" class="px-3 pt-3"> Tendencias</h1>
+  <div class="container-fluid ">
+
+    <div class="stepper">
+      <div class="step active">
+        <span class="circle">1</span>
+        <p class="mt-2">Carrito</p>
       </div>
-      <div id="Contenido">
+      <div class="step">
+        <span class="circle">2</span>
+        <p class="mt-2">Informacion</p>
+      </div>
+      <div class="step">
+        <span class="circle">3</span>
+        <p class="mt-2">Confirmación</p>
+      </div>
+      <div class="step">
+        <span class="circle">4</span>
+        <p class="mt-2">Envio</p>
+      </div>
+    </div>
 
-        <div class="container" name="Apartadojuego">
+  </div>
 
-          <div class="row row-cols-1 row-cols-md-5 g-4 " id="juegos-list">
+  <main>
 
+    <div id="Metodos de Pago">
+
+
+      <div class="container-fluid">
+
+        <div class="row">
+          <div class="col">
+          </div>
+          <div class="col">
+          </div>
+          <div class="col">
           </div>
         </div>
 
-
-      </div>
-
-      <div id="TituloRecomendados" class="mb-4 pb-3 " style="background-color: #b3b2b0;">
-        <h1 style="color: white;" class="px-3 pt-3"> Recomendados</h1>
       </div>
     </div>
 
 
-   
+
+
+
+
+
+
+    </div>
+    </div>
+
+
+
+
+
+
+
+
   </main>
 
-  <!-- Footer -->
+
   <footer class="text-white text-center py-3 bg-black mt-5 h-100 w-100">
     <div class="container d-flex align-items-start">
       <div class="left-container">
@@ -156,14 +190,14 @@
       <div class="canales-container d-flex">
         <p style="color: #df6011;">Canales de pago aceptados </p>
 
-        <div class="px-3 mb-2 d-flex"> 
-    <img src="img/Otros/visa.png" alt="Visa" width="40" height="40" class="mx-2">
-        <img src="img//Otros/logotipo-de-paypal.png" alt="Paypal" width="40" height="40" class="mx-2">
-        <img src="img/Otros/pago-de-apple.png" alt="Apple Pay" width="40" height="40" class="mx-2">
-        <img src="img/Otros/redondo.png" alt="Mastercard" width="40" height="40" class="mx-2">
+        <div class="px-3 mb-2 d-flex">
+          <img src="img/Otros/visa.png" alt="Visa" width="40" height="40" class="mx-2">
+          <img src="img//Otros/logotipo-de-paypal.png" alt="Paypal" width="40" height="40" class="mx-2">
+          <img src="img/Otros/pago-de-apple.png" alt="Apple Pay" width="40" height="40" class="mx-2">
+          <img src="img/Otros/redondo.png" alt="Mastercard" width="40" height="40" class="mx-2">
 
         </div>
-        
+
       </div>
 
     </div>
@@ -171,15 +205,11 @@
 
   </footer>
 
-  <!-- JQuery-->
-  <script src="https://code.jquery.com/jquery-2.2.4.js" crossorigin="anonymous"></script>
-  <!-- Notificaciones Toastr -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-  <!-- Lista de Juegos-->
-  <script src="./json/digitalkey.juegos.js"> </script>
-  <script src="./javascript/lista-juegos.js"></script>
-  <!-- Bootstrap JS-->
-<script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="json/digitalkey.juegos.js"></script>
+  <script src="javascript/compra.js"></script>
+  <script src="javascript/compra-detalle.js"></script>
+
 </body>
 
 </html>

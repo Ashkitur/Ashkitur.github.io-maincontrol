@@ -13,7 +13,7 @@ const juegos = [
     imagenes: [
       "img/ImagenesJuegos/ImagenesExtras/McExtra1.jpg",
       "img/ImagenesJuegos/ImagenesExtras/McExtra2.jpg",
-      "img/ImagenesJuegos/ImagenesExtras/McExtra3.jpg"
+      "img/Banners/Banner1.svg"
     ],
     resenas: {
       comentarios: [
@@ -54,7 +54,7 @@ const juegos = [
     portada: "img/ImagenesJuegos/ImagenesCaratulas/Signalis.jpg",
     descripcion: "Código digital original de Signalis, entrega inmediata por email.",
     plataformas: [
-      "Xbox",
+      "NintendoSwitch",
     ],
     imagenes: [
       "img/ImagenesJuegos/ImagenesExtras/signalis1.jpg",
@@ -90,5 +90,213 @@ const juegos = [
         { usuario: "Sofía M.", texto: "Muy rápido y fácil de canjear.", calificacion: 5 }
       ]
     }
-  },    
+  },
+  {
+    id:4,
+    nombre: "Key Digital - Signalis",
+    precio: 13000,
+    stock: true,
+    disponibilidad: "Solo online",
+    portada: "img/ImagenesJuegos/ImagenesCaratulas/Signalis.jpg",
+    descripcion: "Código digital original de Signalis, entrega inmediata por email.",
+    plataformas: [
+      "NintendoSwitch",
+    ],
+    imagenes: [
+      "img/ImagenesJuegos/ImagenesExtras/signalis1.jpg",
+      "img/ImagenesJuegos/ImagenesExtras/signalis2.jpg",
+      "img/ImagenesJuegos/ImagenesExtras/signalis3.jpg"
+    ],
+    resenas: {
+      comentarios: [
+        { usuario: "Carlos G.", texto: "Obra maestra.", calificacion: 5 },
+        { usuario: "Sofía M.", texto: "Muy rápido y fácil de canjear.", calificacion: 5 }
+      ]
+    }
+  },
+  {
+    id:4,
+    nombre: "Key Digital - Signalis",
+    precio: 13000,
+    stock: true,
+    disponibilidad: "Solo online",
+    portada: "img/ImagenesJuegos/ImagenesCaratulas/Signalis.jpg",
+    descripcion: "Código digital original de Signalis, entrega inmediata por email.",
+    plataformas: [
+      "NintendoSwitch",
+    ],
+    imagenes: [
+      "img/ImagenesJuegos/ImagenesExtras/signalis1.jpg",
+      "img/ImagenesJuegos/ImagenesExtras/signalis2.jpg",
+      "img/ImagenesJuegos/ImagenesExtras/signalis3.jpg"
+    ],
+    resenas: {
+      comentarios: [
+        { usuario: "Carlos G.", texto: "Obra maestra.", calificacion: 5 },
+        { usuario: "Sofía M.", texto: "Muy rápido y fácil de canjear.", calificacion: 5 }
+      ]
+    }
+  },
+  {
+    id:4,
+    nombre: "Key Digital - Signalis",
+    precio: 13000,
+    stock: true,
+    disponibilidad: "Solo online",
+    portada: "img/ImagenesJuegos/ImagenesCaratulas/Signalis.jpg",
+    descripcion: "Código digital original de Signalis, entrega inmediata por email.",
+    plataformas: [
+      "NintendoSwitch",
+    ],
+    imagenes: [
+      "img/ImagenesJuegos/ImagenesExtras/signalis1.jpg",
+      "img/ImagenesJuegos/ImagenesExtras/signalis2.jpg",
+      "img/ImagenesJuegos/ImagenesExtras/signalis3.jpg"
+    ],
+    resenas: {
+      comentarios: [
+        { usuario: "Carlos G.", texto: "Obra maestra.", calificacion: 5 },
+        { usuario: "Sofía M.", texto: "Muy rápido y fácil de canjear.", calificacion: 5 }
+      ]
+    }
+  },
+  {
+    id:4,
+    nombre: "Key Digital - Signalis",
+    precio: 13000,
+    stock: true,
+    disponibilidad: "Solo online",
+    portada: "img/ImagenesJuegos/ImagenesCaratulas/Signalis.jpg",
+    descripcion: "Código digital original de Signalis, entrega inmediata por email.",
+    plataformas: [
+      "NintendoSwitch",
+    ],
+    imagenes: [
+      "img/ImagenesJuegos/ImagenesExtras/signalis1.jpg",
+      "img/ImagenesJuegos/ImagenesExtras/signalis2.jpg",
+      "img/ImagenesJuegos/ImagenesExtras/signalis3.jpg"
+    ],
+    resenas: {
+      comentarios: [
+        { usuario: "Carlos G.", texto: "Obra maestra.", calificacion: 5 },
+        { usuario: "Sofía M.", texto: "Muy rápido y fácil de canjear.", calificacion: 5 }
+      ]
+    }
+  },
+  {
+    id:4,
+    nombre: "Key Digital - Signalis",
+    precio: 13000,
+    stock: true,
+    disponibilidad: "Solo online",
+    portada: "img/ImagenesJuegos/ImagenesCaratulas/Signalis.jpg",
+    descripcion: "Código digital original de Signalis, entrega inmediata por email.",
+    plataformas: [
+      "NintendoSwitch",
+    ],
+    imagenes: [
+      "img/ImagenesJuegos/ImagenesExtras/signalis1.jpg",
+      "img/ImagenesJuegos/ImagenesExtras/signalis2.jpg",
+      "img/ImagenesJuegos/ImagenesExtras/signalis3.jpg"
+    ],
+    resenas: {
+      comentarios: [
+        { usuario: "Carlos G.", texto: "Obra maestra.", calificacion: 5 },
+        { usuario: "Sofía M.", texto: "Muy rápido y fácil de canjear.", calificacion: 5 }
+      ]
+    }
+  },
+  {
+    id:4,
+    nombre: "Key Digital - Signalis",
+    precio: 13000,
+    stock: true,
+    disponibilidad: "Solo online",
+    portada: "img/ImagenesJuegos/ImagenesCaratulas/Signalis.jpg",
+    descripcion: "Código digital original de Signalis, entrega inmediata por email.",
+    plataformas: [
+      "NintendoSwitch",
+    ],
+    imagenes: [
+      "img/ImagenesJuegos/ImagenesExtras/signalis1.jpg",
+      "img/ImagenesJuegos/ImagenesExtras/signalis2.jpg",
+      "img/ImagenesJuegos/ImagenesExtras/signalis3.jpg"
+    ],
+    resenas: {
+      comentarios: [
+        { usuario: "Carlos G.", texto: "Obra maestra.", calificacion: 5 },
+        { usuario: "Sofía M.", texto: "Muy rápido y fácil de canjear.", calificacion: 5 }
+      ]
+    }
+  },
+  {
+    id:4,
+    nombre: "Key Digital - Signalis",
+    precio: 13000,
+    stock: true,
+    disponibilidad: "Solo online",
+    portada: "img/ImagenesJuegos/ImagenesCaratulas/Signalis.jpg",
+    descripcion: "Código digital original de Signalis, entrega inmediata por email.",
+    plataformas: [
+      "NintendoSwitch",
+    ],
+    imagenes: [
+      "img/ImagenesJuegos/ImagenesExtras/signalis1.jpg",
+      "img/ImagenesJuegos/ImagenesExtras/signalis2.jpg",
+      "img/ImagenesJuegos/ImagenesExtras/signalis3.jpg"
+    ],
+    resenas: {
+      comentarios: [
+        { usuario: "Carlos G.", texto: "Obra maestra.", calificacion: 5 },
+        { usuario: "Sofía M.", texto: "Muy rápido y fácil de canjear.", calificacion: 5 }
+      ]
+    }
+  },
+  {
+    id:4,
+    nombre: "Key Digital - Signalis",
+    precio: 13000,
+    stock: true,
+    disponibilidad: "Solo online",
+    portada: "img/ImagenesJuegos/ImagenesCaratulas/Signalis.jpg",
+    descripcion: "Código digital original de Signalis, entrega inmediata por email.",
+    plataformas: [
+      "NintendoSwitch",
+    ],
+    imagenes: [
+      "img/ImagenesJuegos/ImagenesExtras/signalis1.jpg",
+      "img/ImagenesJuegos/ImagenesExtras/signalis2.jpg",
+      "img/ImagenesJuegos/ImagenesExtras/signalis3.jpg"
+    ],
+    resenas: {
+      comentarios: [
+        { usuario: "Carlos G.", texto: "Obra maestra.", calificacion: 5 },
+        { usuario: "Sofía M.", texto: "Muy rápido y fácil de canjear.", calificacion: 5 }
+      ]
+    }
+  },
+  {
+    id:4,
+    nombre: "Key Digital - Signalis",
+    precio: 13000,
+    stock: true,
+    disponibilidad: "Solo online",
+    portada: "img/ImagenesJuegos/ImagenesCaratulas/Signalis.jpg",
+    descripcion: "Código digital original de Signalis, entrega inmediata por email.",
+    plataformas: [
+      "NintendoSwitch",
+    ],
+    imagenes: [
+      "img/ImagenesJuegos/ImagenesExtras/signalis1.jpg",
+      "img/ImagenesJuegos/ImagenesExtras/signalis2.jpg",
+      "img/ImagenesJuegos/ImagenesExtras/signalis3.jpg"
+    ],
+    resenas: {
+      comentarios: [
+        { usuario: "Carlos G.", texto: "Obra maestra.", calificacion: 5 },
+        { usuario: "Sofía M.", texto: "Muy rápido y fácil de canjear.", calificacion: 5 }
+      ]
+    }
+  },
+      
 ];

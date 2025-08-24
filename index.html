@@ -7,6 +7,11 @@
 
   <link rel="stylesheet" href="css/bootstrap.min.css" />
   <link rel="stylesheet" href="cssweb/indexstyles.css" />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+
 </head>
 <body>
   <!-- nav -->
@@ -72,15 +77,63 @@
 
   <!-- Toda la vara acá, TODO CONTENIDO. -->
   <main id="index">
-    <div id="Imagen de bienvenida xd" class=""></div>
+   
 
-    <div id="ContenedorJuegosRandom" class="  mb-4 mx-auto pb-4   h-80 w-100 " style="background-color: #37322e;">
+    <!-- Carrusel de bienvenida -->
+    <div id="Carruselfondo">
+
+
+
+      <div id="bienvenidaCarrusel" class="container my-5">
+      <div id="carouselBienvenida" class="  carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner rounded-4 overflow-hidden">
+          <div class="carousel-item active">
+            <img src="img/Banners/Banner1.svg" class="d-block w-100" alt="Bienvenido a Aim Control" style="max-height: 500px; object-fit: cover;">
+            <div class="carousel-caption d-block bg-dark bg-opacity-75 rounded-3 p-4 mt-3">
+              <h2 class="text-warning">¡Bienvenido a Aim Control!</h2>
+              <p class="lead text-white">Tu tienda digital favorita para videojuegos, consolas y más. Descubre las mejores tendencias y ofertas cada semana.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="img/Banners/Banner2.svg" class="d-block w-100" alt="Explora juegos" style="max-height: 500px; object-fit: cover;">
+            <div class="carousel-caption d-block bg-dark bg-opacity-75 rounded-3 p-4 mt-3">
+              <h2 class="text-warning">Explora cientos de juegos</h2>
+              <p class="lead text-white">Encuentra títulos para todas las plataformas y disfruta de promociones exclusivas.</p>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="img/Banners/Banner2.svg" class="d-block w-100" alt="Ofertas exclusivas" style="max-height: 500px; object-fit: cover;">
+            <div class="carousel-caption d-block bg-dark bg-opacity-75 rounded-3 p-4 mt-3">
+              <h2 class="text-warning">Tarjetas de Regalo</h2>
+              <p class="lead text-white">Regala experiencias de juego únicas con nuestras tarjetas de regalo.</p>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselBienvenida" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselBienvenida" data-bs-slide="next">
+          <span class="carousel-control-next-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
+          <span class="visually-hidden">Siguiente</span>
+        </button>
+      </div>
+    </div>
+
+    </div>
+    
+
+ 
+
+    <div id="ContenedorJuegosRandom" class=" mb-4 mx-auto pb-4 h-80 w-100 " style="background-color: #37322e;">
       <div id="TituloTend" class="mb-4 pb-3 " style="background-color: #b3b2b0;">
         <h1 style="color: white;" class="px-3 pt-3"> Tendencias</h1>
       </div>
       <div id="Contenido">
         <div class="container py-5" name="Apartadojuego">
-          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5" id="juegos-list">
+          <!-- Cambia las clases de Bootstrap para responsividad: -->
+          <div class="row" id="juegos-list">
+            <!-- Las tarjetas se insertan aquí por JS -->
           </div>
         </div>
       </div>
@@ -91,7 +144,7 @@
 
 
     <!--Carrusel-->
-    <div id="ContenedorCarrusel" class="container-fluid py-5 my-4" style="background-color: #b3b2b0;">
+    <div id="ContenedorCarrusel" class="container-fluid py-5 my-4 " style="background-color: #b3b2b0;">
       <div class="container">
         <h2 class="text-white mb-4">Gift Cards</h2>
 
@@ -131,7 +184,6 @@
         </div>
       </div>
     </div>
-
 
 
   </main>
