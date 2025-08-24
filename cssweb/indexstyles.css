@@ -149,11 +149,6 @@ padding: 30px;
 
 /* Carrusel de bienvenida responsivo */
 
-#Carruselfondo {
-  position: relative;
-  overflow: hidden;
-  background-image: url(img/Banners/Fondo.svg);
-}
 
 #bienvenidaCarrusel {
   background: rgba(0, 0, 0, 0.85);
