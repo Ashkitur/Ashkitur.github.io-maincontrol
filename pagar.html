@@ -111,10 +111,10 @@
                             <span class="titulo-resumen">Impuestos</span>
                             <span class="valor-resumen" id="impuesto-acobrar">$0.00</span>
                     </div>
-                    <div class="item-resumen metodopago">
-                        <span class="titulo-resumen">Método de Pago</span>
-                        <span class="valor-resumen" id="metodo-pago-factura"></span>
-                    </div>
+                <div class="item-resumen metodopago">
+                <span class="titulo-resumen">Método de Pago</span>
+                <span class="valor-resumen" id="metodo-pago-factura">-.-</span>
+                </div>
             </div>
         </div>
 
@@ -193,10 +193,19 @@
     document.addEventListener('DOMContentLoaded', showFacturaDetalle);
   </script>
 
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const metodo = localStorage.getItem('metodoPago');
+    if (metodo) {
+      document.getElementById('metodo-pago-factura').textContent = metodo;
+    }
+  });
+</script>
   
  <script>
     document.addEventListener('DOMContentLoaded', showDetail);
   </script>
+
 
 </body>
 </html>

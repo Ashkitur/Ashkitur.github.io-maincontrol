@@ -39,23 +39,29 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   payBtn?.addEventListener('click', () => {
-    const metodo = document.querySelector('input[name="metodo_pago"]:checked')?.value;
-    const formActivo = forms[metodo];
-    if (!formActivo) return;
+  const metodo = document.querySelector('input[name="metodo_pago"]:checked')?.value;
+  const formActivo = forms[metodo];
+  if (!formActivo) return;
 
-    // Validación básica
-    const invalid = [...formActivo.querySelectorAll('input[required]')]
-      .some(inp => !inp.value.trim());
+  // Validación básica
+  const invalid = [...formActivo.querySelectorAll('input[required]')]
+    .some(inp => !inp.value.trim());
 
-    if (invalid){
-      formActivo.querySelectorAll('input[required]').forEach(inp => {
-        if (!inp.value.trim()) inp.classList.add('is-invalid');
-        else inp.classList.remove('is-invalid');
-      });
-      return;
-    }
+  if (invalid) {
+    formActivo.querySelectorAll('input[required]').forEach(inp => {
+      if (!inp.value.trim()) inp.classList.add('is-invalid');
+      else inp.classList.remove('is-invalid');
+    });
+    return;
+  }
 
-    alert('Procesando pago con método: ' + metodo);
-    // Lógica real de envío va aquí
-  });
+  alert('Procesando pago con método: ' + metodo);
+
+  // Guardamos el método de pago en localStorage
+  localStorage.setItem('metodoPago', metodo);
+
+  // Redirigimos a la página de la factura
+  window.location.href = 'pagar.html';
+});
+
 });

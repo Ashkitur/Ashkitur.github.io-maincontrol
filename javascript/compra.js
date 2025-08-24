@@ -6,7 +6,10 @@ function saveCart(cartArray) {
 }
 
 
-
+function countCartItems() {
+    const cartArray = getCart();
+    return cartArray.reduce((total, item) => total + item.quantity, 0);
+}
 
 function getCart() {
     const cart = localStorage.getItem("compra")
