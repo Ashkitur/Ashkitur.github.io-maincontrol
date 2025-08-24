@@ -12,7 +12,6 @@ function getCart() {
     const cart = localStorage.getItem("compra")
     return cart ? JSON.parse(cart) : []
 }
-
 function addToCart(idJuego) {
 
     const idJuegoNum = parseInt(idJuego);
@@ -38,5 +37,6 @@ function addToCart(idJuego) {
         alert(`${carItem.nombre} agregado al carrito`);
     }
 
+    saveCart(cartArray);
     saveCart(cartArray);
 }
