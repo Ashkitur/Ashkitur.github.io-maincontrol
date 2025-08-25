@@ -5,6 +5,29 @@ function saveCart(cartArray) {
 
 }
 
+function vaciarCarrito() {
+  let cartArray = getCart() || [];
+
+  if (cartArray.length > 0) {
+    // Recorremos todos los items solo para iterar (opcional)
+    cartArray.forEach(item => {
+      console.log(`Eliminando item id: ${item.id}`);
+    });
+
+    // Vaciar el carrito
+    cartArray = [];
+    saveCart(cartArray);
+
+    // Refrescar la UI
+    showDetail();
+    updateProceedButton();
+  } else {
+    // Si ya estaba vacío
+    saveCart([]);
+    showDetail();
+    updateProceedButton();
+  }
+}
 
 
 

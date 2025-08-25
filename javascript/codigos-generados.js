@@ -74,11 +74,13 @@ function renderizarCodigos() {
 
   const cart = obtenerCarritoSeguro();
   if (cart.length === 0) {
-    wrapper.innerHTML = `
-      <p class="nota-codigos text-center mb-0">No hay artículos en el carrito.</p>
-      <div class="text-center mt-3">
-        <a href="index.html" class="btn-codigos secundario">Volver a la tienda</a>
-      </div>`;
+wrapper.innerHTML = `
+  <p class="nota-codigos text-center mb-0">No hay artículos en el carrito.</p>
+  <div class="text-center mt-3">
+<a href="index.html" class="btn-codigos secundario" onclick="vaciarCarrito()">Volver a la tienda</a>
+
+  </div>`;
+
     return;
   }
 

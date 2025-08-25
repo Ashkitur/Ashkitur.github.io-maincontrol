@@ -104,7 +104,10 @@
 
                 <div class="col-12">
                   <label for="fullName" class="form-label">Nombre completo</label>
-                  <input type="text" class="form-control" id="fullName" placeholder="Tu nombre completo" required pattern="^[a-zA-ZáéíóúÁÉÍÓÚñÑ\\s]+$">
+               <input type="text" class="form-control" id="fullName" 
+                    placeholder="Tu nombre completo" 
+                    required 
+                    pattern="^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$">
                   <div class="invalid-feedback">Solo letras y espacios.</div>
                 </div>
 
@@ -253,34 +256,37 @@
   <script src="javascript/contactenos.js"></script>
 
   <script>
+  const form = document.getElementById('AimControlForms');
+  const modalEl = document.getElementById('ModalForms');
+  const modal = new bootstrap.Modal(modalEl);
 
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
 
- const form = document.getElementById('AimControlForms');
-    const modal = new bootstrap.Modal(document.getElementById('ModalForms'));
+    if (!form.checkValidity()) {
+      form.classList.add('was-validated');
+    } else {
+      // Lleno modal con datos del formulario
+      document.getElementById('modalEmail').textContent         = form.email.value;
+      document.getElementById('modalName').textContent          = form.fullName.value;
+      document.getElementById('modalBirthDate').textContent     = form.birthDate.value;
+      document.getElementById('modalGender').textContent        = form.gender.value;
+      document.getElementById('modalContactReason').textContent = form.contactReason.value;
+      document.getElementById('modalOrderNumber').textContent   = form.orderNumber.value || 'No especificado';
+      document.getElementById('modalQueryType').textContent     = form.queryType.value;
 
-    form.addEventListener('submit', function (event) {
-      event.preventDefault();
+      modal.show();
+    }
+  });
 
-      if (!form.checkValidity()) {
-        form.classList.add('was-validated');
-      } else {
-        //lleno modal con datos del formulario
-        document.getElementById('modalEmail').textContent = form.email.value;
-        document.getElementById('modalName').textContent = form.fullName.value;
-        document.getElementById('modalBirthDate').textContent = form.birthDate.value;
-        document.getElementById('modalGender').textContent = form.gender.value;
-        document.getElementById('modalContactReason').textContent = form.contactReason.value;
-        document.getElementById('modalOrderNumber').textContent = form.orderNumber.value || 'No especificado';
-        document.getElementById('modalQueryType').textContent = form.queryType.value;
+  // 🧹 Cuando se cierre el modal, limpio el form y validaciones
+  modalEl.addEventListener('hidden.bs.modal', () => {
+    form.reset();
+    form.classList.remove('was-validated');
+    form.querySelectorAll('.is-invalid').forEach(el => el.classList.remove('is-invalid'));
+  });
+</script>
 
-        modal.show();
-        form.classList.remove('was-validated');
-        form.reset();
-      }
-    });
-
-
-  </script>
 
 </body>
 </html>
