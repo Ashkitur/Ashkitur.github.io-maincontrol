@@ -29,48 +29,68 @@ function displayJuegos(data) {
     const col = document.createElement("div");
     col.style.flex = "1 1 calc(25% - 30px)"; // 4 por fila, resta el gap
     col.style.maxWidth = "calc(25% - 30px)";
-    col.style.minWidth = "290px"; 
+    col.style.minWidth = "300px"; 
 
    
     col.classList.add("animate__animated", "animate__fadeInUp");
 
     col.innerHTML = `
       <div class="card h-100 d-flex flex-column shadow-lg juego-item"
-        style="background-color: #121212; color: white; border-radius: 28px; overflow: hidden; width: 100%; max-width: 100%; min-width: 220px; padding: 15px; box-sizing: border-box;">
-        <!-- Portada -->
-        <div class="text-center mb-3">
-          <img src="${juego.portada}" 
-               class="img-fluid"
-               style="width: 100%; height: 380px; aspect-ratio: 16/9; object-fit: cover; border: 3px solid #df6011; border-radius: 20px;"
-               onerror="this.src='img/image-not-found.jpg';" alt="Portada de ${juego.nombre}">
-        </div>
-        <!-- Título -->
-        <h5 class="card-title fw-bold mb-2" 
-            style="font-size: 1.6rem; line-height: 1.3; word-break: break-word;">
-          ${juego.nombre}
-        </h5>
-        <!-- Info -->
-        <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap">
-          <p class="mb-1"><b><i class="bi bi-controller"></i> Plataforma:</b> ${juego.plataformas.join(", ")}</p>
-          <p class="mb-1 text-warning fw-bold" style="font-size: 1.1rem;">
-            <i class="bi bi-cash-coin"></i> ₡${juego.precio}
-          </p>
-        </div>
-        <!-- Botones -->
-        <div class="mt-auto d-flex gap-3 flex-wrap">
-          <button class="btn flex-fill fw-semibold"
-                  onclick="comprarJuegos(${juego.id})"
-                  style="background-color:#df6011; color:#fff; border-radius:15px; padding: 12px 18px; font-size: 1.05rem; transition: 0.3s;">
-            <i class="bi bi-cart-plus"></i> Comprar
-          </button>
-          <button class="btn flex-fill fw-semibold"
-                  onclick="detalleJuego(${juego.id})" data-id="${juego.id}"
-                  style="background-color:#fff; color:#121212; border-radius:15px; padding: 12px 18px; font-size: 1.05rem; transition: 0.3s;">
-            <i class="bi bi-three-dots"></i> Detalle
-          </button>
-        </div>
+      style="background-color: #121212; color: white; border-radius: 28px; overflow: hidden; width: 100%; max-width: 100%; min-width: 220px; padding: 15px; box-sizing: border-box;">
+      <!-- Portada -->
+      <div class="text-center mb-3">
+        <img src="${juego.portada}" 
+           class="img-fluid"
+           style="width: 100%; height: 440px; aspect-ratio: 16/9; object-fit: cover; border: 3px solid #df6011; border-radius: 20px;"
+           onerror="this.src='img/image-not-found.jpg';" alt="Portada de ${juego.nombre}">
+      </div>
+      <!-- Título -->
+      <h5 class="card-title fw-bold mb-2" 
+        style="font-size: 1.6rem; line-height: 1.3; word-break: break-word;">
+        ${juego.nombre}
+      </h5>
+      <!-- Info -->
+      <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap">
+        <p class="mb-1"><b><i class="bi bi-controller"></i> Plataforma:</b> ${juego.plataformas.join(", ")}</p>
+        <p class="mb-1 text-warning fw-bold" style="font-size: 1.1rem;">
+        <i class="bi bi-cash-coin"></i> ₡${juego.precio}
+        </p>
+      </div>
+      <!-- Botones -->
+      <div class="mt-auto d-flex gap-3 flex-wrap">
+        <button class="btn flex-fill fw-semibold"
+            onclick="comprarJuegos(${juego.id})"
+            style="background-color:#df6011; color:#fff; border-radius:15px; padding: 12px 18px; font-size: 1.05rem; transition: 0.3s;">
+        <i class="bi bi-cart-plus"></i> Comprar
+        </button>
+        <button class="btn flex-fill fw-semibold"
+            onclick="detalleJuego(${juego.id})" data-id="${juego.id}"
+            style="background-color:#fff; color:#121212; border-radius:15px; padding: 12px 18px; font-size: 1.05rem; transition: 0.3s;">
+        <i class="bi bi-three-dots"></i> Detalle
+        </button>
+      </div>
       </div>
     `;
+
+    // Centrado responsivo: 1 por fila y centrado en pantallas pequeñas
+    col.style.margin = "0 auto";
+    col.style.display = "flex";
+    col.style.justifyContent = "center";
+
+    // Media query JS para 1 columna centrada en móviles
+    function ajustarResponsive() {
+      if (window.innerWidth <= 768) {
+      col.style.flex = "1 1 100%";
+      col.style.maxWidth = "400px";
+      col.style.minWidth = "220px";
+      } else {
+      col.style.flex = "1 1 calc(25% - 30px)";
+      col.style.maxWidth = "calc(25% - 30px)";
+      col.style.minWidth = "300px";
+      }
+    }
+    ajustarResponsive();
+    window.addEventListener("resize", ajustarResponsive);
 
     juegosList.appendChild(col);
   });

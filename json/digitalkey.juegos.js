@@ -68,6 +68,6 @@ const juegos = [
       ]
     }
   },
-
+  
       
 ];
