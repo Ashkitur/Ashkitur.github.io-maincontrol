@@ -91,12 +91,16 @@ function renderizarCodigos() {
 
   const cart = obtenerCarritoSeguro();
   if (cart.length === 0) {
-    wrapper.innerHTML = `
-      <p class="nota-codigos text-center mb-0">No hay artículos en el carrito.</p>
-      <div class="text-center mt-3">
-        <a href="index.html" class="btn-codigos secundario">Volver a la tienda</a>
-      </div>`;
-    return;
+   wrapper.innerHTML = `
+  <p class="nota-codigos text-center mb-0">No hay artículos en el carrito.</p>
+  <div class="text-center mt-3">
+    <a href="index.html" class="btn-codigos secundario"
+       onclick="localStorage.removeItem('compra'); showDetail(); updateProceedButton();">
+      Volver a la tienda
+    </a>
+  </div>`;
+return;
+
   }
 
   const { codigos, mapaCantidades } = prepararCodigosParaCarrito();
@@ -158,7 +162,9 @@ function renderizarCodigos() {
       ${itemsHTML}
     </ul>
     <div class="text-center mt-4 d-flex flex-column flex-sm-row justify-content-center gap-2">
-      <a href="index.html" class="btn-codigos secundario">Volver a la tienda</a>
+<a href="index.html" class="btn-codigos secundario" onclick="vaciarCarrito(event)">Volver a la tienda</a>
+
+
     </div>
   `;
 }
