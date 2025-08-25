@@ -1,0 +1,590 @@
+\<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>Generador de JSON de Juegos</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<style>
+  :root {
+    --bg:#f5f7fa;
+    --fg:#1c1f23;
+    --panel:#ffffff;
+    --borde:#cfd6dd;
+    --prim:#1d7afc;
+    --pre-bg:#0f172a;
+    --pre-fg:#e2e8f0;
+  }
+  html.dark {
+    --bg:#0d1117;
+    --fg:#e6edf3;
+    --panel:#161b22;
+    --borde:#30363d;
+    --prim:#4093ff;
+    --pre-bg:#1e293b;
+    --pre-fg:#f1f5f9;
+  }
+  body {
+    margin: 0;
+    background: #f5f7fa;
+    color: #222;
+    padding: 1.2rem;
+    line-height: 1.35;
+  }
+  h1 {
+    margin-top: 0;
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+  }
+  form, .panel, .lista-dinamica {
+    background: #fff;
+    border: 1px solid #d0d7de;
+    border-radius: 8px;
+    padding: 1rem 1.2rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 1px 2px rgba(0,0,0,.05);
+  }
+  .grid {
+    display: grid;
+    gap: .9rem;
+  }
+  @media (min-width: 840px) {
+    .grid-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: .25rem;
+  }
+  input[type=text],
+  input[type=number],
+  textarea,
+  select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: .55rem .65rem;
+    border: 1px solid #b6bfc8;
+    border-radius: 6px;
+    font: inherit;
+    background: #fff;
+  }
+  textarea {
+    resize: vertical;
+    min-height: 80px;
+  }
+  .fila-inline {
+    display: flex;
+    gap: .5rem;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    margin-bottom: .6rem;
+  }
+  .fila-inline input[type=text],
+  .fila-inline input[type=number] {
+    flex: 1 1 180px;
+  }
+  button {
+    cursor: pointer;
+    border: 1px solid #1d7afc;
+    background: #1d7afc;
+    color: #fff;
+    padding: .55rem .95rem;
+    border-radius: 6px;
+    font: 500 0.95rem system-ui, sans-serif;
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+  }
+  button.secundario {
+    background: #fff;
+    color: #1d7afc;
+  }
+  button.peligro {
+    background: #d72626;
+    border-color: #d72626;
+  }
+  button:disabled {
+    opacity: .55;
+    cursor: not-allowed;
+  }
+  .chips {
+    display: flex;
+    gap: .45rem;
+    flex-wrap: wrap;
+    margin-top: .4rem;
+  }
+  .chip {
+    background: #e6eef8;
+    color: #184c80;
+    padding: .25rem .55rem;
+    border-radius: 999px;
+    font-size: .75rem;
+    display: inline-flex;
+    align-items: center;
+    gap: .3rem;
+  }
+  .chip button {
+    background: transparent;
+    border: none;
+    color: inherit;
+    font-size: .9em;
+    padding: 0;
+    cursor: pointer;
+  }
+  pre {
+    background: #0f172a;
+    color: #e2e8f0;
+    padding: 1rem;
+    border-radius: 8px;
+    overflow: auto;
+    max-height: 60vh;
+    font-size: .85rem;
+    line-height: 1.3;
+  }
+  .acciones {
+    display: flex;
+    gap: .6rem;
+    flex-wrap: wrap;
+    margin-top: .6rem;
+  }
+  .badge {
+    font-size: .65rem;
+    background: #1d7afc;
+    color: #fff;
+    padding: .2rem .5rem;
+    border-radius: 4px;
+    font-weight: 600;
+    letter-spacing: .5px;
+  }
+  .separador {
+    height: 1px;
+    background: #d0d7de;
+    margin: 1rem 0;
+  }
+  details summary {
+    cursor: pointer;
+    font-weight: 600;
+    margin: .5rem 0;
+  }
+  .mini {
+    font-size: .7rem;
+    opacity: .75;
+  }
+  .tabla-simple {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .tabla-simple th, .tabla-simple td {
+    border: 1px solid #d0d7de;
+    padding: .4rem .6rem;
+    font-size: .8rem;
+  }
+  .tabla-simple th {
+    background: #f0f3f6;
+  }
+  .flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: .8rem;
+    flex-wrap: wrap;
+  }
+  .ok { color: #1d7a40; font-weight: 600; }
+  .error { color: #b10000; font-weight: 600; }
+  .warning { color: #b36b00; font-weight: 600; }
+  footer {
+    margin-top: 2rem;
+    font-size: .75rem;
+    opacity: .7;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+  <h1>Generador de JSON de Juegos</h1>
+  <p>Completa el formulario, agrega plataformas, imágenes y reseñas dinámicamente y genera un arreglo JSON con la estructura requerida.</p>
+
+  <div class="panel" id="cargaExistente">
+    <details>
+      <summary>Cargar / Pegar JSON existente (opcional)</summary>
+      <p>Pega un arreglo válido (const juegos = [...] o solo [...]) para continuar editándolo.</p>
+      <textarea id="entradaJson" placeholder="Pega aquí tu JSON existente..."></textarea>
+      <div class="acciones">
+        <button type="button" onclick="cargarJSON()">Cargar JSON</button>
+      </div>
+      <p id="estadoCarga" class="mini"></p>
+    </details>
+  </div>
+
+  <form id="formJuego" onsubmit="agregarJuego(event)">
+    <div class="grid grid-2">
+      <div>
+        <label>ID (auto)</label>
+        <input type="number" id="id" readonly placeholder="Auto" />
+      </div>
+      <div>
+        <label>Nombre</label>
+        <input type="text" id="nombre" required placeholder="Key Digital - ..." />
+      </div>
+      <div>
+        <label>Precio</label>
+        <input type="number" id="precio" required min="0" step="1" />
+      </div>
+      <div>
+        <label>Stock</label>
+        <select id="stock">
+          <option value="true">Disponible (true)</option>
+          <option value="false">No disponible (false)</option>
+        </select>
+      </div>
+      <div>
+        <label>Disponibilidad</label>
+        <input type="text" id="disponibilidad" value="Solo online" />
+      </div>
+      <div>
+        <label>Portada (ruta)</label>
+        <input type="text" id="portada" placeholder="img/ImagenesJuegos/ImagenesCaratulas/..." />
+      </div>
+      <div style="grid-column: 1 / -1;">
+        <label>Descripción</label>
+        <textarea id="descripcion" required placeholder="Descripción del producto..."></textarea>
+      </div>
+    </div>
+
+    <div class="separador"></div>
+
+    <!-- Plataformas -->
+    <div class="lista-dinamica">
+      <div class="flex-between">
+        <h2 style="margin:0;font-size:1.05rem;">Plataformas</h2>
+        <span class="badge" id="conteoPlataformas">0</span>
+      </div>
+      <div class="fila-inline">
+        <input type="text" id="plataformaInput" placeholder="Ej: PC, Xbox, NintendoSwitch..." />
+        <button type="button" class="secundario" onclick="agregarPlataforma()">Agregar Plataforma</button>
+      </div>
+      <div class="chips" id="plataformasListado"></div>
+    </div>
+
+    <!-- Imágenes -->
+    <div class="lista-dinamica">
+      <div class="flex-between">
+        <h2 style="margin:0;font-size:1.05rem;">Imágenes Galería</h2>
+        <span class="badge" id="conteoImagenes">0</span>
+      </div>
+      <div class="fila-inline">
+        <input type="text" id="imagenInput" placeholder="Ruta de imagen (img/...)" />
+        <button type="button" class="secundario" onclick="agregarImagen()">Agregar Imagen</button>
+      </div>
+      <div class="chips" id="imagenesListado"></div>
+    </div>
+
+    <!-- Reseñas -->
+    <div class="lista-dinamica">
+      <div class="flex-between">
+        <h2 style="margin:0;font-size:1.05rem;">Reseñas / Comentarios</h2>
+        <span class="badge" id="conteoResenas">0</span>
+      </div>
+      <div class="fila-inline">
+        <input type="text" id="usuarioComentario" placeholder="Usuario" />
+        <input type="text" id="textoComentario" placeholder="Comentario" />
+        <input type="number" id="calificacionComentario" placeholder="Calificación (1-5)" min="1" max="5" />
+        <button type="button" class="secundario" onclick="agregarResena()">Agregar Reseña</button>
+      </div>
+      <div class="chips" id="resenasListado"></div>
+    </div>
+
+    <div class="acciones">
+      <button type="submit">Agregar Juego al Arreglo</button>
+      <button type="button" class="secundario" onclick="limpiarFormulario()">Limpiar Formulario</button>
+    </div>
+  </form>
+
+  <div class="panel">
+    <div class="flex-between">
+      <h2 style="margin:0;">JSON Resultante</h2>
+      <div class="acciones">
+        <button type="button" onclick="copiarJSON()">Copiar</button>
+        <button type="button" onclick="descargarJSON()">Descargar juegos.json</button>
+        <button type="button" class="peligro" onclick="vaciarJuegos()">Vaciar Lista</button>
+      </div>
+    </div>
+    <p class="mini">Se muestra el array <code>juegos</code>. (Persistencia localStorage activada)</p>
+    <pre id="salidaJSON">// Aquí aparecerá el JSON...</pre>
+  </div>
+
+  <div class="panel">
+    <details>
+      <summary>Referencia de Estructura</summary>
+      <table class="tabla-simple">
+        <thead>
+          <tr><th>Campo</th><th>Tipo</th><th>Detalle</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>id</td><td>number</td><td>Incremental</td></tr>
+          <tr><td>nombre</td><td>string</td><td>Título del producto</td></tr>
+          <tr><td>precio</td><td>number</td><td>Precio entero</td></tr>
+          <tr><td>stock</td><td>boolean</td><td>true / false</td></tr>
+          <tr><td>disponibilidad</td><td>string</td><td>Texto libre</td></tr>
+          <tr><td>portada</td><td>string</td><td>Ruta a imagen principal</td></tr>
+          <tr><td>descripcion</td><td>string</td><td>Descripción</td></tr>
+          <tr><td>plataformas</td><td>string[]</td><td>Lista de plataformas</td></tr>
+          <tr><td>imagenes</td><td>string[]</td><td>Rutas adicionales</td></tr>
+          <tr><td>resenas.comentarios</td><td>Array&lt;Objeto&gt;</td><td>{ usuario, texto, calificacion }</td></tr>
+        </tbody>
+      </table>
+    </details>
+  </div>
+
+  <footer>
+    Generador de JSON de Juegos - Puedes adaptar libremente este código.
+  </footer>
+
+<script>
+  // Estado temporal para los inputs dinámicos del juego en edición
+  let plataformasTemp = [];
+  let imagenesTemp = [];
+  let resenasTemp = [];
+
+  // Arreglo principal. Cargamos de localStorage si existe.
+  let juegos = [];
+  const LS_KEY = 'juegos_json_generador';
+
+  // Intentar cargar desde localStorage
+  (function init(){
+    try {
+      const guardado = localStorage.getItem(LS_KEY);
+      if (guardado) {
+        const parsed = JSON.parse(guardado);
+        if (Array.isArray(parsed)) {
+          juegos = parsed;
+        }
+      }
+    } catch(e) {
+      console.warn('No se pudo parsear localStorage', e);
+    }
+    actualizarVistaJSON();
+    recalcularID();
+  })();
+
+  function recalcularID() {
+    const idInput = document.getElementById('id');
+    const nextId = juegos.length ? Math.max(...juegos.map(j => j.id || 0)) + 1 : 1;
+    idInput.value = nextId;
+  }
+
+  // Gestión de Plataformas
+  function agregarPlataforma() {
+    const inp = document.getElementById('plataformaInput');
+    let val = inp.value.trim();
+    if (!val) return;
+    if (plataformasTemp.includes(val)) {
+      alert('Esta plataforma ya está agregada.');
+      return;
+    }
+    plataformasTemp.push(val);
+    inp.value = '';
+    renderPlataformas();
+  }
+  function eliminarPlataforma(p) {
+    plataformasTemp = plataformasTemp.filter(x => x !== p);
+    renderPlataformas();
+  }
+  function renderPlataformas() {
+    const cont = document.getElementById('plataformasListado');
+    cont.innerHTML = '';
+    plataformasTemp.forEach(p => {
+      const div = document.createElement('div');
+      div.className = 'chip';
+      div.innerHTML = `<span>${p}</span><button type="button" title="Eliminar" onclick="eliminarPlataforma('${escapeQuotes(p)}')">&times;</button>`;
+      cont.appendChild(div);
+    });
+    document.getElementById('conteoPlataformas').textContent = plataformasTemp.length;
+  }
+
+  // Gestión de Imágenes
+  function agregarImagen() {
+    const inp = document.getElementById('imagenInput');
+    let val = inp.value.trim();
+    if (!val) return;
+    imagenesTemp.push(val);
+    inp.value = '';
+    renderImagenes();
+  }
+  function eliminarImagen(img) {
+    imagenesTemp = imagenesTemp.filter(x => x !== img);
+    renderImagenes();
+  }
+  function renderImagenes() {
+    const cont = document.getElementById('imagenesListado');
+    cont.innerHTML = '';
+    imagenesTemp.forEach(i => {
+      const div = document.createElement('div');
+      div.className = 'chip';
+      div.innerHTML = `<span>${i}</span><button type="button" onclick="eliminarImagen('${escapeQuotes(i)}')">&times;</button>`;
+      cont.appendChild(div);
+    });
+    document.getElementById('conteoImagenes').textContent = imagenesTemp.length;
+  }
+
+  // Gestión de Reseñas
+  function agregarResena() {
+    const u = document.getElementById('usuarioComentario').value.trim();
+    const t = document.getElementById('textoComentario').value.trim();
+    const cRaw = document.getElementById('calificacionComentario').value.trim();
+    if (!u || !t || !cRaw) return;
+    const c = parseInt(cRaw, 10);
+    if (isNaN(c) || c < 1 || c > 5) {
+      alert('La calificación debe ser un número entre 1 y 5');
+      return;
+    }
+    resenasTemp.push({ usuario: u, texto: t, calificacion: c });
+    document.getElementById('usuarioComentario').value = '';
+    document.getElementById('textoComentario').value = '';
+    document.getElementById('calificacionComentario').value = '';
+    renderResenas();
+  }
+  function eliminarResena(idx) {
+    resenasTemp.splice(idx, 1);
+    renderResenas();
+  }
+  function renderResenas() {
+    const cont = document.getElementById('resenasListado');
+    cont.innerHTML = '';
+    resenasTemp.forEach((r, idx) => {
+      const div = document.createElement('div');
+      div.className = 'chip';
+      div.innerHTML = `<span>${r.usuario} (${r.calificacion})</span><button type="button" onclick="eliminarResena(${idx})">&times;</button>`;
+      cont.appendChild(div);
+    });
+    document.getElementById('conteoResenas').textContent = resenasTemp.length;
+  }
+
+  // Agregar juego al array principal
+  function agregarJuego(e) {
+    e.preventDefault();
+
+    if (!plataformasTemp.length) {
+      if(!confirm('No has agregado plataformas ¿Continuar de todos modos?')) return;
+    }
+
+    const juego = {
+      id: parseInt(document.getElementById('id').value, 10),
+      nombre: document.getElementById('nombre').value.trim(),
+      precio: parseInt(document.getElementById('precio').value, 10),
+      stock: document.getElementById('stock').value === 'true',
+      disponibilidad: document.getElementById('disponibilidad').value.trim(),
+      portada: document.getElementById('portada').value.trim(),
+      descripcion: document.getElementById('descripcion').value.trim(),
+      plataformas: [...plataformasTemp],
+      imagenes: [...imagenesTemp],
+      resenas: {
+        comentarios: resenasTemp.map(r => ({ ...r }))
+      }
+    };
+
+    // Validaciones básicas
+    if (!juego.nombre) return alert('Nombre requerido');
+    if (isNaN(juego.precio)) return alert('Precio inválido');
+    if (!juego.descripcion) return alert('Descripción requerida');
+
+    juegos.push(juego);
+    persistir();
+    actualizarVistaJSON();
+    limpiarFormulario(true);
+    recalcularID();
+  }
+
+  function persistir() {
+    try {
+      localStorage.setItem(LS_KEY, JSON.stringify(juegos, null, 2));
+    } catch (e) {
+      console.warn('No se pudo guardar en localStorage', e);
+    }
+  }
+
+  function actualizarVistaJSON() {
+    const salida = document.getElementById('salidaJSON');
+    const contenido = 'const juegos = ' + JSON.stringify(juegos, null, 2) + ';\n';
+    salida.textContent = contenido;
+  }
+
+  function limpiarFormulario(soloCampos=false) {
+    if (!soloCampos && !confirm('¿Seguro que quieres limpiar el formulario actual?')) return;
+    document.getElementById('formJuego').reset();
+    plataformasTemp = [];
+    imagenesTemp = [];
+    resenasTemp = [];
+    renderPlataformas();
+    renderImagenes();
+    renderResenas();
+    document.getElementById('descripcion').value = '';
+  }
+
+  function vaciarJuegos() {
+    if (!confirm('Esto eliminará todo el arreglo de juegos. ¿Continuar?')) return;
+    juegos = [];
+    persistir();
+    actualizarVistaJSON();
+    recalcularID();
+  }
+
+  // Copiar al portapapeles
+  function copiarJSON() {
+    const texto = document.getElementById('salidaJSON').textContent;
+    navigator.clipboard.writeText(texto).then(() => {
+      alert('JSON copiado al portapapeles');
+    }).catch(() => alert('No se pudo copiar'));
+  }
+
+  // Descargar como archivo
+  function descargarJSON() {
+    const contenido = 'const juegos = ' + JSON.stringify(juegos, null, 2) + ';\n';
+    const blob = new Blob([contenido], { type: 'application/javascript;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.download = 'juegos.json.js';
+    a.href = url;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+  }
+
+  // Cargar JSON pegado
+  function cargarJSON() {
+    const entrada = document.getElementById('entradaJson').value.trim();
+    const estado = document.getElementById('estadoCarga');
+    if (!entrada) {
+      estado.textContent = 'No hay contenido que cargar.';
+      estado.className = 'mini warning';
+      return;
+    }
+    try {
+      let txt = entrada;
+      // Si incluye "const juegos =" lo recortamos
+      if (/const\s+[\w$]+\s*=/.test(txt)) {
+        txt = txt.replace(/const\s+[\w$]+\s*=\s*/, '');
+      }
+      // Quitar ; final si existe
+      txt = txt.replace(/;+\s*$/, '');
+      const arr = JSON.parse(txt);
+      if (!Array.isArray(arr)) throw new Error('El JSON no es un arreglo');
+      juegos = arr;
+      persistir();
+      actualizarVistaJSON();
+      recalcularID();
+      estado.textContent = 'JSON cargado correctamente (' + juegos.length + ' elementos).';
+      estado.className = 'mini ok';
+    } catch (e) {
+      estado.textContent = 'Error al parsear: ' + e.message;
+      estado.className = 'mini error';
+    }
+  }
+
+  function escapeQuotes(str) {
+    return str.replace(/"/g, '&quot;').replace(/'/g, "\\'");
+  }
+</script>
+</body>
+</html>
