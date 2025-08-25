@@ -123,7 +123,8 @@ return;
       ${itemsHTML}
     </ul>
     <div class="text-center mt-4 d-flex flex-column flex-sm-row justify-content-center gap-2">
-    <a href="index.html" class="btn-codigos secundario" onclick="vaciarCarrito()">Volver a la tienda</a>
+<a href="index.html" class="btn-codigos secundario" onclick="vaciarCarrito(event)">Volver a la tienda</a>
+
 
     </div>
   `;
