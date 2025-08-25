@@ -1,19 +1,20 @@
-// Genera un segmento de 5 caracteres alfanuméricos mayúsculos
+// ================== CONFIGURACIÓN ==================
+const THRESHOLD = 2; 
+// Si cantidad > THRESHOLD => un código por unidad (cada uno en su propia "casilla").
+// Si cantidad <= THRESHOLD => solo 1 código.
+
+// ================== UTILIDADES ==================
 function generarSegmento() {
   const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
   let s = '';
-  for (let i = 0; i < 5; i++) {
-    s += chars[Math.floor(Math.random() * chars.length)];
-  }
+  for (let i = 0; i < 5; i++) s += chars[Math.floor(Math.random() * chars.length)];
   return s;
 }
 
-// Genera la key completa FORMATO: XXXXX-XXXXX-XXXXX
 function generarKey() {
   return `${generarSegmento()}-${generarSegmento()}-${generarSegmento()}`;
 }
 
-// Obtiene el carrito de la misma forma que tus otras funciones
 function obtenerCarritoSeguro() {
   try {
     const cart = typeof getCart === 'function' ? getCart() : [];
@@ -23,30 +24,41 @@ function obtenerCarritoSeguro() {
   }
 }
 
-// Carga códigos ya guardados
 function cargarCodigosGuardados() {
   try {
-    return JSON.parse(localStorage.getItem('codigosGenerados')) || {};
+    const data = JSON.parse(localStorage.getItem('codigosGenerados')) || {};
+    Object.keys(data).forEach(id => {
+      if (typeof data[id] === 'string') data[id] = [data[id]];
+    });
+    return data;
   } catch {
     return {};
   }
 }
 
-// Guarda códigos
 function guardarCodigos(data) {
   localStorage.setItem('codigosGenerados', JSON.stringify(data));
 }
 
-// Prepara (genera si faltan) los códigos para cada ítem del carrito
+function obtenerMapaCantidades(cart) {
+  const mapa = new Map();
+  cart.forEach(item => {
+    const id = String(item.id);
+    const cant = Number(item.cantidad || item.qty || item.quantity || 1) || 1;
+    mapa.set(id, (mapa.get(id) || 0) + cant);
+  });
+  return mapa;
+}
+
 function prepararCodigosParaCarrito() {
   const cart = obtenerCarritoSeguro();
   const guardados = cargarCodigosGuardados();
   let cambiado = false;
 
-  // Mapa auxiliar para detectar items actuales
-  const idsActuales = new Set(cart.map(i => String(i.id)));
+  const mapaCantidades = obtenerMapaCantidades(cart);
+  const idsActuales = new Set(mapaCantidades.keys());
 
-  // Elimina códigos de productos que ya no están en el carrito
+  // Limpia ids que ya no están
   Object.keys(guardados).forEach(id => {
     if (!idsActuales.has(id)) {
       delete guardados[id];
@@ -54,20 +66,25 @@ function prepararCodigosParaCarrito() {
     }
   });
 
-  // Genera códigos para productos nuevos
-  cart.forEach(item => {
-    const id = String(item.id);
-    if (!guardados[id]) {
-      guardados[id] = generarKey();
+  // Ajusta cada id
+  mapaCantidades.forEach((cantidad, id) => {
+    if (!guardados[id]) guardados[id] = [];
+    let necesarios = cantidad > THRESHOLD ? cantidad : 1;
+    while (guardados[id].length < necesarios) {
+      guardados[id].push(generarKey());
+      cambiado = true;
+    }
+    if (guardados[id].length > necesarios) {
+      guardados[id].length = necesarios;
       cambiado = true;
     }
   });
 
   if (cambiado) guardarCodigos(guardados);
-  return guardados;
+  return { codigos: guardados, mapaCantidades };
 }
 
-// Renderiza el bloque de códigos
+// =============== RENDER (cada código = 1 casilla) ===============
 function renderizarCodigos() {
   const wrapper = document.getElementById('codigos-wrapper');
   if (!wrapper) return;
@@ -82,36 +99,58 @@ function renderizarCodigos() {
     return;
   }
 
-  const codigos = prepararCodigosParaCarrito();
-
-  // Intentamos acceder al array global "juegos" si existe para portada
+  const { codigos, mapaCantidades } = prepararCodigosParaCarrito();
   const juegosLista = typeof juegos !== 'undefined' ? juegos : [];
 
-  const itemsHTML = cart.map(item => {
-    const codigo = codigos[String(item.id)] || '----- ----- -----';
-    const juegoData = juegosLista.find(j => j.id === item.id);
-    const thumb = juegoData && juegoData.portada
-      ? juegoData.portada
-      : 'img/ImagenesJuegos/ImagenesCaratulas/default.png';
+  // Lista única de ids para tener datos base (nombre, portada)
+  const metaPorId = {};
+  cart.forEach(item => {
+    const id = String(item.id);
+    if (!metaPorId[id]) {
+      const juegoData = juegosLista.find(j => String(j.id) === id);
+      metaPorId[id] = {
+        id,
+        nombre: item.nombre || (juegoData ? juegoData.nombre : 'Juego'),
+        thumb: juegoData && juegoData.portada
+          ? juegoData.portada
+          : 'img/ImagenesJuegos/ImagenesCaratulas/default.png'
+      };
+    }
+  });
 
-    const nombre = item.nombre || (juegoData ? juegoData.nombre : 'Juego');
+  // Generar un <li> por cada código
+  const itemsHTML = Object.keys(codigos).flatMap(id => {
+    const listaCods = codigos[id];
+    const cantidad = mapaCantidades.get(id) || 1;
+    const { nombre, thumb } = metaPorId[id];
 
-    return `
-      <li class="codigo-item">
-        <div class="nombre-juego">
-          <img src="${thumb}" alt="Portada ${nombre}" width="40" height="40" style="border-radius:10px;object-fit:cover;">
-          <span>${nombre}</span>
-        </div>
-        <div class="codigo-box">
-          <span class="codigo" data-id="${item.id}">${codigo}</span>
-          <button class="btn-copiar" type="button" onclick="copiarCodigo(this)" aria-label="Copiar código">
-            <i class="fa-regular fa-copy"></i> Copiar
-          </button>
-        </div>
-        <div class="badges">
-          <span class="badge-mini">Digital</span>
-        </div>
-      </li>`;
+    // Mostrar el multiplicador (xN) solo en la primera casilla si hay varias
+    return listaCods.map((code, idx) => {
+      // Opcional: nombre con sufijo de índice
+      // const nombreMostrar = listaCods.length > 1 ? `${nombre} #${idx + 1}` : nombre;
+      const nombreMostrar = nombre;
+
+      const multiplicador = (idx === 0 && cantidad > 1)
+        ? ` <small class="text-muted">(x${cantidad})</small>`
+        : '';
+
+      return `
+        <li class="codigo-item">
+          <div class="nombre-juego">
+            <img src="${thumb}" alt="Portada ${nombre}" width="40" height="40" style="border-radius:10px;object-fit:cover;">
+            <span>${nombreMostrar}${multiplicador}${listaCods.length > 1 ? ` <span class="badge-indice">#${idx + 1}</span>` : ''}</span>
+          </div>
+          <div class="codigo-box">
+            <span class="codigo" data-id="${id}" data-index="${idx}">${code}</span>
+            <button class="btn-copiar" type="button" onclick="copiarCodigo(this)" aria-label="Copiar código ${idx + 1}">
+              <i class="fa-regular fa-copy"></i> Copiar
+            </button>
+          </div>
+          <div class="badges">
+            <span class="badge-mini">Digital</span>
+          </div>
+        </li>`;
+    });
   }).join('');
 
   wrapper.innerHTML = `
@@ -124,7 +163,7 @@ function renderizarCodigos() {
   `;
 }
 
-// Copiar código
+// =============== COPIAR ===============
 function copiarCodigo(btn) {
   const cont = btn.closest('.codigo-item');
   if (!cont) return;
@@ -142,23 +181,19 @@ function copiarCodigo(btn) {
   });
 }
 
-// Muestra / despliega el contenedor
+// =============== MOSTRAR ===============
 function mostrarCodigos() {
   const wrapper = document.getElementById('codigos-wrapper');
   if (!wrapper) return;
-
-  // Si ya está visible, no regeneramos (solo podrías alternar si quisieras)
   if (wrapper.classList.contains('abierto')) return;
 
   renderizarCodigos();
   wrapper.classList.remove('d-none');
-  // Animación opcional
   requestAnimationFrame(() => {
     wrapper.classList.add('abierto', 'animar');
   });
 }
 
-// Preparar códigos al cargar (para que ya estén disponibles)
 document.addEventListener('DOMContentLoaded', () => {
   prepararCodigosParaCarrito();
 });
