@@ -1,124 +1,145 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-  <meta charset="UTF-8">
-  <title>Main Control</title>
-
+  <meta charset="UTF-8" />
+  <title>Aim Control - Inicio</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <link rel="stylesheet" href="css/bootstrap.min.css" />
   <link rel="stylesheet" href="cssweb/indexstyles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <!-- Toastr (si lo usas en la home después) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css"/>
 </head>
-
 <body>
-  <!-- nav -->
-  <!-- la prueba de la prueba de la prueba-->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-black">
 
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.html" style="font-weight: bold;" id="texto-logito">
-        <img src="img/LogoPrincipal/ICON.png" alt="Main Control" width="80" height="80">
-        Aim Control
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-black py-2">
+    <div class="container-fluid px-3">
+      <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="index.html" id="texto-logito">
+        <img src="img/LogoPrincipal/ICON.png" alt="Logo Aim Control" width="64" height="64" class="img-fluid">
+        <span>Aim Control</span>
       </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup"
+              aria-expanded="false" aria-label="Menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="collapse navbar-collapse mt-3 mt-lg-0" id="navbarNavAltMarkup">
+        <div class="vr mx-3 bg-white d-none d-lg-block opacity-50"></div>
+        <div class="navbar-nav mx-auto text-center gap-lg-1">
 
-        <!-- LINEA Q DIVIDE  -->
-        <div class="vr mx-3 bg-white" style="opacity: 0.5;"></div>
-
-
-        <div class="navbar-nav mx-auto text-center">
-          <a class="nav-link d-flex align-items-center gap-2" aria-current="page" href="index.html?plataforma=all"
-           >
-            <img src="img/Logos/computadora-para-juegos.png" alt="plataformas" width="40" height="40">Todas las plataformas
+          <a class="nav-link d-flex align-items-center gap-2" href="index.html?plataforma=all" >
+            <img src="img/Logos/computadora-para-juegos.png" width="34" height="34" alt="">Todas las plataformas
           </a>
-
           <a class="nav-link d-flex align-items-center gap-2" href="PC.html?plataforma=PC">
-            <img src="img/Logos/logotipo-de-steam.png" alt="PC" width="30" height="30"> PC
+            <img src="img/Logos/logotipo-de-steam.png" width="26" height="26" alt="">PC
           </a>
-
-          <a style= "color: #df6011; font-weight: 600;"class="nav-link d-flex align-items-center gap-2" href="PlayStation.html?plataforma=PlayStation">
-            <img src="img/Logos/consoles-ps-512.png" alt="PlayStation" width="30" height="30">PlayStation
+          <a class="nav-link d-flex align-items-center gap-2" href="PlayStation.html?plataforma=PlayStation" style="color: #df6011; font-weight: 600;">
+            <img src="img/Logos/consoles-ps-512.png" width="26" height="26" alt="">PlayStation
           </a>
-
           <a class="nav-link d-flex align-items-center gap-2" href="Xbox.html?plataforma=Xbox">
-            <img src="img/Logos/logotipo-de-xbox.png" alt="Xbox" width="30" height="30">Xbox
+            <img src="img/Logos/logotipo-de-xbox.png" width="26" height="26" alt="">Xbox
           </a>
-
           <a class="nav-link d-flex align-items-center gap-2" href="NintendoSwitch.html?plataforma=NintendoSwitch">
-            <img src="img/Logos/nintendo-switch.png" alt="Nintendo Switch" width="50" height="44">Nintendo Switch
+            <img src="img/Logos/nintendo-switch.png" width="40" height="34" alt="">Nintendo Switch
           </a>
         </div>
-
-
-
+        <div class="d-flex justify-content-center mt-3 mt-lg-0">
+            <a class="nav-link d-flex align-items-center gap-2" href="compra-detalle.html">
+              <div class="icon-box bg-accent d-inline-flex justify-content-center align-items-center">
+                <img src="img/Logos/carrito-de-compras.png" alt="Carrito" width="26" height="26">
+              </div>
+            </a>
+        </div>
       </div>
-
-      <div class="d-flex align-items-center">
-
-        <button class="navbar-toggler me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-       <a class="nav-link d-flex align-items-center gap-2" href="compra-detalle.html">
-          <div class="icon-box" style="background-color: #df6011; padding: 9px; border-radius: 15px;" >
-            <img src="img/Logos/carrito-de-compras.png" alt="Carrito de Compras" width="30" height="30">
-          </div>
-        </a>
-
-      </div>
-
     </div>
   </nav>
-  <!-- Toda la vara acá, TODO CONTENIDO. -->
-  <main id="index">
-    <div id="Imagen de bienvenida xd" class=""></div>
+  <main id="index" class="flex-grow-1">
 
-    <div id="ContenedorJuegosRandom" class="  mb-4 mx-auto pb-4  h-80 w-100 " style="background-color: #37322e;">
-
-      <div id="TituloTend" class="mb-4 pb-3 " style="background-color: #b3b2b0;">
-        <h1 style="color: white;" class="px-3 pt-3"> Tendencias</h1>
+    <!-- CARROUSEL DE BIENVENIDA -->
+    <section id="bienvenida-wrapper" class="py-4 py-md-5 ">
+      <div class="container">
+        <div id="carouselBienvenida" class="carousel slide bienvenida-carrusel" data-bs-ride="carousel">
+          <div class="carousel-inner rounded-4 overflow-hidden">
+            <div class="carousel-item active">
+              <img src="img/Banners/Banner1.svg" class="d-block w-100 banner-img" alt="Bienvenido a Aim Control">
+              <div class="carousel-caption custom-caption">
+                <h2>¡Bienvenido a Aim Control!</h2>
+                <p>Tu tienda digital favorita: videojuegos, consolas y más. Descubre tendencias y ofertas.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="img/Banners/Banner2.svg" class="d-block w-100 banner-img" alt="Explora juegos">
+              <div class="carousel-caption custom-caption">
+                <h2>Explora cientos de juegos</h2>
+                <p>Encuentra títulos para todas las plataformas y promociones exclusivas.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="img/Banners/Banner3.svg" class="d-block w-100 banner-img" alt="Tarjetas de regalo">
+              <div class="carousel-caption custom-caption">
+                <h2>Tarjetas de Regalo</h2>
+                <p>Regala experiencias únicas con nuestras gift cards.</p>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button"
+                  data-bs-target="#carouselBienvenida" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon control-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+          </button>
+          <button class="carousel-control-next" type="button"
+                  data-bs-target="#carouselBienvenida" data-bs-slide="next">
+            <span class="carousel-control-next-icon control-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+          </button>
+        </div>
       </div>
-      <div id="Contenido">
+    </section>
 
-        <div class="container" name="Apartadojuego">
+    <!-- TENDENCIAS + RECOMENDADOS -->
+    <section id="bloque-juegos" class="pb-5 pt-4">
+      <div class="seccion-wrapper">
+        <header class="seccion-header">
+          <h1 class="seccion-titulo">Juegos de Play Station</h1>
+        </header>
 
-          <div class="row row-cols-1 row-cols-md-5 g-4 " id="juegos-list">
-
+        <div class="container py-4 align-items-center">
+          <!-- Lista dinámica de juegos -->
+          <div id="juegos-list" class="juegos-grid">
+            <!-- Tarjetas insertadas por JS -->
           </div>
         </div>
 
-
+       
       </div>
-
-      <div id="TituloRecomendados" class="mb-4 pb-3 " style="background-color: #b3b2b0;">
-        <h1 style="color: white;" class="px-3 pt-3"> Recomendados</h1>
-      </div>
-    </div>
+    </section>
 
 
-   
+
   </main>
 
-  <!-- Footer -->
   <!-- FOOTER -->
-  <footer class="footer text-white mt-auto">
+  <footer class="footer mt-auto">
     <div class="container py-4">
-      <div class="row gy-4 align-items-start">
+      <div class="row gy-4">
         <div class="col-12 col-md-4">
           <h5 class="fw-bold mb-2">Aim Control</h5>
-          <ul class="list-unstyled footer-links mb-0">
+          <ul class="list-unstyled mb-0 footer-links">
             <li><a href="acercade.html">Acerca de</a></li>
             <li><a href="contactenos.html">Contáctenos</a></li>
           </ul>
         </div>
+
         <div class="col-12 col-md-4">
           <h6 class="text-secondary mb-2">Ofertas personalizadas</h6>
-          <form class="d-flex flex-column flex-sm-row gap-2">
-            <input type="email" class="form-control form-control-sm" placeholder="correo@ejemplo.com" aria-label="Correo">
-            <button type="button" class="btn btn-accent btn-sm">Suscribirse</button>
-          </form>
+            <form class="d-flex gap-2 flex-column flex-sm-row">
+              <input type="email" class="form-control form-control-sm" placeholder="correo@ejemplo.com" aria-label="Correo">
+              <button type="button" class="btn btn-accent btn-sm">Suscribirse</button>
+            </form>
         </div>
+
         <div class="col-12 col-md-4">
           <h6 class="text-secondary mb-2">Síguenos</h6>
          <div class="d-flex flex-wrap gap-3">
@@ -137,7 +158,9 @@
       </div>
         </div>
       </div>
+
       <hr class="footer-divider my-4">
+
       <div class="d-flex flex-column flex-lg-row justify-content-between align-items-center gap-3 small">
         <p class="mb-0">&copy; 2023 Aim Control. Todos los derechos reservados.</p>
         <div class="d-flex align-items-center flex-wrap gap-2">
@@ -151,15 +174,10 @@
     </div>
   </footer>
 
-  <!-- JQuery-->
-  <script src="https://code.jquery.com/jquery-2.2.4.js" crossorigin="anonymous"></script>
-  <!-- Notificaciones Toastr -->
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="json/digitalkey.juegos.js"></script>
+  <script src="javascript/lista-juegos.js"></script>
+  <script src="javascript/compra.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-  <!-- Lista de Juegos-->
-  <script src="./json/digitalkey.juegos.js"> </script>
-  <script src="./javascript/lista-juegos.js"></script>
-  <!-- Bootstrap JS-->
-<script src="js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
