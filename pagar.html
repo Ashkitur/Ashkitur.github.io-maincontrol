@@ -9,9 +9,7 @@
   <link rel="stylesheet" href="cssweb/Stepper.css" />
   <link rel="stylesheet" href="cssweb/indexstyles.css" />
   <link rel="stylesheet" href="cssweb/ZonaCompra.css" />
-  
-  <!-- NUEVO CSS de overrides responsivos -->
-                      
+  <link rel="stylesheet" href="cssweb/codigos-keys.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 <body>
@@ -31,7 +29,6 @@
       <div class="collapse navbar-collapse mt-3 mt-lg-0" id="navbarNavAltMarkup">
         <div class="vr mx-3 bg-white d-none d-lg-block opacity-50"></div>
         <div class="navbar-nav mx-auto text-center gap-lg-1">
-
           <a class="nav-link d-flex align-items-center gap-2" href="index.html?plataforma=all" style="color: #df6011; font-weight: 600;">
             <img src="img/Logos/computadora-para-juegos.png" width="34" height="34" alt="">Todas las plataformas
           </a>
@@ -41,7 +38,7 @@
           <a class="nav-link d-flex align-items-center gap-2" href="PlayStation.html?plataforma=PlayStation">
             <img src="img/Logos/consoles-ps-512.png" width="26" height="26" alt="">PlayStation
           </a>
-          <a class="nav-link d-flex align-items-center gap-2" href="Xbox.html?plataforma=Xbox">
+            <a class="nav-link d-flex align-items-center gap-2" href="Xbox.html?plataforma=Xbox">
             <img src="img/Logos/logotipo-de-xbox.png" width="26" height="26" alt="">Xbox
           </a>
           <a class="nav-link d-flex align-items-center gap-2" href="NintendoSwitch.html?plataforma=NintendoSwitch">
@@ -58,79 +55,80 @@
       </div>
     </div>
   </nav>
-<main class="py-4 main-compra">
-  <div class="container">
-    <!-- Stepper -->
-    <div class="stepper d-flex flex-nowrap flex-lg-wrap gap-4 justify-content-center mb-4" aria-label="Progreso de compra">
-      <div class="step"><span class="circle">2</span><p class="mt-2 mb-0">Información</p></div>
-      <div class="step active" aria-current="step"><span class="circle">3</span><p class="mt-2 mb-0">Confirmación</p></div>
-      <div class="step"><span class="circle">4</span><p class="mt-2 mb-0">Envío</p></div>
-    </div>
 
-    <!-- GRID RESPONSIVE (sin JS) -->
-    <div class="compra-grid">
-      <!-- Detalle Factura -->
-      <div id="detalle-factura-container" class="mb-4 panel-factura">
-        <div class="card shadow-sm factura-card" style="border-radius:16px;">
-          <div class="card-body p-3">
-            <h5 class="card-title mb-3 title-section">
-              <i class="fa-solid fa-file-invoice-dollar me-2 text-accent"></i>Detalle de la Factura
-            </h5>
-            <div class="table-responsive tabla-wrapper">
-              <table class="table table-bordered mb-0 tabla-factura"
-                     style="--col1:'Nombre';--col2:'Cantidad';--col3:'Precio';--col4:'Subtotal';">
-                <thead class="table-light">
-                  <tr>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Cantidad</th>
-                    <th scope="col">Precio</th>
-                    <th scope="col">Subtotal</th>
-                  </tr>
-                </thead>
-                <tbody id="detalle-factura" >
-                  <!-- Filas dinámicas -->
-                </tbody>
-              </table>
+ <main class="py-4 main-compra">
+    <div class="container">
+      <!-- Stepper -->
+      <div class="stepper d-flex flex-nowrap flex-lg-wrap gap-4 justify-content-center mb-4" aria-label="Progreso de compra">
+        <div class="step"><span class="circle">1</span><p class="mt-2 mb-0">Información</p></div>
+        <div class="step active" aria-current="step"><span class="circle">2</span><p class="mt-2 mb-0">Confirmación</p></div>
+      </div>
+
+      <div class="compra-grid">
+        <!-- Detalle Factura -->
+        <div id="detalle-factura-container" class="mb-4 panel-factura">
+          <div class="card shadow-sm factura-card" style="border-radius:16px;">
+            <div class="card-body p-3">
+              <h5 class="card-title mb-3 title-section">
+                <i class="fa-solid fa-file-invoice-dollar me-2 text-accent"></i>Detalle de la Factura
+              </h5>
+              <div class="table-responsive tabla-wrapper">
+                <table class="table table-bordered mb-0 tabla-factura"
+                       style="--col1:'Nombre';--col2:'Cantidad';--col3:'Precio';--col4:'Subtotal';">
+                  <thead class="table-light">
+                    <tr>
+                      <th scope="col">Nombre</th>
+                      <th scope="col">Cantidad</th>
+                      <th scope="col">Precio</th>
+                      <th scope="col">Subtotal</th>
+                    </tr>
+                  </thead>
+                  <tbody id="detalle-factura">
+                    <!-- Filas dinámicas -->
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Resumen -->
-      <aside class="tarjeta-resumen" id="tarjeta-resumen">
-        <div class="resumen-inner">
-          <h5 class="mb-3 title-section"><i class="fa-solid fa-receipt me-2 text-accent"></i>Resumen</h5>
-          <div id="lista-resumen" class="lista-resumen">
-            <!-- Items dinámicos -->
-          </div>
-          <div class="item-resumen total">
-            <span class="titulo-resumen">Total</span>
-            <span class="valor-resumen" id="total-compra">$0.00</span>
-          </div>
-          <div class="item-resumen subtotal">
-            <span class="titulo-resumen">Subtotal</span>
-            <span class="valor-resumen" id="total-neto">$0.00</span>
-          </div>
+        <!-- Resumen -->
+        <aside class="tarjeta-resumen" id="tarjeta-resumen">
+          <div class="resumen-inner">
+            <h5 class="mb-3 title-section"><i class="fa-solid fa-receipt me-2 text-accent"></i>Resumen</h5>
+            <div id="lista-resumen" class="lista-resumen"></div>
+            <div class="item-resumen total">
+              <span class="titulo-resumen">Total</span>
+              <span class="valor-resumen" id="total-compra">$0.00</span>
+            </div>
+            <div class="item-resumen subtotal">
+              <span class="titulo-resumen">Subtotal</span>
+              <span class="valor-resumen" id="total-neto">$0.00</span>
+            </div>
             <div class="item-resumen impuestos">
               <span class="titulo-resumen">Impuestos</span>
               <span class="valor-resumen" id="impuesto-acobrar">$0.00</span>
             </div>
-          <div class="item-resumen metodopago">
-            <span class="titulo-resumen">Método de Pago</span>
-            <span class="valor-resumen badge-metodo" id="metodo-pago-factura">-.-</span>
+            <div class="item-resumen metodopago">
+              <span class="titulo-resumen">Método de Pago</span>
+              <span class="valor-resumen badge-metodo" id="metodo-pago-factura">-.-</span>
+            </div>
           </div>
-        </div>
-      </aside>
-    </div>
+        </aside>
+      </div>
 
-    <!-- Botón Recibir Código -->
-    <div class="text-center mt-4">
-      <button type="button" class="btn btn-lg btn-recibir-codigo">
-        Recibir código
-      </button>
+      <div class="text-center mt-4">
+        <button type="button" class="btn btn-lg btn-recibir-codigo" onclick="mostrarCodigos()">
+          Recibir código
+        </button>
+      </div>
+
+      <!-- Contenedor dinámico para las keys -->
+      <div id="codigos-wrapper" class="mt-4 d-none" aria-live="polite"></div>
+
     </div>
-  </div>
-</main>
+  </main>
+
 
 <footer class="footer text-white mt-auto">
   <div class="container py-4">
@@ -139,7 +137,7 @@
         <h5 class="fw-bold mb-2">Aim Control</h5>
         <ul class="list-unstyled footer-links mb-0">
           <li><a href="acercade.html">Acerca de</a></li>
-          <li><a href="contactenos.html">Contáctenos</a></li>
+            <li><a href="contactenos.html">Contáctenos</a></li>
         </ul>
       </div>
       <div class="col-12 col-md-4">
@@ -181,21 +179,25 @@
   </div>
 </footer>
 
-<script src="js/bootstrap.bundle.min.js"></script>
-<script src="javascript/Zona-Compra.js"></script>
-<script src="json/digitalkey.juegos.js"></script>
-<script src="javascript/compra.js"></script>
-<script src="javascript/compra-detalle.js"></script>
-<script src="javascript/factura-compra.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', showFacturaDetalle);
-  document.addEventListener('DOMContentLoaded', showDetail);
-  document.addEventListener('DOMContentLoaded', () => {
-    const metodo = localStorage.getItem('metodoPago');
-    if (metodo) {
-      document.getElementById('metodo-pago-factura').textContent = metodo;
-    }
-  });
-</script>
+ <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="javascript/Zona-Compra.js"></script>
+  <script src="json/digitalkey.juegos.js"></script>
+  <script src="javascript/compra.js"></script>
+  <script src="javascript/compra-detalle.js"></script>
+  <script src="javascript/factura-compra.js"></script>
+>
+  <script src="javascript/codigos-generados.js"></script>
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', showFacturaDetalle);
+    document.addEventListener('DOMContentLoaded', showDetail);
+    document.addEventListener('DOMContentLoaded', () => {
+      const metodo = localStorage.getItem('metodoPago');
+      if (metodo) {
+        document.getElementById('metodo-pago-factura').textContent = metodo;
+      }
+    });
+  </script>
 </body>
 </html>

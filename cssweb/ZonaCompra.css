@@ -394,3 +394,202 @@ main .container {
   }
 }
 
+#codigos-wrapper {
+  background:#39332f;
+  border-radius:30px;
+  color:#fff;
+  box-shadow:0 8px 25px rgba(0,0,0,.15);
+  padding:32px 28px;
+}
+
+@media (max-width: 576px){
+  #codigos-wrapper {
+    border-radius:20px;
+    padding:24px 20px;
+  }
+}
+
+.lista-codigos {
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:grid;
+  gap:14px;
+}
+
+.codigo-item {
+  background:#4d4642;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:18px;
+  padding:14px 16px;
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  box-shadow:0 5px 18px -8px rgba(0,0,0,.55);
+  position:relative;
+  transition:.3s;
+}
+
+.codigo-item:hover {
+  background:#554d49;
+  transform:translateY(-3px);
+  box-shadow:0 10px 28px -12px rgba(0,0,0,.6);
+}
+
+.nombre-juego {
+  font-weight:600;
+  font-size:.9rem;
+  letter-spacing:.35px;
+  color:#f3f3f3;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  word-break:break-word;
+}
+
+.codigo-box {
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  align-items:stretch;
+}
+
+.codigo {
+  font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  background:linear-gradient(145deg,#fff,#f4f4f4);
+  color:#222;
+  padding:8px 14px;
+  font-size:.95rem;
+  font-weight:600;
+  border-radius:12px;
+  letter-spacing:1px;
+  box-shadow:inset 0 0 0 1px rgba(0,0,0,.08), 0 3px 6px -3px rgba(0,0,0,.4);
+  user-select:all;
+  min-width:170px;
+  text-align:center;
+  position:relative;
+}
+
+.btn-copiar {
+  background:linear-gradient(135deg,#ff6600,#ff7f2b 85%);
+  border:none;
+  color:#fff;
+  font-weight:600;
+  font-size:.7rem;
+  padding:8px 14px;
+  border-radius:10px;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  cursor:pointer;
+  box-shadow:0 4px 14px -5px rgba(255,102,0,.5);
+  letter-spacing:.5px;
+  transition:.28s;
+}
+
+.btn-copiar:hover {
+  filter:brightness(1.05);
+  transform:translateY(-2px);
+}
+
+.btn-copiar:active {
+  transform:translateY(0);
+  filter:brightness(.9);
+}
+
+.btn-copiar.copiado {
+  background:#1d9e50;
+  box-shadow:0 4px 14px -5px rgba(29,158,80,.55);
+}
+
+.badges {
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+  margin-top:2px;
+}
+
+.badge-mini {
+  background:rgba(255,255,255,.11);
+  color:#ffb17a;
+  padding:2px 10px 3px;
+  font-size:.55rem;
+  letter-spacing:.65px;
+  border-radius:50px;
+  font-weight:600;
+  text-transform:uppercase;
+}
+
+.btn-codigos {
+  background:linear-gradient(135deg,#ff6600,#ff7f2b 85%);
+  color:#fff;
+  font-size:.65rem;
+  font-weight:600;
+  letter-spacing:.5px;
+  border:none;
+  padding:8px 16px;
+  border-radius:12px;
+  cursor:pointer;
+  box-shadow:0 5px 14px -6px rgba(255,102,0,.55);
+  transition:.3s;
+  text-transform:uppercase;
+}
+
+.btn-codigos:hover:enabled {
+  transform:translateY(-2px);
+  background:linear-gradient(135deg,#ff7a1f,#ff6600 85%);
+}
+
+.btn-codigos:disabled {
+  opacity:.45;
+  cursor:not-allowed;
+}
+
+.btn-codigos.secundario {
+  background:linear-gradient(135deg,#666,#575757);
+  box-shadow:0 4px 12px -6px rgba(0,0,0,.5);
+}
+
+.btn-codigos.secundario:hover:enabled {
+  background:linear-gradient(135deg,#777,#5d5d5d);
+}
+
+.nota-codigos {
+  opacity:.65;
+  line-height:1.3;
+}
+
+@media (min-width:660px){
+  .lista-codigos {
+    grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+  }
+}
+
+@media (max-width:576px){
+  .codigo {
+    flex:1 1 100%;
+  }
+  .codigo-box {
+    flex-direction:column;
+    align-items:stretch;
+  }
+  .btn-copiar {
+    justify-content:center;
+  }
+}
+
+/* Estado / mensajes */
+#estado-codigos {
+  min-height:18px;
+}
+
+/* Transiciones de aparición */
+#codigos-wrapper.animar {
+  animation:fadeInUp .45s ease;
+}
+
+@keyframes fadeInUp {
+  from {opacity:0; transform:translateY(10px);}
+  to {opacity:1; transform:translateY(0);}
+}
+
