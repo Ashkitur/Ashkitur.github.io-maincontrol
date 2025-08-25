@@ -68,9 +68,9 @@ const juegos = [
       "PC"
     ],
     "imagenes": [
-      "img\\ImagenesJuegos\\ImagenesExtras\\GTA5\\GTA51.svg",
-      "img\\ImagenesJuegos\\ImagenesExtras\\GTA5\\GTA52.svg",
-      "img\\ImagenesJuegos\\ImagenesExtras\\GTA5\\GTA53.svg"
+      "img\\ImagenesJuegos\\ImagenesExtras\\GTA5\\GTA51.png",
+      "img\\ImagenesJuegos\\ImagenesExtras\\GTA5\\GTA52.png",
+      "img\\ImagenesJuegos\\ImagenesExtras\\GTA5\\GTA53.png"
     ],
     "resenas": {
       "comentarios": [
@@ -99,9 +99,9 @@ const juegos = [
       "PlayStation"
     ],
     "imagenes": [
-      "img\\ImagenesJuegos\\ImagenesExtras\\GTA6\\gta61.svg",
-      "img\\ImagenesJuegos\\ImagenesExtras\\GTA6\\gta62.svg",
-      "img\\ImagenesJuegos\\ImagenesExtras\\GTA6\\gta63.svg"
+      "img\\ImagenesJuegos\\ImagenesExtras\\GTA6\\GTA61.png",
+      "img\\ImagenesJuegos\\ImagenesExtras\\GTA6\\GTA62.png",
+      "img\\ImagenesJuegos\\ImagenesExtras\\GTA6\\GTA63.png"
     ],
     "resenas": {
       "comentarios": [
